@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="若你的mac或Linux环境未上安装Docker，请移步Docker安装，确认安装成功之后再进行下文内容。 Quick Start获取基础镜像12$ docker pull tutum/lamp  # 从Docker Hub上的tutum用户的仓库获取lamp镜像$ docker images  # 列出所有的镜像，会发现多一条记录：tutum/lamp 本文用的镜像源tutum/lamp，目前D">
+  <meta name="description" content="若你的mac或Linux环境上未安装Docker，请移步Docker安装，确认安装成功之后再进行下文内容。 Quick Start获取基础镜像12$ docker pull tutum/lamp  # 从Docker Hub上的tutum用户的仓库获取lamp镜像$ docker images  # 列出所有的镜像，会发现多一条记录：tutum/lamp 本文用的镜像源tutum/lamp，目前D">
 <meta name="keywords" content="LAMP,Docker,Linux,MVC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux下Docker快速部署LAMP">
 <meta property="og:url" content="http://yoursite.com/2019/04/16/hello-world/index.html">
 <meta property="og:site_name" content="唯有生活不谈情怀">
-<meta property="og:description" content="若你的mac或Linux环境未上安装Docker，请移步Docker安装，确认安装成功之后再进行下文内容。 Quick Start获取基础镜像12$ docker pull tutum/lamp  # 从Docker Hub上的tutum用户的仓库获取lamp镜像$ docker images  # 列出所有的镜像，会发现多一条记录：tutum/lamp 本文用的镜像源tutum/lamp，目前D">
+<meta property="og:description" content="若你的mac或Linux环境上未安装Docker，请移步Docker安装，确认安装成功之后再进行下文内容。 Quick Start获取基础镜像12$ docker pull tutum/lamp  # 从Docker Hub上的tutum用户的仓库获取lamp镜像$ docker images  # 列出所有的镜像，会发现多一条记录：tutum/lamp 本文用的镜像源tutum/lamp，目前D">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-16T13:07:49.946Z">
+<meta property="og:updated_time" content="2019-04-16T15:11:13.554Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下Docker快速部署LAMP">
-<meta name="twitter:description" content="若你的mac或Linux环境未上安装Docker，请移步Docker安装，确认安装成功之后再进行下文内容。 Quick Start获取基础镜像12$ docker pull tutum/lamp  # 从Docker Hub上的tutum用户的仓库获取lamp镜像$ docker images  # 列出所有的镜像，会发现多一条记录：tutum/lamp 本文用的镜像源tutum/lamp，目前D">
+<meta name="twitter:description" content="若你的mac或Linux环境上未安装Docker，请移步Docker安装，确认安装成功之后再进行下文内容。 Quick Start获取基础镜像12$ docker pull tutum/lamp  # 从Docker Hub上的tutum用户的仓库获取lamp镜像$ docker images  # 列出所有的镜像，会发现多一条记录：tutum/lamp 本文用的镜像源tutum/lamp，目前D">
 
 
 
@@ -409,7 +409,7 @@
                 
               
 
-              <time title="创建时间：2019-04-16 21:07:49" itemprop="dateCreated datePublished" datetime="2019-04-16T21:07:49+08:00">2019-04-16</time>
+              <time title="创建时间：2019-04-16 23:11:13" itemprop="dateCreated datePublished" datetime="2019-04-16T23:11:13+08:00">2019-04-16</time>
             
 
             
@@ -475,7 +475,7 @@
       
 
       
-        <p>若你的mac或Linux环境未上安装Docker，请移步<a href="http://www.runoob.com/docker/ubuntu-docker-install.html" target="_blank" rel="noopener">Docker安装</a>，确认安装成功之后再进行下文内容。</p>
+        <p>若你的mac或Linux环境上未安装Docker，请移步<a href="http://www.runoob.com/docker/ubuntu-docker-install.html" target="_blank" rel="noopener">Docker安装</a>，确认安装成功之后再进行下文内容。</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="获取基础镜像"><a href="#获取基础镜像" class="headerlink" title="获取基础镜像"></a>获取基础镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull tutum/lamp  <span class="comment"># 从Docker Hub上的tutum用户的仓库获取lamp镜像</span></span><br><span class="line">$ docker images  <span class="comment"># 列出所有的镜像，会发现多一条记录：tutum/lamp</span></span><br></pre></td></tr></table></figure>
 <p>本文用的镜像源<a href="https://hub.docker.com/r/tutum/lamp" target="_blank" rel="noopener">tutum/lamp</a>，目前Docker 官方维护了一个公共仓库 Docker Hub，其中已经包括了数量超过 15,000 的镜像，开发者可以注册自己的账号，并自定义自己的镜像进行存储，需要的时候可以直接拿来用，同时也能够分享，有点类似于Github。如想注册可移步 <a href="https://hub.docker.com" target="_blank" rel="noopener">Docker Hub</a>。</p>
 <h3 id="自定义你的镜像"><a href="#自定义你的镜像" class="headerlink" title="自定义你的镜像"></a>自定义你的镜像</h3><p>在一个空的目录下新建Dockerfile文件名，填入如下4行内容。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FROM tutum/lamp:latest  <span class="comment"># 表示在镜像tutum/lamp:latest之上自定义你的镜像</span></span><br><span class="line">RUN rm -fr /app  <span class="comment"># 后面会把你的php项目映射到容器的/app/目录下</span></span><br><span class="line">EXPOSE 80 3306   <span class="comment"># 暴露80 3306端口</span></span><br><span class="line">CMD [<span class="string">"/run.sh"</span>]   <span class="comment"># 当容器启动后会自动执行容器内部的/run.sh脚本</span></span><br></pre></td></tr></table></figure></p>
