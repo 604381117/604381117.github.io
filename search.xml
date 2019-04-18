@@ -8,9 +8,9 @@
         <category>IDE</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>LAMP</tag>
         <tag>Docker</tag>
+        <tag>Linux</tag>
         <tag>MVC</tag>
       </tags>
   </entry>
@@ -25,7 +25,7 @@
         <tag>Linux</tag>
         <tag>IPC</tag>
         <tag>共享内存</tag>
-        <tag>管道</tag>
+        <tag>命名管道</tag>
         <tag>信号</tag>
         <tag>select</tag>
       </tags>

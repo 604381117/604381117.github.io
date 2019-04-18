@@ -97,7 +97,7 @@
 
 
   <meta name="description" content="问题模型 A、B两个进程通过管道通信，A 进程每次接收到的数据通过共享内存传递给A1进程显示，同理，B进程每次接收到的数据通过共享内存传递给B1进程显示； 对于A、B 进程，采用ctrl+c（实际为SIGINT信号）方式退出，A、B进程通过捕捉SIGINT信号注册信号处理函数进行资源清理，A1、B1进程手动关闭即可。  特别注意 A、B通过管道通信，如果首先通过ctrl+c退出A进程，那么B进程的">
-<meta name="keywords" content="Linux,IPC,共享内存,管道,信号,select">
+<meta name="keywords" content="Linux,IPC,共享内存,命名管道,信号,select">
 <meta property="og:type" content="article">
 <meta property="og:title" content="进程间通信-利用共享内存和管道通信实现聊天窗口">
 <meta property="og:url" content="http://yoursite.com/2019/04/18/ipc-chat/index.html">
@@ -107,7 +107,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/04/18/ipc-chat/windows.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/18/ipc-chat/ret.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/18/ipc-chat/ipcs.png">
-<meta property="og:updated_time" content="2019-04-17T18:18:13.256Z">
+<meta property="og:updated_time" content="2019-04-18T01:29:22.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="进程间通信-利用共享内存和管道通信实现聊天窗口">
 <meta name="twitter:description" content="问题模型 A、B两个进程通过管道通信，A 进程每次接收到的数据通过共享内存传递给A1进程显示，同理，B进程每次接收到的数据通过共享内存传递给B1进程显示； 对于A、B 进程，采用ctrl+c（实际为SIGINT信号）方式退出，A、B进程通过捕捉SIGINT信号注册信号处理函数进行资源清理，A1、B1进程手动关闭即可。  特别注意 A、B通过管道通信，如果首先通过ctrl+c退出A进程，那么B进程的">
@@ -409,7 +409,7 @@
                 
               
 
-              <time title="创建时间：2019-04-18 00:16:06 / 修改时间：02:18:13" itemprop="dateCreated datePublished" datetime="2019-04-18T00:16:06+08:00">2019-04-18</time>
+              <time title="创建时间：2019-04-18 00:16:06 / 修改时间：09:29:22" itemprop="dateCreated datePublished" datetime="2019-04-18T00:16:06+08:00">2019-04-18</time>
             
 
             
@@ -563,7 +563,7 @@
           
             <a href="/tags/共享内存/" rel="tag"># 共享内存</a>
           
-            <a href="/tags/管道/" rel="tag"># 管道</a>
+            <a href="/tags/命名管道/" rel="tag"># 命名管道</a>
           
             <a href="/tags/信号/" rel="tag"># 信号</a>
           
