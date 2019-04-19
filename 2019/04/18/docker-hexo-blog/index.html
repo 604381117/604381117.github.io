@@ -97,7 +97,7 @@
 
 
   <meta name="description" content="闲谈拿出你的气质，打开你的电脑，借你半小时搭建好属于你的hexo博客，小生用dockerfile自动帮你搭建好；你只需要在你的mac或linux或windows上提前把docker安装好，如何安装不是我的重点，请参考Docker安装；作为程序员，博客就像你的影子，我都已经忘了内心曾经多少次告诫自己，一定要搭建一个属于自己的技术博客，奈何日复一日过去了，近来终于落实到行动上来，所谓明日复明日，明日何">
-<meta name="keywords" content="Docker,Hexo,Dockerfile,Linux，Github">
+<meta name="keywords" content="Docker,Linux,Hexo,Dockerfile,Github">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客最简教程-Dockerfile自动搭建">
 <meta property="og:url" content="http://yoursite.com/2019/04/18/docker-hexo-blog/index.html">
@@ -108,7 +108,9 @@
 <meta property="og:image" content="http://yoursite.com/2019/04/18/docker-hexo-blog/yilia.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/18/docker-hexo-blog/images-ps.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/18/docker-hexo-blog/github.png">
-<meta property="og:updated_time" content="2019-04-19T15:51:30.000Z">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/docker-hexo-blog/ssh-key.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/18/docker-hexo-blog/add-key.png">
+<meta property="og:updated_time" content="2019-04-19T16:57:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客最简教程-Dockerfile自动搭建">
 <meta name="twitter:description" content="闲谈拿出你的气质，打开你的电脑，借你半小时搭建好属于你的hexo博客，小生用dockerfile自动帮你搭建好；你只需要在你的mac或linux或windows上提前把docker安装好，如何安装不是我的重点，请参考Docker安装；作为程序员，博客就像你的影子，我都已经忘了内心曾经多少次告诫自己，一定要搭建一个属于自己的技术博客，奈何日复一日过去了，近来终于落实到行动上来，所谓明日复明日，明日何">
@@ -427,7 +429,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-19 15:51:30" itemprop="dateModified" datetime="2019-04-19T15:51:30+00:00">2019-04-19</time>
+                <time title="修改时间：2019-04-19 16:57:07" itemprop="dateModified" datetime="2019-04-19T16:57:07+00:00">2019-04-19</time>
               
             
           </span>
@@ -508,7 +510,8 @@
 <h4 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h4><p>Dockerfile中的最后两行内容表示的含义是从github上把hexo-theme-yilia克隆下来并重命名成yilia，然后放到容器的/blog/themes/目录下，其中hexo-theme-yilia是hexo的主题，hexo有很多种主题，用每一种主题搭建出来的hexo博客界面美观和布局都不尽相同，你可以通过<a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo官网</a>上浏览每一种主题长啥样子，通过<a href="https://github.com/search?q=hexo-theme" target="_blank" rel="noopener">github</a>获取主题的源码仓库，选择一个你喜欢的主题，并相应的修改这两行。假如你从github选择的主题仓库地址是<a href="https://github.com/yscoder/hexo-theme-indigo.git" target="_blank" rel="noopener">https://github.com/yscoder/hexo-theme-indigo.git</a> ， 那么你需要按照如下方式进行修改，如果你就想用yilia，那么你不需要做任何修改。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&amp;&amp; git <span class="built_in">clone</span> https://github.com/yscoder/hexo-theme-indigo.git themes/indigo \</span><br><span class="line">&amp;&amp; sed <span class="string">"s/theme: landscape/theme: indigo/g"</span> -i /blog/_config.yml</span><br></pre></td></tr></table></figure>
 <h4 id="构建Hexo镜像"><a href="#构建Hexo镜像" class="headerlink" title="构建Hexo镜像"></a>构建Hexo镜像</h4><p>在Dockerfile的同级目录执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ docker build -t icoty1/ubuntu-hexo .  <span class="comment"># 把icoty1/ubuntu-hexo替换成你取的名字</span></span><br><span class="line">$ docker images	 <span class="comment"># 能够看到多出一条记录icoty1/ubuntu-hexo，并能看到该镜像的[IMAGE ID]</span></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">#### 启动容器</span></span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">/* 把[IMAGE ID]替换成上一步构建出来的镜像的ID，该句执行成功会多出来一个容器并有一个[CONTAINER ID]</span><br><span class="line"> * -v /home/yangyu/blog/：/blog/是把本机的/home/yangyu/blog/目录映射到容器的/blog/目录</span><br><span class="line"> * 通过目录映射，你只需要在本机编辑/home/yangyu/blog/目录下的文件，而不用每次都进入容器/blog/目录下编辑文件</span><br><span class="line"> * -p 4000:4000 将主机的4000端口映射到容器的4000端口</span><br><span class="line"> *\</span><br><span class="line">$ docker run -d -ti -p 4000:4000 -v /home/yangyu/blog/：/blog/ [IMAGE ID] /bin/bash </span><br><span class="line">$ docker ps -a	<span class="comment"># 执行该句列出当前所有的容器</span></span><br><span class="line">$ docker <span class="built_in">exec</span> -it [CONTAINER ID] /bin/bash <span class="comment"># 根据前一步的容器ID进入该容器内部</span></span><br><span class="line">$ <span class="built_in">cd</span> /blog/ &amp;&amp; hexo s <span class="comment"># 进入容器内部的/blog/目录下，启动hexo</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker build -t icoty1/ubuntu-hexo .  <span class="comment"># 把icoty1/ubuntu-hexo替换成你取的名字</span></span><br><span class="line">$ docker images	 <span class="comment"># 能够看到多出一条记录icoty1/ubuntu-hexo，并能看到该镜像的[IMAGE ID]</span></span><br></pre></td></tr></table></figure>
+<h4 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/* 把[IMAGE ID]替换成上一步构建出来的镜像的ID，该句执行成功会多出来一个容器并有一个[CONTAINER ID]</span><br><span class="line"> * -v /home/yangyu/blog/：/blog/是把本机的/home/yangyu/blog/目录映射到容器的/blog/目录</span><br><span class="line"> * 通过目录映射，你只需要在本机编辑/home/yangyu/blog/目录下的文件，而不用每次都进入容器/blog/目录下编辑文件</span><br><span class="line"> * -p 4000:4000 将主机的4000端口映射到容器的4000端口</span><br><span class="line"> *\</span><br><span class="line">$ docker run -d -ti -p 4000:4000 -v /home/yangyu/blog/：/blog/ [IMAGE ID] /bin/bash </span><br><span class="line">$ docker ps -a	<span class="comment"># 执行该句列出当前所有的容器</span></span><br><span class="line">$ docker <span class="built_in">exec</span> -it [CONTAINER ID] /bin/bash <span class="comment"># 根据前一步的容器ID进入该容器内部</span></span><br><span class="line">$ <span class="built_in">cd</span> /blog/ &amp;&amp; hexo s <span class="comment"># 进入容器内部的/blog/目录下，启动hexo</span></span><br></pre></td></tr></table></figure>
 <h4 id="浏览器测试"><a href="#浏览器测试" class="headerlink" title="浏览器测试"></a>浏览器测试</h4><p>浏览器访问<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> ，出现下图说明已经成功，以后你的博客配置，文章撰写和发布等，都在/home/yangyu/blog/目录下进行，这和在容器内部/blog/目录下操作完全对等。</p>
 <p><img src="/2019/04/18/docker-hexo-blog/yilia.png" alt="yilia"></p>
 <h3 id="Docker基本命令"><a href="#Docker基本命令" class="headerlink" title="Docker基本命令"></a><a href="http://www.runoob.com/docker/docker-command-manual.html" target="_blank" rel="noopener">Docker基本命令</a></h3><p>作为一般开发者，只要你不是专攻Docker的，我认为会使用Docker的一些基本操作，使自己的日常开发和工作不受阻碍，并了解Docker和容器有啥区别，为什么现在企业流行Docker，这个东西解决了啥问题，有啥优势就够了。关于Docker是什么有何优势，这里挑了一个简洁的<a href="https://blog.csdn.net/shnsuohaonan/article/details/80651439" target="_blank" rel="noopener">博客链接</a>。</p>
@@ -619,7 +622,11 @@
 <p>创建一个仓库，必须为“用户名.github.io”，比如我的用户名为icoty，仓库名则为：icoty.github.io；</p>
 <p><img src="/2019/04/18/docker-hexo-blog/github.png" alt="yilia"></p>
 <p>执行如下命令生成ssh key，执行完后复制~/.sshid_rsa.pub文件内的全部内容，按照图示添加ssh keys，并粘贴保存到Key栏中，Title栏随便取。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span> <span class="comment"># 全程回车</span></span><br><span class="line">$ git config --global user.name <span class="string">"你用github用户名"</span></span><br><span class="line">$ git config --global user.email <span class="string">"你的github邮箱地址"</span></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">![yilia](docker-hexo-blog/ssh-key.png)</span><br><span class="line"></span><br><span class="line">![yilia](docker-hexo-blog/add-key.png)</span><br><span class="line"></span><br><span class="line">到此，已经配置完成，执行如下命令发布到github上：</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">hexo deploy <span class="comment"># 部署到GitHub，通过https://你用github用户名.github.io访问，我的是https://icoty.github.io</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span> <span class="comment"># 全程回车</span></span><br><span class="line">$ git config --global user.name <span class="string">"你用github用户名"</span></span><br><span class="line">$ git config --global user.email <span class="string">"你的github邮箱地址"</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2019/04/18/docker-hexo-blog/ssh-key.png" alt="yilia"></p>
+<p><img src="/2019/04/18/docker-hexo-blog/add-key.png" alt="yilia"></p>
+<p>到此，已经配置完成，执行如下命令发布到github上：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy <span class="comment"># 部署到GitHub，通过https://你用github用户名.github.io访问，我的是https://icoty.github.io</span></span><br></pre></td></tr></table></figure>
 <h3 id="配置Hexo主题"><a href="#配置Hexo主题" class="headerlink" title="配置Hexo主题"></a>配置Hexo主题</h3><p>编辑/blog/_config.yml文件，编辑标题、描述信息、Github信息，下图参见我的：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title: 阳光沥肩头 仿佛自由人 <span class="comment"># 标题</span></span><br><span class="line">subtitle: 	<span class="comment"># 子标题</span></span><br><span class="line">description: Linux C++服务端 <span class="comment"># 描述信息</span></span><br><span class="line">keywords: </span><br><span class="line">author: icoty</span><br><span class="line">language: zh-CN <span class="comment"># 语言</span></span><br><span class="line">timezone: <span class="comment"># 时区</span></span><br><span class="line"></span><br><span class="line">deploy:</span><br><span class="line">  - <span class="built_in">type</span>: git</span><br><span class="line">    repository: git@github.com:icoty/icoty.github.io.git  <span class="comment"># 设置repository对应的链接</span></span><br><span class="line">    branch: master                                        <span class="comment"># 设置提交到的分支</span></span><br><span class="line">    message: Site updated at &#123;&#123; now(<span class="string">"YYYY-MM-DD HH:mm:ss"</span>) &#125;&#125; <span class="comment"># 设置我们提交的信息</span></span><br></pre></td></tr></table></figure>
 <p>编辑/blog/themes/yilia/_config.yml文件，自定义其他配置，如友链、评论、分享、头像等，在此不一一赘述，请自行查看对应主题的官方文档和Github说明。</p>
@@ -683,11 +690,13 @@
           
             <a href="/tags/Docker/" rel="tag"># Docker</a>
           
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
             <a href="/tags/Hexo/" rel="tag"># Hexo</a>
           
             <a href="/tags/Dockerfile/" rel="tag"># Dockerfile</a>
           
-            <a href="/tags/Linux，Github/" rel="tag"># Linux，Github</a>
+            <a href="/tags/Github/" rel="tag"># Github</a>
           
         </div>
       
@@ -700,8 +709,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/17/hello-world/" rel="next" title="Linux下Docker快速部署LAMP">
-                <i class="fa fa-chevron-left"></i> Linux下Docker快速部署LAMP
+              <a href="/2019/04/18/ipc-chat/" rel="next" title="进程间通信-利用共享内存和管道通信实现聊天窗口">
+                <i class="fa fa-chevron-left"></i> 进程间通信-利用共享内存和管道通信实现聊天窗口
               </a>
             
           </div>
@@ -709,6 +718,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/19/hello-world/" rel="prev" title="Linux下Docker快速部署LAMP">
+                Linux下Docker快速部署LAMP <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -944,7 +957,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#闲谈"><span class="nav-number">1.</span> <span class="nav-text">闲谈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建Hexo"><span class="nav-number">2.</span> <span class="nav-text">搭建Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获取基础镜像"><span class="nav-number">2.1.</span> <span class="nav-text">获取基础镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成Dockerfile"><span class="nav-number">2.2.</span> <span class="nav-text">生成Dockerfile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更换主题"><span class="nav-number">2.3.</span> <span class="nav-text">更换主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构建Hexo镜像"><span class="nav-number">2.4.</span> <span class="nav-text">构建Hexo镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器测试"><span class="nav-number">2.5.</span> <span class="nav-text">浏览器测试</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker基本命令"><span class="nav-number">3.</span> <span class="nav-text">Docker基本命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo部署到Github"><span class="nav-number">4.</span> <span class="nav-text">Hexo部署到Github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Hexo主题"><span class="nav-number">5.</span> <span class="nav-text">配置Hexo主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo命令"><span class="nav-number">6.</span> <span class="nav-text">Hexo命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MarkDown语法"><span class="nav-number">7.</span> <span class="nav-text">MarkDown语法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#闲谈"><span class="nav-number">1.</span> <span class="nav-text">闲谈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建Hexo"><span class="nav-number">2.</span> <span class="nav-text">搭建Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获取基础镜像"><span class="nav-number">2.1.</span> <span class="nav-text">获取基础镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成Dockerfile"><span class="nav-number">2.2.</span> <span class="nav-text">生成Dockerfile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更换主题"><span class="nav-number">2.3.</span> <span class="nav-text">更换主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构建Hexo镜像"><span class="nav-number">2.4.</span> <span class="nav-text">构建Hexo镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动容器"><span class="nav-number">2.5.</span> <span class="nav-text">启动容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器测试"><span class="nav-number">2.6.</span> <span class="nav-text">浏览器测试</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker基本命令"><span class="nav-number">3.</span> <span class="nav-text">Docker基本命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo部署到Github"><span class="nav-number">4.</span> <span class="nav-text">Hexo部署到Github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Hexo主题"><span class="nav-number">5.</span> <span class="nav-text">配置Hexo主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo命令"><span class="nav-number">6.</span> <span class="nav-text">Hexo命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MarkDown语法"><span class="nav-number">7.</span> <span class="nav-text">MarkDown语法</span></a></li></ol></div>
             
 
           </div>
