@@ -406,12 +406,24 @@
                 
               
 
-              <time title="创建时间：2019-04-18 00:16:06 / 修改时间：02:13:31" itemprop="dateCreated datePublished" datetime="2019-04-18T00:16:06+00:00">2019-04-18</time>
+              <time title="创建时间：2019-04-18 00:16:06" itemprop="dateCreated datePublished" datetime="2019-04-18T00:16:06+00:00">2019-04-18</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-20 14:37:56" itemprop="dateModified" datetime="2019-04-20T14:37:56+00:00">2019-04-20</time>
               
             
           </span>
@@ -618,7 +630,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-20 14:15:46" itemprop="dateModified" datetime="2019-04-20T14:15:46+00:00">2019-04-20</time>
+                <time title="修改时间：2019-04-20 14:42:42" itemprop="dateModified" datetime="2019-04-20T14:42:42+00:00">2019-04-20</time>
               
             
           </span>
@@ -872,7 +884,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/19/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/20/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="icoty">
@@ -892,7 +904,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/19/hello-world/" class="post-title-link" itemprop="url">Linux下Docker快速部署LAMP</a>
+                <a href="/2019/04/20/hello-world/" class="post-title-link" itemprop="url">Linux下Docker快速部署LAMP</a>
               
             
           </h1>
@@ -917,24 +929,12 @@
                 
               
 
-              <time title="创建时间：2019-04-19 16:38:44" itemprop="dateCreated datePublished" datetime="2019-04-19T16:38:44+00:00">2019-04-19</time>
+              <time title="创建时间：2019-04-20 14:42:33 / 修改时间：14:42:29" itemprop="dateCreated datePublished" datetime="2019-04-20T14:42:33+00:00">2019-04-20</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-16 15:11:13" itemprop="dateModified" datetime="2019-04-16T15:11:13+00:00">2019-04-16</time>
               
             
           </span>
@@ -970,8 +970,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/19/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/19/hello-world/" itemprop="commentCount"></span>
+                <a href="/2019/04/20/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/20/hello-world/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1001,8 +1001,8 @@
       
         
           
-            <p>若你的mac或Linux环境上未安装Docker，请移步<a href="http://www.runoob.com/docker/ubuntu-docker-install.html" target="_blank" rel="noopener">Docker安装</a>，确认安装成功之后再进行下文内容。</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="获取基础镜像"><a href="#获取基础镜像" class="headerlink" title="获取基础镜像"></a>获取基础镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull tutum/lamp  <span class="comment"># 从Docker Hub上的tutum用户的仓库获取lamp镜像</span></span><br><span class="line">$ docker images  <span class="comment"># 列出所有的镜像，会发现多一条记录：tutum/lamp</span></span><br></pre></td></tr></table></figure>
+            <p>若你的mac或Linux环境上未安装Docker，请移步<a href="http://www.runoob.com/docker/ubuntu-docker-install.html" target="_blank" rel="noopener">Docker安装</a>，确认安装成功之后再进行下文内容。完全不了解Docker的参见我<a href="https://icoty.github.io/2019/04/18/docker-hexo-blog/" target="_blank" rel="noopener">另一篇文章</a>.</p>
+<h3 id="获取基础镜像"><a href="#获取基础镜像" class="headerlink" title="获取基础镜像"></a>获取基础镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull tutum/lamp  <span class="comment"># 从Docker Hub上的tutum用户的仓库获取lamp镜像</span></span><br><span class="line">$ docker images  <span class="comment"># 列出所有的镜像，会发现多一条记录：tutum/lamp</span></span><br></pre></td></tr></table></figure>
 <p>本文用的镜像源<a href="https://hub.docker.com/r/tutum/lamp" target="_blank" rel="noopener">tutum/lamp</a>，目前Docker 官方维护了一个公共仓库 Docker Hub，其中已经包括了数量超过 15,000 的镜像，开发者可以注册自己的账号，并自定义自己的镜像进行存储，需要的时候可以直接拿来用，同时也能够分享，有点类似于Github。如想注册可移步 <a href="https://hub.docker.com" target="_blank" rel="noopener">Docker Hub</a>。</p>
 <h3 id="自定义你的镜像"><a href="#自定义你的镜像" class="headerlink" title="自定义你的镜像"></a>自定义你的镜像</h3><p>在一个空的目录下新建Dockerfile文件名，填入如下4行内容。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FROM tutum/lamp:latest  <span class="comment"># 表示在镜像tutum/lamp:latest之上自定义你的镜像</span></span><br><span class="line">RUN rm -fr /app  <span class="comment"># 后面会把你的php项目映射到容器的/app/目录下</span></span><br><span class="line">EXPOSE 80 3306   <span class="comment"># 暴露80 3306端口</span></span><br><span class="line">CMD [<span class="string">"/run.sh"</span>]   <span class="comment"># 当容器启动后会自动执行容器内部的/run.sh脚本</span></span><br></pre></td></tr></table></figure></p>
 <p>在Dockerfile的同级目录执行如下命令，该命令会去执行Dockerfile脚本，并构建新的镜像username/my-lamp-app，其中my-lamp-app为自定义的镜像名字，命名成你的即可。如果注册了docker hub，一般将username换层你的用户名，如未注册，可以随便取。我执行的是：“docker build -t icoty1/lamp .”<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker build -t username/my-lamp-app .</span><br></pre></td></tr></table></figure></p>
