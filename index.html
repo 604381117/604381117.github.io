@@ -568,7 +568,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/18/docker-hexo-blog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/18/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="icoty">
@@ -588,7 +588,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/18/docker-hexo-blog/" class="post-title-link" itemprop="url">Hexo+Github博客最简教程-Dockerfile自动搭建</a>
+                <a href="/2019/04/18/hello-world/" class="post-title-link" itemprop="url">Hexo+Github博客最简教程-Dockerfile自动搭建</a>
               
             
           </h1>
@@ -666,8 +666,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/18/docker-hexo-blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/18/docker-hexo-blog/" itemprop="commentCount"></span>
+                <a href="/2019/04/18/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/18/hello-world/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -699,7 +699,7 @@
           
             <h3 id="闲谈"><a href="#闲谈" class="headerlink" title="闲谈"></a>闲谈</h3><p>拿出你的气质，打开你的电脑，借你半小时搭建好属于你的hexo博客，小生用dockerfile自动帮你搭建好；<br>你只需要在你的mac或linux或windows上提前把docker安装好，如何安装不是我的重点，请参考<a href="http://www.runoob.com/docker/ubuntu-docker-install.html" target="_blank" rel="noopener">Docker安装</a>；<br>作为程序员，博客就像你的影子，我都已经忘了内心曾经多少次告诫自己，一定要搭建一个属于自己的技术博客，奈何日复一日过去了，近来终于落实到行动上来，所谓明日复明日，明日何其多，早晚要做的事，劝君晚做不如早做。</p>
 <h3 id="搭建Hexo"><a href="#搭建Hexo" class="headerlink" title="搭建Hexo"></a>搭建Hexo</h3><h4 id="获取基础镜像"><a href="#获取基础镜像" class="headerlink" title="获取基础镜像"></a>获取基础镜像</h4><p>Docker安装成功之后方能进行接下来的操作，首先从我的Docker Hub仓库上获取基础镜像</p>
-<p><img src="/2019/04/18/docker-hexo-blog/dockerhub.png" alt="docker hub"></p>
+<p><img src="/2019/04/18/hello-world/docker-hexo-blog/dockerhub.png" alt="docker hub"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull icoty1/ubuntu-hexo-blog <span class="comment"># 从Docker hub上的icoty1用户下获取基础镜像</span></span><br><span class="line">$ docker images <span class="comment"># 查看本地所有镜像，会发现icoty1/ubuntu-hexo-blog已经被pull下来了</span></span><br></pre></td></tr></table></figure>
 <h4 id="生成Dockerfile"><a href="#生成Dockerfile" class="headerlink" title="生成Dockerfile"></a>生成Dockerfile</h4><p>进入一个空的目录下新建空文件Dockerfile，复制如下内容：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基础镜像</span></span><br><span class="line">FROM icoty1/ubuntu-hexo-blog:latest</span><br><span class="line"></span><br><span class="line">MAINTAINER icoty1 <span class="string">"https://icoty.github.io"</span> </span><br><span class="line"></span><br><span class="line">EXPOSE 4000</span><br><span class="line"></span><br><span class="line"><span class="comment"># hexo部分插件安装，使支持rss，图片，字数统计等功能</span></span><br><span class="line">RUN npm install -g hexo-cli 		\</span><br><span class="line">&amp;&amp; npm install hexo-server --save 	\</span><br><span class="line">&amp;&amp; hexo init blog &amp;&amp; <span class="built_in">cd</span> /blog 		\</span><br><span class="line">&amp;&amp; npm install 				\</span><br><span class="line">&amp;&amp; npm install hexo-deployer-git --save \</span><br><span class="line">&amp;&amp; npm install hexo-migrator-rss --save \</span><br><span class="line">&amp;&amp; npm install hexo-asset-image --save	\</span><br><span class="line">&amp;&amp; npm install hexo-wordcount --save 	\</span><br><span class="line">&amp;&amp; npm install hexo-generator-sitemap --save 		\</span><br><span class="line">&amp;&amp; npm install hexo-generator-baidu-sitemap --save 	\</span><br><span class="line">&amp;&amp; npm install hexo-helper-live2d --save 		\</span><br><span class="line">&amp;&amp; git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia \</span><br><span class="line">&amp;&amp; sed <span class="string">"s/theme: landscape/theme: yilia/g"</span> -i /blog/_config.yml</span><br></pre></td></tr></table></figure>
@@ -709,13 +709,13 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker build -t icoty1/ubuntu-hexo .  <span class="comment"># 把icoty1/ubuntu-hexo替换成你取的名字</span></span><br><span class="line">$ docker images	 <span class="comment"># 能够看到多出一条记录icoty1/ubuntu-hexo，并能看到该镜像的[IMAGE ID]</span></span><br></pre></td></tr></table></figure>
 <h4 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/* 把[IMAGE ID]替换成上一步构建出来的镜像的ID，该句执行成功会多出来一个容器并有一个[CONTAINER ID]</span><br><span class="line"> * -v /home/yangyu/blog/：/blog/是把本机的/home/yangyu/blog/目录映射到容器的/blog/目录</span><br><span class="line"> * 通过目录映射，你只需要在本机编辑/home/yangyu/blog/目录下的文件，而不用每次都进入容器/blog/目录下编辑文件</span><br><span class="line"> * -p 4000:4000 将主机的4000端口映射到容器的4000端口</span><br><span class="line"> *\</span><br><span class="line">$ docker run -d -ti -p 4000:4000 -v /home/yangyu/blog/：/blog/ [IMAGE ID] /bin/bash </span><br><span class="line">$ docker ps -a	<span class="comment"># 执行该句列出当前所有的容器</span></span><br><span class="line">$ docker <span class="built_in">exec</span> -it [CONTAINER ID] /bin/bash <span class="comment"># 根据前一步的容器ID进入该容器内部</span></span><br><span class="line">$ <span class="built_in">cd</span> /blog/ &amp;&amp; hexo s <span class="comment"># 进入容器内部的/blog/目录下，启动hexo</span></span><br></pre></td></tr></table></figure>
 <h4 id="浏览器测试"><a href="#浏览器测试" class="headerlink" title="浏览器测试"></a>浏览器测试</h4><p>浏览器访问<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> ，出现下图说明已经成功，以后你的博客配置，文章撰写和发布等，都在/home/yangyu/blog/目录下进行，这和在容器内部/blog/目录下操作完全对等。</p>
-<p><img src="/2019/04/18/docker-hexo-blog/yilia.png" alt="yilia"></p>
+<p><img src="/2019/04/18/hello-world/docker-hexo-blog/yilia.png" alt="yilia"></p>
 <h3 id="Hexo部署到Github"><a href="#Hexo部署到Github" class="headerlink" title="Hexo部署到Github"></a>Hexo部署到Github</h3><p><a href="https://github.com/join?source=header-home" target="_blank" rel="noopener">注册Github账户</a>，如果已经注册，跳过此步；<br>在github上仓库“用户名.github.io”，比如我的用户名为icoty，仓库名则为：icoty.github.io；</p>
-<p><img src="/2019/04/18/docker-hexo-blog/github.png" alt="yilia"></p>
+<p><img src="/2019/04/18/hello-world/docker-hexo-blog/github.png" alt="yilia"></p>
 <p>执行如下命令生成ssh key，执行完后复制~/.sshid_rsa.pub文件内的全部内容，按照图示添加ssh keys，并粘贴保存到Key栏中，Title栏随便取。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span> <span class="comment"># 全程回车</span></span><br><span class="line">$ git config --global user.name <span class="string">"你用github用户名"</span></span><br><span class="line">$ git config --global user.email <span class="string">"你的github邮箱地址"</span></span><br></pre></td></tr></table></figure>
-<p><img src="/2019/04/18/docker-hexo-blog/ssh-key.png" alt="yilia"></p>
-<p><img src="/2019/04/18/docker-hexo-blog/add-key.png" alt="yilia"></p>
+<p><img src="/2019/04/18/hello-world/docker-hexo-blog/ssh-key.png" alt="yilia"></p>
+<p><img src="/2019/04/18/hello-world/docker-hexo-blog/add-key.png" alt="yilia"></p>
 <h3 id="配置Hexo主题"><a href="#配置Hexo主题" class="headerlink" title="配置Hexo主题"></a>配置Hexo主题</h3><p>编辑/blog/_config.yml文件，编辑标题、描述信息、Github信息，下图参见我的：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title: 阳光沥肩头 仿佛自由人 <span class="comment"># 标题</span></span><br><span class="line">subtitle: 	<span class="comment"># 子标题</span></span><br><span class="line">description: Linux C++服务端 <span class="comment"># 描述信息</span></span><br><span class="line">keywords: </span><br><span class="line">author: icoty</span><br><span class="line">language: zh-CN <span class="comment"># 语言</span></span><br><span class="line">timezone: <span class="comment"># 时区</span></span><br><span class="line"></span><br><span class="line">deploy:</span><br><span class="line">  - <span class="built_in">type</span>: git</span><br><span class="line">    repository: git@github.com:icoty/icoty.github.io.git  <span class="comment"># 设置repository对应的链接</span></span><br><span class="line">    branch: master                                        <span class="comment"># 设置提交到的分支</span></span><br><span class="line">    message: Site updated at &#123;&#123; now(<span class="string">"YYYY-MM-DD HH:mm:ss"</span>) &#125;&#125; <span class="comment"># 设置我们提交的信息</span></span><br></pre></td></tr></table></figure>
 <p>执行如下命令发布到github上，通过https://你用github用户名.github.io 访问，我的是<a href="https://icoty.github.io" target="_blank" rel="noopener">https://icoty.github.io</a></p>
@@ -827,7 +827,7 @@
 </tbody>
 </table>
 <h4 id="镜像和容器"><a href="#镜像和容器" class="headerlink" title="镜像和容器"></a>镜像和容器</h4><p>为了便于理解，你可以把镜像理解成一个初始模版A，通过这个模板A你可以复制出模板B、模板C等，模板B和模板C在这里就相当于容器，突然某一天你发现模板A现有的内容已经不能满足你的需求了（比如模板A没有安装Mysql，而你需要安装Mysql），这时你就只能自定义新的模板(相当于自定义新的符合你的要求的镜像)，而自定义方式就是从模板B或模板C中安装Mysql，安装成功之后，通过docker commit命令将模板B或模板C提交成一个新的初始模板A1（也就是新的镜像），以后所有从模板A1启动的容器就都有Mysql了，然后你就有模板A和模板A1了（就是两个镜像），贴张Docker命令图片：</p>
-<p><img src="/2019/04/18/docker-hexo-blog/images-ps.png" alt="cmd"></p>
+<p><img src="/2019/04/18/hello-world/docker-hexo-blog/images-ps.png" alt="cmd"></p>
 
           
         
