@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/2019/04/18/docker-hexo-blog/</loc>
+    <lastmod>2019-04-23</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/2019/04/22/docker/</loc>
     <lastmod>2019-04-23</lastmod>
   </url>  <url>
@@ -8,9 +11,6 @@
     <lastmod>2019-04-23</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2019/04/16/docker-lamp/</loc>
-    <lastmod>2019-04-23</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/04/18/docker-hexo-blog/</loc>
     <lastmod>2019-04-23</lastmod>
   </url>
 </urlset>
