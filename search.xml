@@ -8,8 +8,8 @@
         <category>IDE</category>
       </categories>
       <tags>
-        <tag>Dockerfile</tag>
         <tag>Docker</tag>
+        <tag>Dockerfile</tag>
       </tags>
   </entry>
   <entry>
@@ -20,9 +20,9 @@
         <category>IDE</category>
       </categories>
       <tags>
+        <tag>Linux</tag>
         <tag>Hexo</tag>
         <tag>Dockerfile</tag>
-        <tag>Linux</tag>
         <tag>Github</tag>
       </tags>
   </entry>
@@ -50,9 +50,9 @@
         <category>IDE</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>LAMP</tag>
         <tag>Docker</tag>
+        <tag>Linux</tag>
         <tag>MVC</tag>
       </tags>
   </entry>
