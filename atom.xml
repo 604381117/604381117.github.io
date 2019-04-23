@@ -37,9 +37,9 @@
       <category term="IDE" scheme="http://yoursite.com/categories/IDE/"/>
     
     
-      <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
-    
       <category term="Dockerfile" scheme="http://yoursite.com/tags/Dockerfile/"/>
+    
+      <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
     
   </entry>
   
@@ -64,11 +64,11 @@
       <category term="IDE" scheme="http://yoursite.com/categories/IDE/"/>
     
     
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
-    
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
       <category term="Dockerfile" scheme="http://yoursite.com/tags/Dockerfile/"/>
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
     
       <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
     
@@ -131,11 +131,11 @@
       <category term="IDE" scheme="http://yoursite.com/categories/IDE/"/>
     
     
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
       <category term="LAMP" scheme="http://yoursite.com/tags/LAMP/"/>
     
       <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
-    
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
     
       <category term="MVC" scheme="http://yoursite.com/tags/MVC/"/>
     
