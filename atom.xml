@@ -39,11 +39,11 @@
     
       <category term="Dockerfile" scheme="https://icoty.github.io/tags/Dockerfile/"/>
     
+      <category term="Docker命令" scheme="https://icoty.github.io/tags/Docker%E5%91%BD%E4%BB%A4/"/>
+    
       <category term="镜像" scheme="https://icoty.github.io/tags/%E9%95%9C%E5%83%8F/"/>
     
       <category term="容器" scheme="https://icoty.github.io/tags/%E5%AE%B9%E5%99%A8/"/>
-    
-      <category term="Docker命令" scheme="https://icoty.github.io/tags/Docker%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
@@ -70,11 +70,11 @@
     
       <category term="Dockerfile" scheme="https://icoty.github.io/tags/Dockerfile/"/>
     
-      <category term="Hexo命令" scheme="https://icoty.github.io/tags/Hexo%E5%91%BD%E4%BB%A4/"/>
-    
       <category term="镜像" scheme="https://icoty.github.io/tags/%E9%95%9C%E5%83%8F/"/>
     
       <category term="容器" scheme="https://icoty.github.io/tags/%E5%AE%B9%E5%99%A8/"/>
+    
+      <category term="Hexo命令" scheme="https://icoty.github.io/tags/Hexo%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
