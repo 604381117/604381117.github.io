@@ -24,6 +24,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
 
 
 
@@ -423,7 +430,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-24 01:24:56" itemprop="dateModified" datetime="2019-04-24T01:24:56+00:00">2019-04-24</time>
+                <time title="修改时间：2019-04-24 01:53:56" itemprop="dateModified" datetime="2019-04-24T01:53:56+00:00">2019-04-24</time>
               
             
           </span>
@@ -514,7 +521,11 @@
 <p>执行如下命令发布到github上，通过“https://你的github用户名.github.io”访问，我的是<a href="https://icoty.github.io" target="_blank" rel="noopener">https://icoty.github.io</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$hexo</span> generate</span><br><span class="line"><span class="variable">$hexo</span> deploy <span class="comment"># 部署到GitHub</span></span><br></pre></td></tr></table></figure>
 <p>编辑/blog/themes/yilia/_config.yml文件，自定义其他配置，如友链、评论、分享、头像等，这些配置并不是一定要做，做不做都行，只是配置的完善些，你的Hexo博客界面看起来美观些，如何配置在此不一一赘述，请自行查看对应主题的官方文档和Github说明。如果你能操作这里，说明我这个教程还是有效的，感谢你的坚持！</p>
-<h4 id="修改文章内链接文本样式"><a href="#修改文章内链接文本样式" class="headerlink" title="修改文章内链接文本样式"></a>修改文章内链接文本样式</h4><p>vi /themes/next/source/css/_common/components/post/post.styl，在文件最后且@import之前添加如下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 文章内链接文本样式</span><br><span class="line">.post-body p a&#123;</span><br><span class="line">  color: <span class="comment">#0593d3; //原始链接颜色</span></span><br><span class="line">  border-bottom: none;</span><br><span class="line">  border-bottom: 1px solid <span class="comment">#0593d3; //底部分割线颜色</span></span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">    color: <span class="comment">#fc6423; //鼠标经过颜色</span></span><br><span class="line">    border-bottom: none;</span><br><span class="line">    border-bottom: 1px solid <span class="comment">#fc6423; //底部分割线颜色</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="修改文章内链接文本样式"><a href="#修改文章内链接文本样式" class="headerlink" title="修改文章内链接文本样式"></a>修改文章内链接文本样式</h4><p>vi themes/next/source/css/_common/components/post/post.styl，在文件最后且@import之前添加如下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 文章内链接文本样式</span><br><span class="line">.post-body p a&#123;</span><br><span class="line">  color: <span class="comment">#0593d3; //原始链接颜色</span></span><br><span class="line">  border-bottom: none;</span><br><span class="line">  border-bottom: 1px solid <span class="comment">#0593d3; //底部分割线颜色</span></span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">    color: <span class="comment">#fc6423; //鼠标经过颜色</span></span><br><span class="line">    border-bottom: none;</span><br><span class="line">    border-bottom: 1px solid <span class="comment">#fc6423; //底部分割线颜色</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="文章末尾添加“文章结束”标记"><a href="#文章末尾添加“文章结束”标记" class="headerlink" title="文章末尾添加“文章结束”标记"></a>文章末尾添加“文章结束”标记</h4><p>在themes/next/layout/_macro/目录下新建passage-end-tag.swig，填入如下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &#123;% <span class="keyword">if</span> not is_index %&#125;</span><br><span class="line">        &lt;div style=<span class="string">"text-align:center;color: #ccc;font-size:14px;"</span>&gt;-------------本文结束&lt;i class=<span class="string">"fa fa-paw"</span>&gt;&lt;/i&gt;感谢您的阅读-------------&lt;/div&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>然后编辑themes/next/layout/_macro/post.swig，按照下图添加代码块：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &#123;% <span class="keyword">if</span> not is_index %&#125;</span><br><span class="line">        &lt;div style=<span class="string">"text-align:center;color: #ccc;font-size:14px;"</span>&gt;-------------本文结束&lt;i class=<span class="string">"fa fa-paw"</span>&gt;&lt;/i&gt;感谢您的阅读-------------&lt;/div&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2019/04/18/docker-hexo-blog/finish-read.png" alt="yilia"></p>
+<p>最后编辑themes/next/_config.yml，添加如下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文章末尾添加“本文结束”标记</span></span><br><span class="line">passage_end_tag:</span><br><span class="line">  enabled: <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="Hexo命令"><a href="#Hexo命令" class="headerlink" title="Hexo命令"></a><a href="https://hexo.io/zh-cn/docs/commands" rel="external nofollow noopener noreferrer" target="_blank">Hexo命令</a></h3><p>Hexo搭建好后，你可以写博客发布到GitHub 上，别人通过“https://你的github用户名.github.io”就能访问你的博客和看到你写的文章，而这个章节就是教你怎么在本地写你的博客，写博客用的MarkDown语法，推荐你安装MarkDown编辑器Typora。下面列出写博客过程中常用的命令，这些命令都需要走到/blog/目录下执行。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$hexo</span> new <span class="string">"my-hexo"</span> <span class="comment">#新建my-hexo文章，在/blog/source/_post/目录下生成my-hexo.md，在这个文件里面写你的文章</span></span><br><span class="line"><span class="variable">$hexo</span> generate <span class="comment"># 文章写好后保存，然后执行这条命令，生成静态页面至public目录</span></span><br><span class="line"><span class="variable">$hexo</span> s <span class="comment"># 然后开启预览访问端口（默认端口4000，'ctrl+c'关闭server，‘ctrl+z’放到后台运行），通过http://localhost:4000 查看效果，如果满意就执行下一条命令发布到github</span></span><br><span class="line"><span class="variable">$hexo</span> deploy <span class="comment"># 发布到github，通过https://你用github用户名.github.io 访问</span></span><br><span class="line"><span class="variable">$hexo</span> clean <span class="comment"># 有时你写文章和配置其他内容后，老是不生效，就执行下该命令清除缓存文件 (db.json) 和已生成的静态文件 (public)，不是删除，你的文章仍然在的</span></span><br><span class="line"><span class="variable">$nohup</span> hexo s &amp; <span class="comment"># 启动hexo以后台方式运行</span></span><br><span class="line"><span class="variable">$hexo</span> new page <span class="string">"About"</span> <span class="comment">#新建About页面，这个是配置Hexo界面多出来一个About布局</span></span><br><span class="line"><span class="variable">$hexo</span> <span class="built_in">help</span>  <span class="comment"># 查看帮助</span></span><br><span class="line"><span class="variable">$hexo</span> version  <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>
 <h3 id="MarkDown语法"><a href="#MarkDown语法" class="headerlink" title="MarkDown语法"></a><a href="https://www.jianshu.com/p/191d1e21f7ed" rel="external nofollow noopener noreferrer" target="_blank">MarkDown语法</a></h3><p>这个比较基础，网上教程也一大堆，MarkDown很容易学，放心比九九表容易多了，只要你用markdown实际动手写过一篇博文后就上手了，因此没啥可说的。</p>
@@ -529,6 +540,9 @@
     
     
     
+    <div>
+     
+    </div>
 
     
 
@@ -736,6 +750,9 @@
     
     
     
+    <div>
+     
+    </div>
 
     
 
@@ -952,6 +969,9 @@
     
     
     
+    <div>
+     
+    </div>
 
     
 
@@ -1151,6 +1171,9 @@
     
     
     
+    <div>
+     
+    </div>
 
     
 
