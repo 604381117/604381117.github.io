@@ -106,7 +106,7 @@
   <meta name="description" content="Linux C++服务端">
 <meta property="og:type" content="website">
 <meta property="og:title" content="阳光沥肩头 仿佛自由人">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="https://icoty.github.io/index.html">
 <meta property="og:site_name" content="阳光沥肩头 仿佛自由人">
 <meta property="og:description" content="Linux C++服务端">
 <meta property="og:locale" content="zh-CN">
@@ -122,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="https://icoty.github.io/">
 
 
 
@@ -368,7 +368,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/18/docker-hexo-blog/">
+    <link itemprop="mainEntityOfPage" href="https://icoty.github.io/2019/04/18/docker-hexo-blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="icoty">
@@ -430,7 +430,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-24 01:53:56" itemprop="dateModified" datetime="2019-04-24T01:53:56+00:00">2019-04-24</time>
+                <time title="修改时间：2019-04-24 02:06:49" itemprop="dateModified" datetime="2019-04-24T02:06:49+00:00">2019-04-24</time>
               
             
           </span>
@@ -518,7 +518,7 @@
 <p><img src="/2019/04/18/docker-hexo-blog/add-key.png" alt="yilia"></p>
 <h3 id="配置Hexo主题"><a href="#配置Hexo主题" class="headerlink" title="配置Hexo主题"></a>配置Hexo主题</h3><p>编辑/blog/_config.yml文件，编辑标题、描述信息、Github信息，下图参见我的：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title: 阳光沥肩头 仿佛自由人 <span class="comment"># 标题</span></span><br><span class="line">subtitle: 	<span class="comment"># 子标题</span></span><br><span class="line">description: Linux C++服务端 <span class="comment"># 描述信息</span></span><br><span class="line">keywords: </span><br><span class="line">author: icoty</span><br><span class="line">language: zh-CN <span class="comment"># 语言</span></span><br><span class="line">timezone: <span class="comment"># 时区</span></span><br><span class="line"></span><br><span class="line">deploy:</span><br><span class="line">  - <span class="built_in">type</span>: git</span><br><span class="line">    repository: git@github.com:icoty/icoty.github.io.git  <span class="comment"># 设置repository对应的链接</span></span><br><span class="line">    branch: master                                        <span class="comment"># 设置提交到的分支</span></span><br><span class="line">    message: Site updated at &#123;&#123; now(<span class="string">"YYYY-MM-DD HH:mm:ss"</span>) &#125;&#125; <span class="comment"># 设置我们提交的信息</span></span><br></pre></td></tr></table></figure>
-<p>执行如下命令发布到github上，通过“https://你的github用户名.github.io”访问，我的是<a href="https://icoty.github.io" target="_blank" rel="noopener">https://icoty.github.io</a></p>
+<p>执行如下命令发布到github上，通过“https://你的github用户名.github.io”访问，我的是<a href="https://icoty.github.io">https://icoty.github.io</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$hexo</span> generate</span><br><span class="line"><span class="variable">$hexo</span> deploy <span class="comment"># 部署到GitHub</span></span><br></pre></td></tr></table></figure>
 <p>编辑/blog/themes/yilia/_config.yml文件，自定义其他配置，如友链、评论、分享、头像等，这些配置并不是一定要做，做不做都行，只是配置的完善些，你的Hexo博客界面看起来美观些，如何配置在此不一一赘述，请自行查看对应主题的官方文档和Github说明。如果你能操作这里，说明我这个教程还是有效的，感谢你的坚持！</p>
 <h4 id="修改文章内链接文本样式"><a href="#修改文章内链接文本样式" class="headerlink" title="修改文章内链接文本样式"></a>修改文章内链接文本样式</h4><p>vi themes/next/source/css/_common/components/post/post.styl，在文件最后且@import之前添加如下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 文章内链接文本样式</span><br><span class="line">.post-body p a&#123;</span><br><span class="line">  color: <span class="comment">#0593d3; //原始链接颜色</span></span><br><span class="line">  border-bottom: none;</span><br><span class="line">  border-bottom: 1px solid <span class="comment">#0593d3; //底部分割线颜色</span></span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">    color: <span class="comment">#fc6423; //鼠标经过颜色</span></span><br><span class="line">    border-bottom: none;</span><br><span class="line">    border-bottom: 1px solid <span class="comment">#fc6423; //底部分割线颜色</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -542,6 +542,10 @@
     
     <div>
      
+    </div>
+
+    <div>
+      
     </div>
 
     
@@ -588,7 +592,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/18/ipc-chat/">
+    <link itemprop="mainEntityOfPage" href="https://icoty.github.io/2019/04/18/ipc-chat/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="icoty">
@@ -650,7 +654,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-23 01:44:47" itemprop="dateModified" datetime="2019-04-23T01:44:47+00:00">2019-04-23</time>
+                <time title="修改时间：2019-04-24 02:09:19" itemprop="dateModified" datetime="2019-04-24T02:09:19+00:00">2019-04-24</time>
               
             
           </span>
@@ -754,6 +758,10 @@
      
     </div>
 
+    <div>
+      
+    </div>
+
     
 
     
@@ -798,7 +806,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/docker/">
+    <link itemprop="mainEntityOfPage" href="https://icoty.github.io/2019/04/22/docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="icoty">
@@ -860,7 +868,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-23 01:44:50" itemprop="dateModified" datetime="2019-04-23T01:44:50+00:00">2019-04-23</time>
+                <time title="修改时间：2019-04-24 02:08:44" itemprop="dateModified" datetime="2019-04-24T02:08:44+00:00">2019-04-24</time>
               
             
           </span>
@@ -973,6 +981,10 @@
      
     </div>
 
+    <div>
+      
+    </div>
+
     
 
     
@@ -1017,7 +1029,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/16/docker-lamp/">
+    <link itemprop="mainEntityOfPage" href="https://icoty.github.io/2019/04/16/docker-lamp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="icoty">
@@ -1079,7 +1091,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-23 01:44:44" itemprop="dateModified" datetime="2019-04-23T01:44:44+00:00">2019-04-23</time>
+                <time title="修改时间：2019-04-24 02:09:11" itemprop="dateModified" datetime="2019-04-24T02:09:11+00:00">2019-04-24</time>
               
             
           </span>
@@ -1146,7 +1158,7 @@
       
         
           
-            <p>若你的mac或Linux环境上未安装Docker，请移步<a href="http://www.runoob.com/docker/ubuntu-docker-install.html" rel="external nofollow noopener noreferrer" target="_blank">Docker安装</a>，确认安装成功之后再进行下文内容。完全不了解Docker的参见我<a href="https://icoty.github.io/2019/04/18/docker-hexo-blog/" target="_blank" rel="noopener">另一篇文章</a>.</p>
+            <p>若你的mac或Linux环境上未安装Docker，请移步<a href="http://www.runoob.com/docker/ubuntu-docker-install.html" rel="external nofollow noopener noreferrer" target="_blank">Docker安装</a>，确认安装成功之后再进行下文内容。完全不了解Docker的参见我<a href="https://icoty.github.io/2019/04/18/docker-hexo-blog/">另一篇文章</a>.</p>
 <h3 id="获取基础镜像"><a href="#获取基础镜像" class="headerlink" title="获取基础镜像"></a>获取基础镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull tutum/lamp  <span class="comment"># 从Docker Hub上的tutum用户的仓库获取lamp镜像</span></span><br><span class="line">$ docker images  <span class="comment"># 列出所有的镜像，会发现多一条记录：tutum/lamp</span></span><br></pre></td></tr></table></figure>
 <p>本文用的镜像源<a href="https://hub.docker.com/r/tutum/lamp" rel="external nofollow noopener noreferrer" target="_blank">tutum/lamp</a>，目前Docker 官方维护了一个公共仓库 Docker Hub，其中已经包括了数量超过 15,000 的镜像，开发者可以注册自己的账号，并自定义自己的镜像进行存储，需要的时候可以直接拿来用，同时也能够分享，有点类似于Github。如想注册可移步 <a href="https://hub.docker.com" rel="external nofollow noopener noreferrer" target="_blank">Docker Hub</a>。</p>
 <h3 id="自定义你的镜像"><a href="#自定义你的镜像" class="headerlink" title="自定义你的镜像"></a>自定义你的镜像</h3><p>在一个空的目录下新建Dockerfile文件名，填入如下4行内容。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FROM tutum/lamp:latest  <span class="comment"># 表示在镜像tutum/lamp:latest之上自定义你的镜像</span></span><br><span class="line">RUN rm -fr /app  <span class="comment"># 后面会把你的php项目映射到容器的/app/目录下</span></span><br><span class="line">EXPOSE 80 3306   <span class="comment"># 暴露80 3306端口</span></span><br><span class="line">CMD [<span class="string">"/run.sh"</span>]   <span class="comment"># 当容器启动后会自动执行容器内部的/run.sh脚本</span></span><br></pre></td></tr></table></figure></p>
@@ -1173,6 +1185,10 @@
     
     <div>
      
+    </div>
+
+    <div>
+      
     </div>
 
     
@@ -1347,7 +1363,7 @@
                   
                     
                   
-                  <a href="https://www.cnblogs.com/icoty23" title="博客源 &rarr; https://www.cnblogs.com/icoty23" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-blog"></i></a>
+                  <a href="https://www.cnblogs.com/icoty23" title="博客源 &rarr; https://www.cnblogs.com/icoty23" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-spinner"></i></a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -1356,7 +1372,7 @@
                   
                     
                   
-                  <a href="https://www.zhihu.com/people/xia-shi-61-47/activities" title="知乎 &rarr; https://www.zhihu.com/people/xia-shi-61-47/activities" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-zhihu"></i></a>
+                  <a href="https://www.zhihu.com/people/xia-shi-61-47/activities" title="知乎 &rarr; https://www.zhihu.com/people/xia-shi-61-47/activities" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-heartbeat"></i></a>
                 </span>
               
                 <span class="links-of-author-item">
