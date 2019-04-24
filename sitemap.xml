@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://icoty.github.io/2019/04/18/docker-hexo-blog/</loc>
+    
+    <lastmod>2019-04-24T06:47:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://icoty.github.io/2019/04/18/ipc-chat/</loc>
     
     <lastmod>2019-04-24T02:09:19.000Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://icoty.github.io/2019/04/22/docker/</loc>
     
     <lastmod>2019-04-24T02:08:44.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://icoty.github.io/2019/04/18/docker-hexo-blog/</loc>
-    
-    <lastmod>2019-04-24T02:06:49.000Z</lastmod>
     
   </url>
   
