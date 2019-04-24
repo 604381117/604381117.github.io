@@ -8,8 +8,8 @@
         <category>Docker基础知识</category>
       </categories>
       <tags>
-        <tag>Dockerfile</tag>
         <tag>Docker命令</tag>
+        <tag>Dockerfile</tag>
         <tag>镜像</tag>
         <tag>容器</tag>
       </tags>
@@ -23,9 +23,9 @@
       </categories>
       <tags>
         <tag>Dockerfile</tag>
+        <tag>Hexo命令</tag>
         <tag>镜像</tag>
         <tag>容器</tag>
-        <tag>Hexo命令</tag>
       </tags>
   </entry>
   <entry>
@@ -58,7 +58,7 @@
       </categories>
       <tags>
         <tag>Linux</tag>
-        <tag>Docker</tag>
+        <tag>Docker命令</tag>
         <tag>Dockerfile</tag>
       </tags>
   </entry>
