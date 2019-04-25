@@ -105,7 +105,7 @@
 <meta property="og:description" content="问题模型有一个系统，定义如下P、V操作：P(s)|V(s)—|:—s.count –;if s&amp;lt;0 then        将本进程插入相应队列末尾等待; | s.count ++;if s&amp;lt;=0 then        从相应等待队列队尾唤醒一个进程，将其插入就绪队列;思考并回答:a. 这样定义P、V操作是否有问题?b. 试用这样的P、V操作实现N个进程竞争使用某一共享变量的互斥机制">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://icoty.github.io/2019/04/25/stack-pv/stack-pv.png">
-<meta property="og:updated_time" content="2019-04-25T13:02:05.000Z">
+<meta property="og:updated_time" content="2019-04-25T13:42:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="另类P、V操作问题">
 <meta name="twitter:description" content="问题模型有一个系统，定义如下P、V操作：P(s)|V(s)—|:—s.count –;if s&amp;lt;0 then        将本进程插入相应队列末尾等待; | s.count ++;if s&amp;lt;=0 then        从相应等待队列队尾唤醒一个进程，将其插入就绪队列;思考并回答:a. 这样定义P、V操作是否有问题?b. 试用这样的P、V操作实现N个进程竞争使用某一共享变量的互斥机制">
@@ -407,7 +407,7 @@
                 
               
 
-              <time title="创建时间：2019-04-25 07:06:35 / 修改时间：13:02:05" itemprop="dateCreated datePublished" datetime="2019-04-25T07:06:35+00:00">2019-04-25</time>
+              <time title="创建时间：2019-04-25 07:06:35 / 修改时间：13:42:42" itemprop="dateCreated datePublished" datetime="2019-04-25T07:06:35+00:00">2019-04-25</time>
             
 
             
@@ -524,6 +524,8 @@
 <p>b. 解决方案<br>这里以N个进程为例进行一般化分析，定义信号量数组S[N-1]，共有N-1个信号量，下标从0～N-2，其中S[i] = N-i-1，表示第i+1个信号量S[i]的储值为N-i-1，初值为何取这个看后面分析，下为伪码。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Semaphore S[N-1];	// S[i] = N-i-1</span><br><span class="line">void func()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span>(int i=0 ; i&lt;n-1 ; i++)</span><br><span class="line">		P(S[i]);</span><br><span class="line">	// 临界区 Critical Section</span><br><span class="line">	<span class="keyword">for</span>(int i=n-2 ; i&gt;=0 ; i--)</span><br><span class="line">		V(S[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>一定要注意P(S[i])操作中的i是从0～N-2，而V(S[i])的i是反过来的从N-2～0，这个很重要，这个就是多级队列的精髓，顺序不能换。<br>下面的分析，假设t1时刻p1进入临界区还没出来之前，t2～tN时刻p2～pN按顺序来请求进入临界区，那么p2～pN都执行for循环，分别被挂起在信号量N-2～0的等待队列上，并且每个信号量的等待队列上有且只有一个进程被挂起。在tN+1时刻p1出临界区，由于V(S[i])是从N-2～0，因此等待在LN-2上的P2最先被唤醒，然后L2进入临界区。之后按顺序p3～pN依次被唤醒，但是由于p2已经进入临界区，p3～pN被唤醒后重新请求临界区，唤醒的顺序与请求临界区的顺序一致，饥饿现象得以解决。</p>
 <p><img src="/2019/04/25/stack-pv/stack-pv.png" alt="聊天窗口模型"></p>
+<p>该方法的资源复杂度为O(N-1)，需要N-1个信号量。</p>
+<p>c. 优化方法<br>除了前面的办法，已经可以确定存在更优方案能把资源复杂度降为O(logN)，具体怎么做暂不揭晓。</p>
 
       
     </div>
