@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://icoty.github.io/"/>
-  <updated>2019-04-24T11:43:56.000Z</updated>
+  <updated>2019-04-25T07:06:35.000Z</updated>
   <id>https://icoty.github.io/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>stack-pv</title>
+    <link href="https://icoty.github.io/2019/04/25/stack-pv/"/>
+    <id>https://icoty.github.io/2019/04/25/stack-pv/</id>
+    <published>2019-04-25T07:06:35.000Z</published>
+    <updated>2019-04-25T07:06:35.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Docker最简教程</title>
@@ -70,11 +84,11 @@
     
       <category term="Dockerfile" scheme="https://icoty.github.io/tags/Dockerfile/"/>
     
+      <category term="Hexo命令" scheme="https://icoty.github.io/tags/Hexo%E5%91%BD%E4%BB%A4/"/>
+    
       <category term="镜像" scheme="https://icoty.github.io/tags/%E9%95%9C%E5%83%8F/"/>
     
       <category term="容器" scheme="https://icoty.github.io/tags/%E5%AE%B9%E5%99%A8/"/>
-    
-      <category term="Hexo命令" scheme="https://icoty.github.io/tags/Hexo%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
