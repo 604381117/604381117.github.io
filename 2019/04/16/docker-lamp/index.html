@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://icoty.github.io/2019/04/16/docker-lamp/php-app.png">
 <meta property="og:image" content="https://icoty.github.io/2019/04/16/docker-lamp/time-zone.png">
 <meta property="og:image" content="https://icoty.github.io/2019/04/16/docker-lamp/php-myadmin.png">
-<meta property="og:updated_time" content="2019-04-25T05:39:45.000Z">
+<meta property="og:updated_time" content="2019-04-25T05:40:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下Docker快速部署LAMP">
 <meta name="twitter:description" content="若你的mac或Linux环境上未安装Docker，请移步Docker安装，确认安装成功之后再进行下文内容。如果你不了解Docker如何操作，但是你又想彻底弄懂Docker命令，可以看我另一篇文章Docker最简教程。 拿来即用获取LAMPLAMP镜像我已经搭建好并且我已经测试过了，没有问题。你只需要直接拿去用，执行如下命令：123$docker pull icoty1/lamp:v1.1.0$do">
@@ -426,7 +426,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-25 05:39:45" itemprop="dateModified" datetime="2019-04-25T05:39:45+00:00">2019-04-25</time>
+                <time title="修改时间：2019-04-25 05:40:25" itemprop="dateModified" datetime="2019-04-25T05:40:25+00:00">2019-04-25</time>
               
             
           </span>
@@ -506,7 +506,7 @@
 <p>访问phpadmin：<a href="http://localhost/phpmyadmin/index.php" rel="external nofollow noopener noreferrer" target="_blank">http://localhost/phpmyadmin/index.php</a> ，登陆的用户名和密码均为phpmyadmin，登陆后你能够在浏览器上一目了然的对所有数据表进行操作。</p>
 <p>容器内根目录下有个start.sh文件，每次需要重启apache服务和mysql服务时只需要执行这个脚本就好了，命令如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sh</span> start.sh</span><br></pre></td></tr></table></figure>
-<h4 id="LAMP版本"><a href="#LAMP版本" class="headerlink" title="LAMP版本"></a>LAMP版本</h4><p>Ubuntu 18.04.2，PHP 7.2.15，mysql 5.7.25，同时也安装了phpmyadmin。下面是查看版本的命令。mysql数据库的root账户密码是root，phpmyadmin账户密码是phpmyadmin ，你可以把密码修改成你的，<a href="https://www.cnblogs.com/mmx8861/p/9062363.html" rel="external nofollow noopener noreferrer" target="_blank">修改方式</a>。</p>
+<h4 id="LAMP版本"><a href="#LAMP版本" class="headerlink" title="LAMP版本"></a>LAMP版本</h4><p>Ubuntu 18.04.2，PHP 7.2.15，mysql 5.7.25，同时也安装了phpmyadmin。下面是查看版本的命令。mysql数据库的root账户密码是root，phpmyadmin账户密码是phpmyadmin ，你可以把密码修改成你的，<a href="https://www.cnblogs.com/mmx8861/p/9062363.html" rel="external nofollow noopener noreferrer" target="_blank">mysql修改用户密码</a>。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">root@4f5e11ebccac:/<span class="comment"># cat /etc/issue</span></span><br><span class="line">Ubuntu 18.04.2 LTS \n \l</span><br><span class="line"></span><br><span class="line">root@4f5e11ebccac:/<span class="comment"># php -v</span></span><br><span class="line">PHP 7.2.15-0ubuntu0.18.04.2 (cli) (built: Mar 22 2019 17:05:14) ( NTS )</span><br><span class="line">Copyright (c) 1997-2018 The PHP Group</span><br><span class="line">Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies</span><br><span class="line">    with Zend OPcache v7.2.15-0ubuntu0.18.04.2, Copyright (c) 1999-2018, by Zend Technologies</span><br><span class="line">root@4f5e11ebccac:/<span class="comment"># mysql -u root -p</span></span><br><span class="line">Enter password: </span><br><span class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</span><br><span class="line">Your MySQL connection id is 9</span><br><span class="line">Server version: 5.7.25-0ubuntu0.18.04.2 (Ubuntu)</span><br></pre></td></tr></table></figure>
 <p>到这里你的目的就已经达到了，一个完整LAMP服务已经在你本机上跑起来并且能用了。下面的内容是我制作icoty1/lamp:v1.1.0的过程，如果你有兴趣，或者想知道我是怎么制作出来的，欢迎继续围观。</p>
 <h3 id="icoty1-lamp-v1-1-0制作过程"><a href="#icoty1-lamp-v1-1-0制作过程" class="headerlink" title="icoty1/lamp:v1.1.0制作过程"></a>icoty1/lamp:v1.1.0制作过程</h3><h4 id="获取ubuntu基础镜像"><a href="#获取ubuntu基础镜像" class="headerlink" title="获取ubuntu基础镜像"></a>获取ubuntu基础镜像</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull ubuntu  <span class="comment"># 从Docker Hub拉取最新的ubuntu 18.04镜像并运行一个容器</span></span><br></pre></td></tr></table></figure>
