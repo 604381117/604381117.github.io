@@ -96,19 +96,19 @@
 
 
 
-  <meta name="description" content="问题模型有一个系统，定义如下P、V操作：123456789P(s)：	s.count--;	if s&amp;lt;0 then		将本进程插入相应队列末尾等待;   	V(s):	s.count++;	if s&amp;lt;=0 then		从相应等待队列队尾唤醒一个进程，将其插入就绪队列; 思考并回答:a. 这样定义P、V操作是否有问题?b. 试用这样的P、V操作实现N个进程竞争使用某一共享变量的互斥机制。">
+  <meta name="description" content="问题模型有一个系统，定义如下P、V操作：123456789P(s)：	s.count--;	if s&amp;lt;0 then			将本进程插入相应队列末尾等待;  	V(s):	s.count++;	if s&amp;lt;=0 then		从相应等待队列队尾唤醒一个进程，将其插入就绪队列; 思考并回答:a. 这样定义P、V操作是否有问题?b. 试用这样的P、V操作实现N个进程竞争使用某一共享变量的互斥机制。">
 <meta name="keywords" content="信号量Semaphores,临界区,P&#x2F;V操作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="另类P、V操作问题">
 <meta property="og:url" content="https://icoty.github.io/2019/04/25/stack-pv/index.html">
 <meta property="og:site_name" content="阳光沥肩头 仿佛自由人">
-<meta property="og:description" content="问题模型有一个系统，定义如下P、V操作：123456789P(s)：	s.count--;	if s&amp;lt;0 then		将本进程插入相应队列末尾等待;   	V(s):	s.count++;	if s&amp;lt;=0 then		从相应等待队列队尾唤醒一个进程，将其插入就绪队列; 思考并回答:a. 这样定义P、V操作是否有问题?b. 试用这样的P、V操作实现N个进程竞争使用某一共享变量的互斥机制。">
+<meta property="og:description" content="问题模型有一个系统，定义如下P、V操作：123456789P(s)：	s.count--;	if s&amp;lt;0 then			将本进程插入相应队列末尾等待;  	V(s):	s.count++;	if s&amp;lt;=0 then		从相应等待队列队尾唤醒一个进程，将其插入就绪队列; 思考并回答:a. 这样定义P、V操作是否有问题?b. 试用这样的P、V操作实现N个进程竞争使用某一共享变量的互斥机制。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://icoty.github.io/2019/04/25/stack-pv/stack-pv.png">
-<meta property="og:updated_time" content="2019-04-25T16:22:32.000Z">
+<meta property="og:updated_time" content="2019-04-25T16:28:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="另类P、V操作问题">
-<meta name="twitter:description" content="问题模型有一个系统，定义如下P、V操作：123456789P(s)：	s.count--;	if s&amp;lt;0 then		将本进程插入相应队列末尾等待;   	V(s):	s.count++;	if s&amp;lt;=0 then		从相应等待队列队尾唤醒一个进程，将其插入就绪队列; 思考并回答:a. 这样定义P、V操作是否有问题?b. 试用这样的P、V操作实现N个进程竞争使用某一共享变量的互斥机制。">
+<meta name="twitter:description" content="问题模型有一个系统，定义如下P、V操作：123456789P(s)：	s.count--;	if s&amp;lt;0 then			将本进程插入相应队列末尾等待;  	V(s):	s.count++;	if s&amp;lt;=0 then		从相应等待队列队尾唤醒一个进程，将其插入就绪队列; 思考并回答:a. 这样定义P、V操作是否有问题?b. 试用这样的P、V操作实现N个进程竞争使用某一共享变量的互斥机制。">
 <meta name="twitter:image" content="https://icoty.github.io/2019/04/25/stack-pv/stack-pv.png">
 
 
@@ -407,7 +407,7 @@
                 
               
 
-              <time title="创建时间：2019-04-25 07:06:35 / 修改时间：16:22:32" itemprop="dateCreated datePublished" datetime="2019-04-25T07:06:35+00:00">2019-04-25</time>
+              <time title="创建时间：2019-04-25 07:06:35 / 修改时间：16:28:07" itemprop="dateCreated datePublished" datetime="2019-04-25T07:06:35+00:00">2019-04-25</time>
             
 
             
@@ -491,7 +491,7 @@
       
 
       
-        <h3 id="问题模型"><a href="#问题模型" class="headerlink" title="问题模型"></a>问题模型</h3><p>有一个系统，定义如下P、V操作：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">P(s)：</span><br><span class="line">	s.count--;</span><br><span class="line">	<span class="keyword">if</span> s&lt;0 <span class="keyword">then</span></span><br><span class="line">		将本进程插入相应队列末尾等待; </span><br><span class="line">  	</span><br><span class="line">V(s):</span><br><span class="line">	s.count++;</span><br><span class="line">	<span class="keyword">if</span> s&lt;=0 <span class="keyword">then</span></span><br><span class="line">		从相应等待队列队尾唤醒一个进程，将其插入就绪队列;</span><br></pre></td></tr></table></figure></p>
+        <h3 id="问题模型"><a href="#问题模型" class="headerlink" title="问题模型"></a>问题模型</h3><p>有一个系统，定义如下P、V操作：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">P(s)：</span><br><span class="line">	s.count--;</span><br><span class="line">	<span class="keyword">if</span> s&lt;0 <span class="keyword">then</span></span><br><span class="line">			将本进程插入相应队列末尾等待;</span><br><span class="line">  	</span><br><span class="line">V(s):</span><br><span class="line">	s.count++;</span><br><span class="line">	<span class="keyword">if</span> s&lt;=0 <span class="keyword">then</span></span><br><span class="line">		从相应等待队列队尾唤醒一个进程，将其插入就绪队列;</span><br></pre></td></tr></table></figure></p>
 <p>思考并回答:<br>a. 这样定义P、V操作是否有问题?<br>b. 试用这样的P、V操作实现N个进程竞争使用某一共享变量的互斥机制。<br>c. 对于b的解法，有无效率更高的方法。如有，试问降低了多少复杂性?</p>
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>a. 当然有问题，假设s=2，现有进程p1、p2按顺序来请求共享资源A，p1和p2直接获取A，假设p1和p2都还未释放A的时候，p3、p4、p5按顺序也来请求A，这时s的等待队列L为：(尾)p5p4p3(头)，然后p1释放A，执行V(s)操作从L队尾唤醒p5，L变为：(尾)p4p3(头)。这时A被p2和p5持有，且p2和p5都未释放A的时候，假设这时p1又来请求A，p1被挂起，L变为：(尾)p1p4p3(头)。然后p2释放A执行V(s)操作从L队尾唤醒p1，你会发现p1又竞争到了A，而p3和p4还一次都未竞争到，这会导致越靠近L队首的p3和p4越容易饿死，出现饥饿现象。问题的根源就在于这样定义的P、V操作，由于在信号量的等待队列上是先进后出导致的，这属于栈P、V。</p>
 <p>b. 解决方案<br>这里以N个进程为例进行一般化分析，定义信号量数组S[N-1]，共有N-1个信号量，下标从0～N-2，其中S[i] = N-i-1，表示第i+1个信号量S[i]的储值为N-i-1，初值为何取这个看后面分析，下为伪码。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Semaphore S[N-1];	// S[i] = N-i-1</span><br><span class="line">void func()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span>(int i=0 ; i&lt;n-1 ; i++)</span><br><span class="line">		P(S[i]);</span><br><span class="line">	// 临界区 Critical Section</span><br><span class="line">	<span class="keyword">for</span>(int i=n-2 ; i&gt;=0 ; i--)</span><br><span class="line">		V(S[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
