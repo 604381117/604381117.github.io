@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://icoty.github.io/about/index.html</loc>
+    
+    <lastmod>2019-04-26T08:23:25.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://icoty.github.io/about/resume.html</loc>
+    
+    <lastmod>2019-04-26T08:19:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://icoty.github.io/2019/04/25/stack-pv/</loc>
     
-    <lastmod>2019-04-26T03:18:05.000Z</lastmod>
+    <lastmod>2019-04-26T06:22:22.000Z</lastmod>
     
   </url>
   
@@ -33,13 +47,6 @@
     <loc>https://icoty.github.io/2019/04/16/docker-lamp/</loc>
     
     <lastmod>2019-04-25T06:59:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://icoty.github.io/about/index.html</loc>
-    
-    <lastmod>2019-04-20T15:10:36.000Z</lastmod>
     
   </url>
   
