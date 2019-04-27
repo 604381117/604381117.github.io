@@ -101,7 +101,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="进程间通信-利用共享内存和管道通信实现聊天窗口">
 <meta property="og:url" content="https://icoty.github.io/2019/04/18/ipc-chat/index.html">
-<meta property="og:site_name" content="阳光沥肩头 仿佛自由人">
+<meta property="og:site_name" content="荒野之萍">
 <meta property="og:description" content="问题模型 A、B两个进程通过管道通信，A 进程每次接收到的数据通过共享内存传递给A1进程显示，同理，B进程每次接收到的数据通过共享内存传递给B1进程显示； 对于A、B 进程，采用ctrl+c（实际为SIGINT信号）方式退出，A、B进程通过捕捉SIGINT信号注册信号处理函数进行资源清理，A1、B1进程手动关闭即可。  特别注意 A、B通过管道通信，如果首先通过ctrl+c退出A进程，那么B进程的">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://icoty.github.io/2019/04/18/ipc-chat/windows.png">
@@ -115,7 +115,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="阳光沥肩头 仿佛自由人" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="荒野之萍" type="application/atom+xml">
 
 
 
@@ -131,7 +131,7 @@
   };
 </script>
 
-  <title>进程间通信-利用共享内存和管道通信实现聊天窗口 | 阳光沥肩头 仿佛自由人</title>
+  <title>进程间通信-利用共享内存和管道通信实现聊天窗口 | 荒野之萍</title>
   
 
 
@@ -190,10 +190,14 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">阳光沥肩头 仿佛自由人</span>
+        <span class="site-title">荒野之萍</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
+      
+        <p class="site-subtitle">忙着活或忙着死</p>
+      
     
     
   </div>
@@ -375,7 +379,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阳光沥肩头 仿佛自由人">
+      <meta itemprop="name" content="荒野之萍">
     </span>
 
     
