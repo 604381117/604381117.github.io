@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://icoty.github.io/2019/04/16/docker-lamp/</loc>
+    <lastmod>2019-05-11</lastmod>
+  </url>  <url>
+    <loc>https://icoty.github.io/2019/05/02/nachos-3.4-thread/</loc>
+    <lastmod>2019-05-02</lastmod>
+  </url>  <url>
     <loc>https://icoty.github.io/2019/04/25/stack-pv/</loc>
     <lastmod>2019-04-26</lastmod>
   </url>  <url>
@@ -11,9 +17,6 @@
     <lastmod>2019-04-25</lastmod>
   </url>  <url>
     <loc>https://icoty.github.io/2019/04/18/ipc-chat/</loc>
-    <lastmod>2019-04-25</lastmod>
-  </url>  <url>
-    <loc>https://icoty.github.io/2019/04/16/docker-lamp/</loc>
     <lastmod>2019-04-25</lastmod>
   </url>
 </urlset>

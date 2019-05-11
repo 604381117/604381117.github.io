@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://icoty.github.io/2019/04/16/docker-lamp/php-app.png">
 <meta property="og:image" content="https://icoty.github.io/2019/04/16/docker-lamp/time-zone.png">
 <meta property="og:image" content="https://icoty.github.io/2019/04/16/docker-lamp/php-myadmin.png">
-<meta property="og:updated_time" content="2019-04-25T06:59:37.000Z">
+<meta property="og:updated_time" content="2019-05-11T04:18:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下Docker快速部署LAMP">
 <meta name="twitter:description" content="若你的mac或Linux环境上未安装Docker，请移步Docker安装，确认安装成功之后再进行下文内容。如果你不了解Docker如何操作，但是你又想彻底弄懂Docker命令，可以看我另一篇文章Docker最简教程。 拿来即用获取LAMPLAMP镜像我已经搭建好并且我已经测试过了，没有问题。你只需要直接拿去用，执行如下命令：123$docker pull icoty1/lamp:v1.1.0$do">
@@ -430,7 +430,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-25 06:59:37" itemprop="dateModified" datetime="2019-04-25T06:59:37+00:00">2019-04-25</time>
+                <time title="修改时间：2019-05-11 04:18:40" itemprop="dateModified" datetime="2019-05-11T04:18:40+00:00">2019-05-11</time>
               
             
           </span>
@@ -506,7 +506,7 @@
 <h3 id="拿来即用"><a href="#拿来即用" class="headerlink" title="拿来即用"></a>拿来即用</h3><h4 id="获取LAMP"><a href="#获取LAMP" class="headerlink" title="获取LAMP"></a>获取LAMP</h4><p>LAMP镜像我已经搭建好并且我已经测试过了，没有问题。你只需要直接拿去用，执行如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$docker</span> pull icoty1/lamp:v1.1.0</span><br><span class="line"><span class="variable">$docker</span> images <span class="comment"># 能够看到icoty1/lamp:v1.1.0已经被拉到你本地</span></span><br><span class="line"><span class="variable">$docker</span> run -d -ti -p 80:80 -p 3306:3306 -v /Users/yangyu/app/:/var/www/html/ icoty1/lamp:v1.1.0 /bin/bash start.sh <span class="comment"># 运行一个容器，目录/Users/yangyu/app/是你本机PHP应用位置</span></span><br></pre></td></tr></table></figure></p>
 <p>/Users/yangyu/app/下存放的是public、thinkphp、vendor、runtime等内容。然后访问<a href="http://localhost" rel="external nofollow noopener noreferrer" target="_blank">http://localhost</a> 能够看到PHP应用目录下的内容，如下图，说明已经成功。<br><img src="/2019/04/16/docker-lamp/php-app.png" alt="php-app"></p>
 <p>然后访问<a href="http://localhost/public/index.php" rel="external nofollow noopener noreferrer" target="_blank">http://localhost/public/index.php</a> ，这个是PHP的入口。如果浏览器打开提示权限不够，不要慌，检查下你无法访问的那个目录下是否存在.htaccess文件，如果有则删除就好了，如果没有则执行如下命令。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$docker</span> <span class="built_in">exec</span> -it [CONTAINER ID] /bin/bash <span class="comment"># 进入前面启动的容器中</span></span><br><span class="line"><span class="variable">$chown</span> -R 0777 /var/www/html/ <span class="comment"># 赋予最高权限</span></span><br><span class="line"><span class="variable">$sh</span> start.sh <span class="comment"># start.sh在根目录下，是重启服务用的</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$docker</span> <span class="built_in">exec</span> -it [CONTAINER ID] /bin/bash <span class="comment"># 进入前面启动的容器中</span></span><br><span class="line"><span class="variable">$chmod</span> -R 0777 /var/www/html/ <span class="comment"># 赋予最高权限</span></span><br><span class="line"><span class="variable">$sh</span> start.sh <span class="comment"># start.sh在根目录下，是重启服务用的</span></span><br></pre></td></tr></table></figure>
 <p>访问phpadmin：<a href="http://localhost/phpmyadmin/index.php" rel="external nofollow noopener noreferrer" target="_blank">http://localhost/phpmyadmin/index.php</a> ，登陆的用户名和密码均为phpmyadmin，登陆后你能够在浏览器上一目了然的对所有数据表进行操作。</p>
 <p>容器内根目录下有个start.sh文件，每次需要重启apache服务和mysql服务时只需要执行这个脚本就好了，命令如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sh</span> start.sh</span><br></pre></td></tr></table></figure>
@@ -555,7 +555,7 @@
   <p><span>本文标题:</span><a href="/2019/04/16/docker-lamp/">Linux下Docker快速部署LAMP</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 icoty 的个人博客">icoty</a></p>
   <p><span>发布时间:</span>2019年04月16日 - 15:04</p>
-  <p><span>最后更新:</span>2019年04月25日 - 06:04</p>
+  <p><span>最后更新:</span>2019年05月11日 - 04:05</p>
   <p><span>原始链接:</span><a href="/2019/04/16/docker-lamp/" title="Linux下Docker快速部署LAMP">https://icoty.github.io/2019/04/16/docker-lamp/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://icoty.github.io/2019/04/16/docker-lamp/" aria-label="复制成功！"></i></span>
   </p>
@@ -734,7 +734,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
