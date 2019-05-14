@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://icoty.github.io/2019/05/14/nachos-3-4-Lab3/</loc>
+    <loc>https://icoty.github.io/2019/05/14/nachos-3-4-Lab2/</loc>
     
-    <lastmod>2019-05-14T11:53:37.000Z</lastmod>
+    <lastmod>2019-05-14T11:59:54.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://icoty.github.io/2019/05/13/nachos-3-4-Lab1/</loc>
     
-    <lastmod>2019-05-14T08:35:23.000Z</lastmod>
+    <lastmod>2019-05-14T11:59:43.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://icoty.github.io/2019/05/14/nachos-3-4-Lab3/</loc>
+    
+    <lastmod>2019-05-14T11:57:22.000Z</lastmod>
     
   </url>
   
@@ -19,13 +26,6 @@
     <loc>https://icoty.github.io/2019/04/22/docker/</loc>
     
     <lastmod>2019-05-14T08:23:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://icoty.github.io/2019/05/14/nachos-3-4-Lab2/</loc>
-    
-    <lastmod>2019-05-14T08:21:50.000Z</lastmod>
     
   </url>
   
