@@ -568,225 +568,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://icoty.github.io/2019/04/18/ipc-chat/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="icoty">
-      <meta itemprop="description" content="Linux C++服务端 / 系统开发">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="荒野之萍">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/18/ipc-chat/" class="post-title-link" itemprop="url">进程间通信-利用共享内存和管道通信实现聊天窗口</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-18 00:16:06" itemprop="dateCreated datePublished" datetime="2019-04-18T00:16:06+00:00">2019-04-18</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-25 16:23:04" itemprop="dateModified" datetime="2019-04-25T16:23:04+00:00">2019-04-25</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/同步机制/" itemprop="url" rel="index"><span itemprop="name">同步机制</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/进程间通信/" itemprop="url" rel="index"><span itemprop="name">进程间通信</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IO多路复用模型/" itemprop="url" rel="index"><span itemprop="name">IO多路复用模型</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/18/ipc-chat/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/18/ipc-chat/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              问题模型
-A、B两个进程通过管道通信，A 进程每次接收到的数据通过共享内存传递给A1进程显示，同理，B进程每次接收到的数据通过共享内存传递给B1进程显示；
-对于A、B 进程，采用ctrl+c（实际为SIGINT信号）方式退出，A、B进程通过捕捉SIGINT信号注册信号处理函数进行资源清理，A1、B1
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/18/ipc-chat/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-    <div>
-     
-    </div>
-
-    <div>
-      
-    </div>
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://icoty.github.io/2019/04/22/docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -849,7 +630,7 @@ A、B两个进程通过管道通信，A 进程每次接收到的数据通过共�
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-25 16:23:34" itemprop="dateModified" datetime="2019-04-25T16:23:34+00:00">2019-04-25</time>
+                <time title="修改时间：2019-05-14 04:09:36" itemprop="dateModified" datetime="2019-05-14T04:09:36+00:00">2019-05-14</time>
               
             
           </span>
@@ -1052,7 +833,7 @@ A、B两个进程通过管道通信，A 进程每次接收到的数据通过共�
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-14 04:08:06" itemprop="dateModified" datetime="2019-05-14T04:08:06+00:00">2019-05-14</time>
+                <time title="修改时间：2019-05-14 04:20:55" itemprop="dateModified" datetime="2019-05-14T04:20:55+00:00">2019-05-14</time>
               
             
           </span>
@@ -1343,6 +1124,225 @@ A、B两个进程通过管道通信，A 进程每次接收到的数据通过共�
           
             <div class="post-button text-center">
               <a class="btn" href="/2019/04/25/stack-pv/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+     
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://icoty.github.io/2019/04/18/ipc-chat/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="icoty">
+      <meta itemprop="description" content="Linux C++服务端 / 系统开发">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="荒野之萍">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/18/ipc-chat/" class="post-title-link" itemprop="url">进程间通信-利用共享内存和管道通信实现聊天窗口</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-18 00:16:06" itemprop="dateCreated datePublished" datetime="2019-04-18T00:16:06+00:00">2019-04-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-14 04:09:19" itemprop="dateModified" datetime="2019-05-14T04:09:19+00:00">2019-05-14</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/同步机制/" itemprop="url" rel="index"><span itemprop="name">同步机制</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/进程间通信/" itemprop="url" rel="index"><span itemprop="name">进程间通信</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IO多路复用模型/" itemprop="url" rel="index"><span itemprop="name">IO多路复用模型</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/04/18/ipc-chat/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/18/ipc-chat/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              问题模型
+A、B两个进程通过管道通信，A 进程每次接收到的数据通过共享内存传递给A1进程显示，同理，B进程每次接收到的数据通过共享内存传递给B1进程显示；
+对于A、B 进程，采用ctrl+c（实际为SIGINT信号）方式退出，A、B进程通过捕捉SIGINT信号注册信号处理函数进行资源清理，A1、B1
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/18/ipc-chat/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
