@@ -119,6 +119,8 @@
     
       <category term="信号量Semaphore" scheme="https://icoty.github.io/tags/%E4%BF%A1%E5%8F%B7%E9%87%8FSemaphore/"/>
     
+      <category term="Nachos-3.4" scheme="https://icoty.github.io/tags/Nachos-3-4/"/>
+    
       <category term="锁实现" scheme="https://icoty.github.io/tags/%E9%94%81%E5%AE%9E%E7%8E%B0/"/>
     
       <category term="条件变量实现" scheme="https://icoty.github.io/tags/%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F%E5%AE%9E%E7%8E%B0/"/>
@@ -128,8 +130,6 @@
       <category term="读者写者问题" scheme="https://icoty.github.io/tags/%E8%AF%BB%E8%80%85%E5%86%99%E8%80%85%E9%97%AE%E9%A2%98/"/>
     
       <category term="Barrier实现" scheme="https://icoty.github.io/tags/Barrier%E5%AE%9E%E7%8E%B0/"/>
-    
-      <category term="Nachos-3.4" scheme="https://icoty.github.io/tags/Nachos-3-4/"/>
     
   </entry>
   
@@ -156,13 +156,13 @@
       <category term="操作系统" scheme="https://icoty.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
     
-      <category term="Nachos-3.4" scheme="https://icoty.github.io/tags/Nachos-3-4/"/>
-    
       <category term="时间片轮转调度策略" scheme="https://icoty.github.io/tags/%E6%97%B6%E9%97%B4%E7%89%87%E8%BD%AE%E8%BD%AC%E8%B0%83%E5%BA%A6%E7%AD%96%E7%95%A5/"/>
     
       <category term="FIFO线程调度策略" scheme="https://icoty.github.io/tags/FIFO%E7%BA%BF%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%AD%96%E7%95%A5/"/>
     
       <category term="基于优先级的可抢占式调度策略" scheme="https://icoty.github.io/tags/%E5%9F%BA%E4%BA%8E%E4%BC%98%E5%85%88%E7%BA%A7%E7%9A%84%E5%8F%AF%E6%8A%A2%E5%8D%A0%E5%BC%8F%E8%B0%83%E5%BA%A6%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="Nachos-3.4" scheme="https://icoty.github.io/tags/Nachos-3-4/"/>
     
   </entry>
   
