@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="荒野之萍">
 <meta property="og:description" content="实际工作和开发过程中，网络通信过程中的数据传输和存储大多需要经过严格的加解密设计，比如用户的登陆与注册，敏感信息传输，支付网站和银行的交易信息，甚至为了防止被拖库，数据库的敏感信息存储也需要经过精心的设计。在进行安全设计过程中，或多或少涉及到密码学的一些概念，比如对称加密算法，非对称加密算法(也名公钥算法)，消息认证，Hash函数(也名散列函数或摘要算法)，数字签名(也名指纹或摘要)，流密码等。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-22T15:18:37.000Z">
+<meta property="og:updated_time" content="2019-05-22T15:22:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一文彻底揭穿常用加解密算法的伪装">
 <meta name="twitter:description" content="实际工作和开发过程中，网络通信过程中的数据传输和存储大多需要经过严格的加解密设计，比如用户的登陆与注册，敏感信息传输，支付网站和银行的交易信息，甚至为了防止被拖库，数据库的敏感信息存储也需要经过精心的设计。在进行安全设计过程中，或多或少涉及到密码学的一些概念，比如对称加密算法，非对称加密算法(也名公钥算法)，消息认证，Hash函数(也名散列函数或摘要算法)，数字签名(也名指纹或摘要)，流密码等。">
@@ -426,7 +426,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-22 15:18:37" itemprop="dateModified" datetime="2019-05-22T15:18:37+00:00">2019-05-22</time>
+                <time title="修改时间：2019-05-22 15:22:49" itemprop="dateModified" datetime="2019-05-22T15:22:49+00:00">2019-05-22</time>
               
             
           </span>
@@ -506,7 +506,7 @@
 <li>C(Ciphertext)是可能密文的有限集(密文空间); </li>
 <li>K(Key)是一切可能密钥构成的有限集(密钥空间);</li>
 <li>E(Encrtption)和D(Decryption)是分别由密钥决定的所有加密算法和解密算法的集合;</li>
-<li>对$k \in K$，有加密算法 $e_k:P  \rightarrow C$，$e_k\in E$；同时有由<br>$k^<em> \in K$ 决定的解密算法 $d_k^</em>: C \rightarrow P$，$d_k^<em> \in D$；满足关系 $d_k^</em> (e_k(x)) = x$，$x \in P$。</li>
+<li>对$k \in K$，有加密算法 $e_k:P  \rightarrow C$，$e_k \in E$；同时有由<br>$k^<em> \in K$ 决定的解密算法 $d_k^</em> : C \rightarrow P$，$d_k^<em> \in D$；满足关系 $d_k^</em> (e_k(x)) = x$，$x \in P$。</li>
 </ol>
 <h4 id="密码破译"><a href="#密码破译" class="headerlink" title="密码破译"></a>密码破译</h4><p>密码破译根本目的在于破译出密钥或密文，假设破译者Oscar是在已知密码体制的前提下来破译Bob使用的密钥。这个假设被称为Kerckhoff准则，最常见的破解类型有如下5种，从1～5，Oscar的破译难度逐渐降低。</p>
 <ol>
