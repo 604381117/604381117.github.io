@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="荒野之萍">
 <meta property="og:description" content="实际工作和开发过程中，网络通信过程中的数据传输和存储大多需要经过严格的加解密设计，比如用户的登陆与注册，敏感信息传输，支付网站和银行的交易信息，甚至为了防止被拖库，数据库的敏感信息存储也需要经过精心的设计。在进行安全设计过程中，或多或少涉及到密码学的一些概念，比如对称加密算法，非对称加密算法(也名公钥算法)，消息认证，Hash函数(也名散列函数或摘要算法)，数字签名(也名指纹或摘要)，流密码等。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-22T15:25:45.000Z">
+<meta property="og:updated_time" content="2019-05-22T15:31:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一文彻底揭穿常用加解密算法的伪装">
 <meta name="twitter:description" content="实际工作和开发过程中，网络通信过程中的数据传输和存储大多需要经过严格的加解密设计，比如用户的登陆与注册，敏感信息传输，支付网站和银行的交易信息，甚至为了防止被拖库，数据库的敏感信息存储也需要经过精心的设计。在进行安全设计过程中，或多或少涉及到密码学的一些概念，比如对称加密算法，非对称加密算法(也名公钥算法)，消息认证，Hash函数(也名散列函数或摘要算法)，数字签名(也名指纹或摘要)，流密码等。">
@@ -426,7 +426,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-22 15:25:45" itemprop="dateModified" datetime="2019-05-22T15:25:45+00:00">2019-05-22</time>
+                <time title="修改时间：2019-05-22 15:31:09" itemprop="dateModified" datetime="2019-05-22T15:31:09+00:00">2019-05-22</time>
               
             
           </span>
@@ -506,7 +506,7 @@
 <li>C(Ciphertext)是可能密文的有限集(密文空间); </li>
 <li>K(Key)是一切可能密钥构成的有限集(密钥空间);</li>
 <li>E(Encrtption)和D(Decryption)是分别由密钥决定的所有加密算法和解密算法的集合;</li>
-<li>对$k \in K$，有加密算法$e_k:P  \rightarrow C$，$e_k \in E$；同时有由$k^<em> \in K$决定的解密算法 $d_k^</em>:C \rightarrow P$，$d_k^<em> \in D$；满足关系$d_k^</em> (e_k(x)) = x$，$x \in P$。</li>
+<li>对 $k \in K，有加密算法e_k:P  \rightarrow C，e_k \in E；同时有由k^<em> \in K决定的解密算法 d_k^</em>:C \rightarrow P，d_k^<em> \in D；满足关系d_k^</em> (e_k(x)) = x，x \in P$。</li>
 </ol>
 <h4 id="密码破译"><a href="#密码破译" class="headerlink" title="密码破译"></a>密码破译</h4><p>密码破译根本目的在于破译出密钥或密文，假设破译者Oscar是在已知密码体制的前提下来破译Bob使用的密钥。这个假设被称为Kerckhoff准则，最常见的破解类型有如下5种，从1～5，Oscar的破译难度逐渐降低。</p>
 <ol>
@@ -518,8 +518,8 @@
 </ol>
 <h3 id="加密算法"><a href="#加密算法" class="headerlink" title="加密算法"></a>加密算法</h3><h4 id="对称加密算法"><a href="#对称加密算法" class="headerlink" title="对称加密算法"></a>对称加密算法</h4><p>对称加密算法的加密密钥和解密密钥相同，常见的对称加密算法有：AES、DES、2DES、3DES、RC4、RC5、RC6，Blowfish和IDEA，目前使用最广泛的是DES、AES。</p>
 <pre class="mermaid">graph LR
-A[发送方<br>输入明文P] -->|P|B["发送方密钥K<br>加密算法(如DES)<br>C=E(K,P)"];
-B -->|传输密文C|C["接收方密钥K<br>解密算法(如DES)<br>P=D(K,C)"];
+A[发送方Bob<br>输入明文P] -->|P|B["发送方Bob与接收方Alice<br>共用相同密钥K<br>加密算法(如DES)<br>C=E(K,P)"];
+B -->|传输密文C|C["接收方Alice与发送方Bob<br>共用相同密钥K<br>解密算法(如DES)<br>P=D(K,C)"];
 C -->|P|D["接收方<br>输出明文P"];</pre>
 
 <h4 id="非对称加密算法-公钥算法"><a href="#非对称加密算法-公钥算法" class="headerlink" title="非对称加密算法(公钥算法)"></a>非对称加密算法(公钥算法)</h4><p>公钥算法的加密算法和解密算法使用不同的密钥，分别为公钥和私钥，这两个密钥中的任何一个都可以用来加密，而另一个用来解密。常见的公钥算法有：椭圆曲线(ECC)、RSA、Diffie-Hellman、El Gamal(安全性建立在基于求解离散对数是困难的)、DSA(适用于数字签名)。</p>
@@ -603,17 +603,17 @@ C -->|PRbob|D["Alice<br>Bob的私钥PRbob"];</pre>
 <li><strong>消息认证</strong>是用来验证消息完整性的一种机制服务，消息认证确认收到的数据确实和发送时的一样(即<strong>防篡改</strong>)，并且还要确保发送方的身份是真实有效的的(即<strong>防冒充</strong>)。下图以对称加密算法为例，因为对称密钥K只有Bob和Alice才有，保证了发送方的合法有效性，同时比较C3与C是否相等，可以确定传输过程中是否被篡改过。</li>
 </ol>
 <pre class="mermaid">graph LR
-A[Bob<br>输入明文P] -->|P|B["Hash函数<br>(如sha256)<br>C=Hash(P)"];
-B -->|C|C["C1=P||C"];
+A[Bob<br>输入明文P] -->|P|B["Bob<br>Hash函数<br>(如sha256)<br>C=Hash(P)"];
+B -->|C|C["Bob<br>C1=P||C"];
 A -->|P|C;
 C -->|"C1=P||C"|D["Bob和Alice公用的密钥K<br>对称加密算法(如DES)<br>C2=E(K,C1)"];
 D -->|传输密文C2|E["Alice和Bob公用的密钥K<br>对称解密算法(如DES)<br>C1=D(K,C2)"];
-E -->|"C1=P||C"|F["1.Hash函数(如sha256)<br>C3=Hash(P)<br>2.比较C3与C是否相等"];</pre>
+E -->|"C1=P||C"|F["Alice<br>1.Hash函数(如sha256)<br>C3=Hash(P)<br>2.比较C3与C是否相等"];</pre>
 2. **数字签名(也名指纹或摘要)**是一种认证机制，它使得消息的产生者可以添加一个起签名作用的码字，通过计算消息的Hash值并用产生者的私钥加密Hash值来生成签名，签名保证了消息和来源和完整性。下入最后一步比较C3与C如果不相等，认证失败。下图没有提供保密性，因为传输过程中只是将P和C1简单的连接在一起，并没有对C2进行加密，如果需要提供保密性，可以使用Alic的私钥对C2加密后再传输。
 <pre class="mermaid">graph LR
-A[Bob<br>输入明文P] -->|P|B["Hash函数<br>(如sha256)<br>C=Hash(P)"];
+A[Bob<br>输入明文P] -->|P|B["Bob<br>Hash函数<br>(如sha256)<br>C=Hash(P)"];
 B -->|C|C["Bob的私钥PRbob<br>加密算法(如RSA)<br>C1=E(PRbob,C)"];
-C -->|C1|D["C2=P||C1"];
+C -->|C1|D["Bob<br>C2=P||C1"];
 A -->|P|D;
 D -->|传输C2|E["Alice的公钥环{PUbob,……}<br>1.解密算法(如RSA)<br>C=D(PUbob,C1)<br>2.Hash函数(如sha256)<br>C3=Hash(P)<br>3.比较C3与C是否相等"];</pre>
 3. 用于产生单向口令文件，比如操作系统存储的都是口令的Hah值而不是口令本身，当用户输入口令时，计算其Hash值和存储的口令比对，这样即使操作系统被黑之后，也能保证用户口令的安全性。同样适用于入侵检测和病毒检测，如将你需要保护的文件的Hash值存储到安全系统中(比如只读设备中，不可修改)，这样病毒入侵后只能修改文件而不能修改Hash值，于是可以通过重新计算文件的Hash值和之前保存的Hash值比对。
@@ -625,7 +625,7 @@ D -->|传输C2|E["Alice的公钥环{PUbob,……}<br>1.解密算法(如RSA)<br>C
 典型的流密码是每次加密一个字节的密文，加密长度可以按需求设计，比如每次只加密一位或者大于一个字节的单元都行。实质上$Ci=Pi \oplus K1i，Pi=Ci \oplus K2i$，就是简单的异或，加密异或一次，解密在异或一次，即可恢复明文字节流。
 
 <pre class="mermaid">graph LR
-A["Bob<br>明文字节流P1~Pn"] -->|"P1~Pn"|C["加密函数<br>Ci=E(K1i,Pi)"];
+A["Bob<br>明文字节流P1~Pn"] -->|"P1~Pn"|C["Bob<br>加密函数<br>Ci=E(K1i,Pi)"];
 B["Bob 由密钥K1控制的<br>密钥流发生器K11～K1n<br>其中K1i=K2i"] -->|"K11～K1n"|C;
 C -->|"传输密文C1～Cn"|E["Alice<br>解密函数<br>Pi=D(K2i,Ci)"];
 D["Alice 由密钥K2控制的<br>密钥流发生器K21～K2n<br>其中K1i=K2i"] -->|"K21～K2n"|E;
