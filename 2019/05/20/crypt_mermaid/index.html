@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="荒野之萍">
 <meta property="og:description" content="实际工作和开发过程中，网络通信过程中的数据传输和存储大多需要经过严格的加解密设计，比如用户的登陆与注册，敏感信息传输，支付网站和银行的交易信息，甚至为了防止被拖库，数据库的敏感信息存储也需要经过精心的设计。在进行安全设计过程中，或多或少涉及到密码学的一些概念，比如对称加密算法，非对称加密算法(也名公钥算法)，消息认证，Hash函数(也名散列函数或摘要算法)，数字签名(也名指纹或摘要)，流密码等。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-22T13:21:17.000Z">
+<meta property="og:updated_time" content="2019-05-22T13:37:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一文彻底揭穿常用加解密算法的伪装">
 <meta name="twitter:description" content="实际工作和开发过程中，网络通信过程中的数据传输和存储大多需要经过严格的加解密设计，比如用户的登陆与注册，敏感信息传输，支付网站和银行的交易信息，甚至为了防止被拖库，数据库的敏感信息存储也需要经过精心的设计。在进行安全设计过程中，或多或少涉及到密码学的一些概念，比如对称加密算法，非对称加密算法(也名公钥算法)，消息认证，Hash函数(也名散列函数或摘要算法)，数字签名(也名指纹或摘要)，流密码等。">
@@ -426,7 +426,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-22 13:21:17" itemprop="dateModified" datetime="2019-05-22T13:21:17+00:00">2019-05-22</time>
+                <time title="修改时间：2019-05-22 13:37:10" itemprop="dateModified" datetime="2019-05-22T13:37:10+00:00">2019-05-22</time>
               
             
           </span>
@@ -544,12 +544,7 @@
 <li>选择密文攻击：Oscar可暂时接近解密机，因此他能选择特定密文串c并构造出相应的明文串p。</li>
 <li>选择文本攻击：Oscar可以制造任意明文(p) / 密文(c)并得到对应的密文(c) / 明文(p)。</li>
 </ol>
-<h3 id="加密算法"><a href="#加密算法" class="headerlink" title="加密算法"></a>加密算法</h3><h4 id="对称加密算法"><a href="#对称加密算法" class="headerlink" title="对称加密算法"></a>对称加密算法</h4><p>对称加密算法的加密密钥和解密密钥相同，常见的对称加密算法有：AES、DES、2DES、3DES、RC4、RC5、RC6，Blowfish和IDEA，目前使用最广泛的是DES、AES。</p>
-<pre class="mermaid">graph LR
-A[发送方<br>输入明文P] -->|P|B["发送方密钥K<br>加密算法(如DES)<br>C=E(K,P)"];
-B -->|传输密文C|C["接收方密钥K<br>解密算法(如DES)<br>P=D(K,C)"];
-C -->|P|D["接收方<br>输出明文P"];</pre>
-
+<h3 id="加密算法"><a href="#加密算法" class="headerlink" title="加密算法"></a>加密算法</h3><h4 id="对称加密算法"><a href="#对称加密算法" class="headerlink" title="对称加密算法"></a>对称加密算法</h4><p>对称加密算法的加密密钥和解密密钥相同，常见的对称加密算法有：AES、DES、2DES、3DES、RC4、RC5、RC6，Blowfish和IDEA，目前使用最广泛的是DES、AES。<br>graph LR<br>A[发送方<br>输入明文P] –&gt;|P|B[“发送方密钥K<br>加密算法(如DES)<br>C=E(K,P)”];<br>B –&gt;|传输密文C|C[“接收方密钥K<br>解密算法(如DES)<br>P=D(K,C)”];<br>C –&gt;|P|D[“接收方<br>输出明文P”];</p>
 <h4 id="非对称加密算法-公钥算法"><a href="#非对称加密算法-公钥算法" class="headerlink" title="非对称加密算法(公钥算法)"></a>非对称加密算法(公钥算法)</h4><p>公钥算法的加密算法和解密算法使用不同的密钥，分别为公钥和私钥，这两个密钥中的任何一个都可以用来加密，而另一个用来解密。常见的公钥算法有：椭圆曲线(ECC)、RSA、Diffie-Hellman、El Gamal(安全性建立在基于求解离散对数是困难的)、DSA(适用于数字签名)。</p>
 <h5 id="公钥算法的应用"><a href="#公钥算法的应用" class="headerlink" title="公钥算法的应用"></a>公钥算法的应用</h5><ol>
 <li>发送方Bob用接收方Alice的公钥对消息进行加密，接收方Alice用自己的私钥进行解密，可提供消息传输过程中的保密性。</li>
@@ -659,7 +654,7 @@ C -->|"传输密文C1～Cn"|E["Alice<br>解密函数<br>Pi=D(K2i,Ci)"];
 D["Alice 由密钥K2控制的<br>密钥流发生器K21～K2n<br>其中K1i=K2i"] -->|"K21～K2n"|E;
 E -->|"明文字节流P1～Pn"|F["Alice<br>明文字节流P1~Pn"];</pre>
 
-<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p><a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference/5044%20MathJax%20basic%20tutorial%20and%20quick%20reference" rel="external nofollow noopener noreferrer" target="_blank">Typora插入数学公式与符号</a><br><a href="https://www.jianshu.com/p/7ddbb7dc8fec" rel="external nofollow noopener noreferrer" target="_blank">Typora画流程图和时序图</a><br><a href="https://www.cnblogs.com/colife/p/5566789.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/colife/p/5566789.html</a><br><a href="https://blog.csdn.net/u011779724/article/details/80776776" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/u011779724/article/details/80776776</a></p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p><a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference/5044%20MathJax%20basic%20tutorial%20and%20quick%20reference" rel="external nofollow noopener noreferrer" target="_blank">Typora插入数学公式与符号</a><br><a href="https://www.jianshu.com/p/7ddbb7dc8fec" rel="external nofollow noopener noreferrer" target="_blank">Typora画流程图和时序图</a><br><a href="https://mermaidjs.github.io/demos.html" rel="external nofollow noopener noreferrer" target="_blank">mermaid官方教程</a><br><a href="https://www.cnblogs.com/colife/p/5566789.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/colife/p/5566789.html</a><br><a href="https://blog.csdn.net/u011779724/article/details/80776776" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/u011779724/article/details/80776776</a></p>
 
       
     </div>
