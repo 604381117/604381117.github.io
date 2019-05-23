@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="荒野之萍">
 <meta property="og:description" content="近来用Markdown写文章，越来越不喜欢插入图片了，一切能用语法解决的问题坚决不放图，原因有二：  如果把流程图和数学公式都以图片方式放到文章内，当部署到Github上后，访问博客时图片加载实在太慢，有时一篇文章需要画10来个流程图，那你就得截图10来多次，还得给这些图片想一个合适的名字，同时插入图片的时候还要注意图片的插入位置和顺序；  如果你要把文章发布到其他博客平台，如CSDN、博客园，在">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-23T03:43:28.000Z">
+<meta property="og:updated_time" content="2019-05-23T03:51:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo引入Mermaid流程图和MathJax数学公式">
 <meta name="twitter:description" content="近来用Markdown写文章，越来越不喜欢插入图片了，一切能用语法解决的问题坚决不放图，原因有二：  如果把流程图和数学公式都以图片方式放到文章内，当部署到Github上后，访问博客时图片加载实在太慢，有时一篇文章需要画10来个流程图，那你就得截图10来多次，还得给这些图片想一个合适的名字，同时插入图片的时候还要注意图片的插入位置和顺序；  如果你要把文章发布到其他博客平台，如CSDN、博客园，在">
@@ -409,7 +409,7 @@
                 
               
 
-              <time title="创建时间：2019-05-23 00:30:10 / 修改时间：03:43:28" itemprop="dateCreated datePublished" datetime="2019-05-23T00:30:10+00:00">2019-05-23</time>
+              <time title="创建时间：2019-05-23 00:30:10 / 修改时间：03:51:38" itemprop="dateCreated datePublished" datetime="2019-05-23T00:30:10+00:00">2019-05-23</time>
             
 
             
@@ -497,12 +497,12 @@
 <h2 id="Mermaid"><a href="#Mermaid" class="headerlink" title="Mermaid"></a>Mermaid</h2><ol>
 <li>如果你用的主题和我的主题仓库是同一个，你只需修改blog/themes/next/_config.yml内mermaid模块enable为true，其他的啥也不用做。</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$cd</span> blog/  <span class="comment"># 走到博客根目录</span></span><br><span class="line"><span class="variable">$yarn</span> add hexo-filter-mermaid-diagrams  <span class="comment"># 安装mermai插件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Mermaid tag</span></span><br><span class="line">mermaid:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Available themes: default | dark | forest | neutral</span></span><br><span class="line">  theme: forest</span><br><span class="line">  cdn: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js</span><br><span class="line">  <span class="comment">#cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$cd</span> blog/  <span class="comment"># 走到博客根目录</span></span><br><span class="line"><span class="variable">$yarn</span> add hexo-filter-mermaid-diagrams  <span class="comment"># 安装mermaid插件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Mermaid tag</span></span><br><span class="line">mermaid:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Available themes: default | dark | forest | neutral</span></span><br><span class="line">  theme: forest</span><br><span class="line">  cdn: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js</span><br><span class="line">  <span class="comment">#cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js</span></span><br></pre></td></tr></table></figure>
 <ol start="2">
-<li>如果你的不是next主题或者你的next主题是github上旧版本仓库，你首先需要查看themes/next/_config.yml内是否有mermaid模块，如果有，按照前面的方法1，执行完方法1后，如果不奏效，不要改回去，接着下面的内容继续配置。</li>
+<li>如果你的不是next主题或者你的next主题是github上旧版本仓库，你首先需要查看themes/next/_config.yml内是否有mermaid模块，如果有，按照前面的方法1，执行完方法1后，如果不奏效，不要改回去，接着下面的内容继续配置。如果没有mermaid模块，仍然着接下面内容继续配置。</li>
 </ol>
 <ul>
-<li><p>编辑博客根目录blog/_config.yml，在最后添加入内容：</p>
+<li><p>编辑博客根目录下的blog/_config.yml，在最后添加如下内容：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mermaid chart</span></span><br><span class="line">mermaid: <span class="comment">## mermaid url https://github.com/knsv/mermaid</span></span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span>  <span class="comment"># default true</span></span><br><span class="line">  version: <span class="string">"7.1.2"</span> <span class="comment"># default v7.1.2</span></span><br><span class="line">  options:  <span class="comment"># find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js</span></span><br><span class="line">    <span class="comment">#startOnload: true  // default true</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>编辑blog/themes/next/layout/_partials/footer.swig，在最后添加如下内容：</p>
@@ -521,7 +521,7 @@
 <li><p>搜索“mermaid”，所有的流程图都应该是括在一个标签类的，如果你的流程图没有class = “mermaid”，那就是第一步安装的hexo-filter-mermaid-diagrams插件没有解析成功，可能是hexo，node，yarn版本问题所致。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 流程图解析为：&lt;pre class="mermaid"&gt;流程图&lt;/pre&gt;</span></span><br><span class="line">&lt;pre class=<span class="string">"mermaid"</span>&gt;graph LR</span><br><span class="line">A[Bob&lt;br&gt;输入明文P] --&gt;|P|B[<span class="string">"Bob的私钥PRbob&lt;br&gt;加密算法(如RSA)&lt;br&gt;C=E(PRbob,P)"</span>];</span><br><span class="line">B --&gt;|传输数字签名C|C[<span class="string">"Alice的公钥环&#123;PUbob,……&#125;&lt;br&gt;解密算法(如RSA)&lt;br&gt;P=D(PUbob,C)"</span>];</span><br><span class="line">C --&gt;|P|D[<span class="string">"Alice&lt;br&gt;输出明文P"</span>];&lt;/pre&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>若流程图确实解析成功了，但是web仍然不显示流程图，说明js文件引入失败，继续在index.html中搜索“mermaid.min.js”，正常情况下需要有如下内容，如果没有，在文件最后的”“之前添加上之后再部署观看效果，到此理论上应该可以了，如果还是不行，仔细检查下有没有遗漏步骤，考验你解bug的时候到了。</p>
+<li><p>若流程图确实解析成功了，但是web仍然不显示流程图，说明js文件引入失败，继续在index.html中搜索“mermaid.min.js”，正常情况下需要有如下内容，如果没有，在文件最后的”body”之前添加上，之后再部署观看效果，到此理论上应该可以了，如果还是不行，仔细检查下有没有遗漏步骤，考验你解bug的时候到了。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">if</span> (window.mermaid) &#123;</span><br><span class="line">    mermaid.initialize(&#123;theme: <span class="string">'forest'</span>&#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
