@@ -38,12 +38,12 @@
       </categories>
       <tags>
         <tag>信号量Semaphore</tag>
-        <tag>Nachos-3.4</tag>
         <tag>锁实现</tag>
         <tag>条件变量实现</tag>
         <tag>生产者消费者问题</tag>
         <tag>读者写者问题</tag>
         <tag>Barrier实现</tag>
+        <tag>Nachos-3.4</tag>
       </tags>
   </entry>
   <entry>
@@ -55,10 +55,10 @@
         <category>操作系统</category>
       </categories>
       <tags>
+        <tag>Nachos-3.4</tag>
         <tag>时间片轮转调度策略</tag>
         <tag>FIFO线程调度策略</tag>
         <tag>基于优先级的可抢占式调度策略</tag>
-        <tag>Nachos-3.4</tag>
       </tags>
   </entry>
   <entry>
@@ -96,9 +96,9 @@
       </categories>
       <tags>
         <tag>Dockerfile</tag>
-        <tag>Docker教程</tag>
         <tag>镜像</tag>
         <tag>容器</tag>
+        <tag>Docker教程</tag>
       </tags>
   </entry>
   <entry>
@@ -110,9 +110,9 @@
       </categories>
       <tags>
         <tag>Dockerfile</tag>
+        <tag>Hexo命令</tag>
         <tag>镜像</tag>
         <tag>容器</tag>
-        <tag>Hexo命令</tag>
       </tags>
   </entry>
   <entry>
