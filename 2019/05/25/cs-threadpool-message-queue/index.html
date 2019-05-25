@@ -97,7 +97,7 @@
 
 
   <meta name="description" content="引言并发是什么？企业在进行产品开发过程中为什么需要考虑这个问题？想象一下天猫的双11和京东的618活动，一秒的点击量就有几十万甚至上百万，这么多请求一下子涌入到服务器，服务器需要对这么多的请求逐个进行消化掉，假如服务器一秒的处理能力就几万，那么剩下的不能及时得到处理的这些请求作何处理？总不能让用户界面一直等着，因此消息队列应运而生，所有的请求都统一放入消息队列，工作线程从消息队列不断的消费，消息队">
-<meta name="keywords" content="线程池,TCP&#x2F;Socket编程,消息队列,条件变量实现,锁实现,面向对象编程,单例设计模式,Log4cpp,Makefile,智能指针,UML,类图,时序图">
+<meta name="keywords" content="线程池,TCP&#x2F;Socket编程,消息队列,条件变量实现,锁实现,面向对象编程,单例设计模式,Log4cpp,Makefile,智能指针,UML,类图,时序图,C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于线程池、消息队列和epoll模型实现Client-Server并发架构">
 <meta property="og:url" content="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/index.html">
@@ -108,7 +108,7 @@
 <meta property="og:image" content="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/cs-sequence.png">
 <meta property="og:image" content="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/cs-ret.png">
 <meta property="og:image" content="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/cs-log.png">
-<meta property="og:updated_time" content="2019-05-25T15:56:56.000Z">
+<meta property="og:updated_time" content="2019-05-25T15:58:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于线程池、消息队列和epoll模型实现Client-Server并发架构">
 <meta name="twitter:description" content="引言并发是什么？企业在进行产品开发过程中为什么需要考虑这个问题？想象一下天猫的双11和京东的618活动，一秒的点击量就有几十万甚至上百万，这么多请求一下子涌入到服务器，服务器需要对这么多的请求逐个进行消化掉，假如服务器一秒的处理能力就几万，那么剩下的不能及时得到处理的这些请求作何处理？总不能让用户界面一直等着，因此消息队列应运而生，所有的请求都统一放入消息队列，工作线程从消息队列不断的消费，消息队">
@@ -414,7 +414,7 @@
                 
               
 
-              <time title="创建时间：2019-05-25 08:16:55 / 修改时间：15:56:56" itemprop="dateCreated datePublished" datetime="2019-05-25T08:16:55+00:00">2019-05-25</time>
+              <time title="创建时间：2019-05-25 08:16:55 / 修改时间：15:58:19" itemprop="dateCreated datePublished" datetime="2019-05-25T08:16:55+00:00">2019-05-25</time>
             
 
             
@@ -479,6 +479,13 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/UML/" itemprop="url" rel="index"><span itemprop="name">UML</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a></span>
 
                 
                 
@@ -695,6 +702,8 @@
           
             <a href="/tags/时序图/" rel="tag"><i class="fa fa-tag"></i> 时序图</a>
           
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
+          
         </div>
       
 
@@ -843,7 +852,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -946,7 +957,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">43</span>
+                      
+                    
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
