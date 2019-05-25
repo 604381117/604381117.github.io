@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[基于线程池、消息队列和epoll模型实现Client-Server并发架构]]></title>
+    <url>%2F2019%2F05%2F25%2Fcs-threadpool-message-queue%2F</url>
+    <content type="text"><![CDATA[引言并发是什么？企业在进行产品开发过程中为什么需要考虑这个问题？想象一下天猫的双11和京东的618活动，一秒的点击量就有几十万甚至上百万，这么多请求一下子涌入到服务器，服务器需要对这么多的请求逐个进行消化掉，假如服务器一秒的处理能力就几万，那么甚下的不能及时得到处理的这些请求作何处理？总不能让用户界面一直等着，因此消息队列应运而生，所有的请求都统一放入消息队列，工作线程从消息队列不断的消费，消息队列相当于一个缓冲区，可达到解藕、异步和削峰的目的。 Kafka、ActiveMQ、RabbitMQ和RockerMQ都是消息队列的典型，每一种都有其自身的优势和劣势。本文我用自己编写的Buffer类模拟消息队列，如果是企业级需要上线的应用，一般都是于业界已有的MQ框架上开发。 需求原型 N个Client从标准输入接收数据，然后连续不断的发送到Server端； Server端接收来自每个Client的数据，将数据中的小写字母全部转换成大写字母，其他字符保持不变，最后把转换结果发送给对应的Client。 需求分解 拿到需求，第一步要做的就是分析需求并选择合适的设计架构，考虑到Server需要和Client进行通信，Client来自四面八方，端对端通信自然选择TCP，因此Server端需要能够监听新的连接请求和已有连接的业务请求； 又由于Server需要响应多个Client的业务请求，我们希望把业务处理交给Server端的工作线程（消费者）来做； 同时还需要一个IO线程负责监听Socket描述符，当IO线程监听到已有连接的业务请求时，立即把请求内容封装成一个任务推入消息队列尾； IO线程与工作线程互斥访问消息队列，当然工作线程消费一个任务或者IO线程添加一个任务都需要通知对方，也就是同步； 工作线程处理完毕后，把处理结果交给IO线程，由IO线程负责把结果发送给对应的Client，也就是IO线程与工作线程的分离，这里工作线程通知IO线程的方式我用eventfd来实现； 我们希望引入Log4cpp记录服务端的日志，并能够保存到文件中； 分析完这些，一个整体架构和大体的样子在脑海中就已经形成了，接着就需要编写设计文档和画流程图、类图和时序图了。 详细设计文档 uml静态类图： uml动态时序图： 效果 如图，开了三个Client，运行结果正确： Server端通过Log4cpp把日志写到文件中： 源码获取https://github.com/icoty/cs_threadpool_epoll_mq 目录结构1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859.├── client // 客户端Demo│ ├── Client.cc│ ├── Client.exe│ ├── client.sh // 进入该目录下启动Client Demo: sh client.sh│ ├── Log4func.cc // 引入日志模块重新疯转│ ├── Log4func.h│ └── Makefile // 编译方式：make├── conf│ └── my.conf // IP,Port配置文件, 从这里进行修改├── include // 头文件│ ├── Configuration.hpp // 配置文件,单例类,my.conf的内存化│ ├── FileName.hpp // 全局定义,Configuration会用到│ ├── log // 日志模块头文件│ │ └── Log4func.hpp│ ├── net // 网络框架模块头文件│ │ ├── EpollPoller.hpp│ │ ├── InetAddress.hpp│ │ ├── Socket.hpp│ │ ├── SockIO.hpp│ │ ├── TcpConnection.hpp│ │ └── TcpServer.hpp│ ├── String2Upper.hpp // 工作线程转换成大写实际走的这里面的接口│ ├── String2UpperServer.hpp // Server端的整个工厂│ └── threadpool // 线程池、锁、条件变量和消息队列的封装│ ├── Buffer.hpp│ ├── Condition.hpp│ ├── MutexLock.hpp│ ├── Noncopyable.hpp│ ├── Pthread.hpp│ ├── Task.hpp│ └── Threadpool.hpp├── log // Server端的日志通过Log4cpp记录到这个文件中│ └── log4test.log├── Makefile // 编译方式：make├── README.md ├── server // server端Demo│ ├── server.exe│ └── server.sh // 进入该目录下启动Server Demo：sh server.sh└── src // 源文件 ├── Configuration.cpp ├── log │ └── Log4func.cpp ├── main.cpp ├── net │ ├── EpollPoller.cpp │ ├── InetAddress.cpp │ ├── Socket.cpp │ ├── SockIO.cpp │ ├── TcpConnection.cpp │ └── TcpServer.cpp ├── String2Upper.cpp ├── String2UpperServer.cpp └── threadpool ├── Buffer.cpp ├── Condition.cpp ├── MutexLock.cpp // MutexLockGuard封装 ├── Pthread.cpp └── Threadpool.cpp 参考文献[1] UNIX环境高级编程第3版[2] cpp reference[2] UML时序图[3] Log4cpp官网下载[4] Log4cpp安装]]></content>
+      <categories>
+        <category>IO多路复用模型</category>
+        <category>同步机制</category>
+        <category>CS并发架构</category>
+        <category>互斥机制</category>
+        <category>TCP</category>
+        <category>线程池</category>
+        <category>UML</category>
+      </categories>
+      <tags>
+        <tag>线程池</tag>
+        <tag>TCP/Socket编程</tag>
+        <tag>消息队列</tag>
+        <tag>条件变量实现</tag>
+        <tag>锁实现</tag>
+        <tag>面向对象编程</tag>
+        <tag>单例设计模式</tag>
+        <tag>Log4cpp</tag>
+        <tag>Makefile</tag>
+        <tag>智能指针</tag>
+        <tag>UML</tag>
+        <tag>类图</tag>
+        <tag>时序图</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo引入Mermaid流程图和MathJax数学公式]]></title>
     <url>%2F2019%2F05%2F23%2Fmarkdown-mermaid-mathjax%2F</url>
     <content type="text"><![CDATA[近来用Markdown写文章，越来越不喜欢插入图片了，一切能用语法解决的问题坚决不放图，原因有二： 如果把流程图和数学公式都以图片方式放到文章内，当部署到Github上后，访问博客时图片加载实在太慢，有时一篇文章需要画10来个流程图，那你就得截图10来多次，还得给这些图片想一个合适的名字，同时插入图片的时候还要注意图片的插入位置和顺序； 如果你要把文章发布到其他博客平台，如CSDN、博客园，在每一个平台上你都要插入10来多次图片，作为程序员，这种笨拙又耗时的方法，我实在不能忍。 于是愤而搜索，Mermaid语法可实现流程图功能，MathJax语法可实现数学公式和特殊符号的功能，只需要遵循其语法规则即可，这也不由得让我想起：“苏乞儿打完降龙十八掌前17掌之后幡然领悟出第18掌的奥妙时说的那句话：我实在是太聪明了！”。下面都以next主题为例，我的主题是https://github.com/theme-next/hexo-theme-next Mermaid 如果你用的主题和我的主题仓库是同一个，你只需修改blog/themes/next/_config.yml内mermaid模块enable为true，其他的啥也不用做。 12345678910$cd blog/ # 走到博客根目录$yarn add hexo-filter-mermaid-diagrams # 安装mermaid插件# Mermaid tagmermaid: enable: true # Available themes: default | dark | forest | neutral theme: forest cdn: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js #cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js 如果你的不是next主题或者你的next主题是github上旧版本仓库，你首先需要查看themes/next/_config.yml内是否有mermaid模块，如果有，按照前面的方法1，执行完方法1后，如果不奏效，不要改回去，接着下面的内容继续配置。如果没有mermaid模块，仍然着接下面内容继续配置。 编辑博客根目录下的blog/_config.yml，在最后添加如下内容： 123456# mermaid chartmermaid: ## mermaid url https://github.com/knsv/mermaid enable: true # default true version: "7.1.2" # default v7.1.2 options: # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js #startOnload: true // default true 编辑blog/themes/next/layout/_partials/footer.swig，在最后添加如下内容： 12345678&#123;% if theme.mermaid.enable %&#125; &lt;script src='https://unpkg.com/mermaid@&#123;&#123; theme.mermaid.version &#125;&#125;/dist/mermaid.min.js'&gt;&lt;/script&gt; &lt;script&gt; if (window.mermaid) &#123; mermaid.initialize(&#123;&#123; JSON.stringify(theme.mermaid.options) &#125;&#125;); &#125; &lt;/script&gt;&#123;% endif %&#125; 如果你的主题下没有footer.swig文件，你需要在你的主题目录下搜索文件名为after-footer.ejs和after_footer.pug的文件，根据文件名的不同在其最后添加不同的内容，这点在github上的 hexo-filter-mermaid-diagrams 教程已经明确交代了。123456789101112131415161718# 若是after_footer.pug，在最后添加内容if theme.mermaid.enable == true script(type='text/javascript', id='maid-script' mermaidoptioins=theme.mermaid.options src='https://unpkg.com/mermaid@'+ theme.mermaid.version + '/dist/mermaid.min.js' + '?v=' + theme.version) script. if (window.mermaid) &#123; var options = JSON.parse(document.getElementById('maid-script').getAttribute('mermaidoptioins')); mermaid.initialize(options); &#125;# 若是after-footer.ejs，在最后添加&lt;% if (theme.mermaid.enable) &#123; %&gt; &lt;script src='https://unpkg.com/mermaid@&lt;%= theme.mermaid.version %&gt;/dist/mermaid.min.js'&gt;&lt;/script&gt; &lt;script&gt; if (window.mermaid) &#123; mermaid.initialize(&#123;theme: 'forest'&#125;); &#125; &lt;/script&gt;&lt;% &#125; %&gt; 最后，赶紧部署到github上观看效果吧，如果不奏效的话，把blog/_config.yml中的external_link设置为false和设置为true都试下，这点在github教程上也已经交代了，因为我的next版本不涉及这个问题，请君多试。1!!!Notice: if you want to use 'Class diagram', please edit your '_config.yml' file, set external_link: false. - hexo bug. 前两步做完后，如果都不奏效，这里还有一招绝杀技，那就是打开blog/public目录下你写的文章的index.html。 搜索“mermaid”，所有的流程图都应该是括在一个标签类的，如果你的流程图没有class = “mermaid”，那就是第一步安装的hexo-filter-mermaid-diagrams插件没有解析成功，可能是hexo，node，yarn版本问题所致。 12345# 流程图解析为：&lt;pre class="mermaid"&gt;流程图&lt;/pre&gt;&lt;pre class="mermaid"&gt;graph LRA[Bob&lt;br&gt;输入明文P] --&gt;|P|B["Bob的私钥PRbob&lt;br&gt;加密算法(如RSA)&lt;br&gt;C=E(PRbob,P)"];B --&gt;|传输数字签名C|C["Alice的公钥环&#123;PUbob,……&#125;&lt;br&gt;解密算法(如RSA)&lt;br&gt;P=D(PUbob,C)"];C --&gt;|P|D["Alice&lt;br&gt;输出明文P"];&lt;/pre&gt; 若流程图确实解析成功了，但是web仍然不显示流程图，说明js文件引入失败，继续在index.html中搜索“mermaid.min.js”，正常情况下需要有如下内容，如果没有，在文件最后的”body”之前添加上，之后再部署观看效果，到此理论上应该可以了，如果还是不行，仔细检查下有没有遗漏步骤，考验你解bug的时候到了。 123456&lt;script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"&gt;&lt;/script&gt;&lt;script&gt; if (window.mermaid) &#123; mermaid.initialize(&#123;theme: 'forest'&#125;); &#125;&lt;/script&gt; MathJax我的主题只需修改blog/themes/next/_config.yml内math模块enable为true即可，不需要安装任何插件，修改之后，在文章的Front Matter栏添加”mathjax: true”才能解析，其他主题也可以试下该方法可行否，都大同小异。12345678910111213141516171819202122232425262728293031# Math Equations Render Supportmath: enable: true # 这里改为true # Default (true) will load mathjax / katex script on demand. # That is it only render those page which has `mathjax: true` in Front Matter. # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE. per_page: true engine: mathjax #engine: katex # hexo-rendering-pandoc (or hexo-renderer-kramed) needed to full MathJax support. mathjax: cdn: //cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML #cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML # See: https://mhchem.github.io/MathJax-mhchem/ #mhchem: //cdn.jsdelivr.net/npm/mathjax-mhchem@3 #mhchem: //cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.0 # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) needed to full Katex support. katex: cdn: //cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css #cdn: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css copy_tex: # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex enable: false copy_tex_js: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js copy_tex_css: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css 12345678910# 文章引入方式---title: 常用加密算法的应用date: 2019-05-20 13:58:36tags: [对称加密算法,非对称加密算法/公钥算法,Hash函数/散列函数/摘要函数,消息认证,流密码,数字签名/指纹/消息摘要]categories: - [密码学与信息安全]copyright: truemathjax: true # 添加这行，文章才会解析--- 参考文献MathJax语法规则Mermaid语法规则Mermaid官方教程Mermaid Github仓库MathJax Github仓库]]></content>
@@ -37,13 +66,13 @@
         <category>互斥机制</category>
       </categories>
       <tags>
-        <tag>信号量Semaphore</tag>
-        <tag>Nachos-3.4</tag>
-        <tag>锁实现</tag>
         <tag>条件变量实现</tag>
+        <tag>锁实现</tag>
+        <tag>信号量</tag>
         <tag>生产者消费者问题</tag>
         <tag>读者写者问题</tag>
         <tag>Barrier实现</tag>
+        <tag>Nachos-3.4</tag>
       </tags>
   </entry>
   <entry>
@@ -69,8 +98,8 @@
         <category>操作系统</category>
       </categories>
       <tags>
-        <tag>PCB</tag>
         <tag>Nachos-3.4</tag>
+        <tag>PCB</tag>
       </tags>
   </entry>
   <entry>
@@ -82,7 +111,7 @@
         <category>互斥机制</category>
       </categories>
       <tags>
-        <tag>信号量Semaphore</tag>
+        <tag>信号量</tag>
         <tag>临界区</tag>
         <tag>P/V操作</tag>
       </tags>
@@ -96,9 +125,9 @@
       </categories>
       <tags>
         <tag>Dockerfile</tag>
-        <tag>Docker教程</tag>
         <tag>镜像</tag>
         <tag>容器</tag>
+        <tag>Docker教程</tag>
       </tags>
   </entry>
   <entry>
@@ -110,9 +139,9 @@
       </categories>
       <tags>
         <tag>Dockerfile</tag>
+        <tag>Hexo命令</tag>
         <tag>镜像</tag>
         <tag>容器</tag>
-        <tag>Hexo命令</tag>
       </tags>
   </entry>
   <entry>
@@ -120,9 +149,9 @@
     <url>%2F2019%2F04%2F18%2Fipc-chat%2F</url>
     <content type="text"><![CDATA[问题模型 A、B两个进程通过管道通信，A 进程每次接收到的数据通过共享内存传递给A1进程显示，同理，B进程每次接收到的数据通过共享内存传递给B1进程显示； 对于A、B 进程，采用ctrl+c（实际为SIGINT信号）方式退出，A、B进程通过捕捉SIGINT信号注册信号处理函数进行资源清理，A1、B1进程手动关闭即可。 特别注意 A、B通过管道通信，如果首先通过ctrl+c退出A进程，那么B进程的fifo1管道的写端会收到SIGPIPE信号而终止B进程，因此必须在B进程终止前清理掉被B占用的共享内存2，将共享内存2的引用计数减一，否则，当B1进程退出并清理共享内存2后，共享内存2的引用计数不为0，会导致共享内存2得不到释放； 为了解决前一个问题，A、B进程在启动后立即将各自的进程id通过管道发送给对方，并在各自的进程退出时向对方进程id发送SIGINT信号，触发对方进程进入信号处理接口执行资源回收工作； A和A1通过共享内存1通信，会从A进程和A1进程的虚拟地址空间分配一段连续的页映射到同一块连续的物理内存页上，这样A、A1两个进程都可以间接访问物理内存页，从而达到通信的目的，一般共享内存需要进行保护，读写不能同时进行，也不能同时进行写操作，共享内存省去了从内核缓冲区到用户缓冲区的拷贝，因此效率高。 编码与效果图 func.h:12345678910111213141516171819202122232425262728293031#include &lt;stdio.h&gt;#include &lt;sys/types.h&gt;#include &lt;fcntl.h&gt;#include &lt;sys/stat.h&gt;#include &lt;unistd.h&gt;#include &lt;errno.h&gt;#include &lt;strings.h&gt;#include &lt;string.h&gt;#include &lt;sys/select.h&gt;#include &lt;sys/time.h&gt;#include &lt;stdlib.h&gt;#include &lt;sys/wait.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/ipc.h&gt;#include &lt;sys/shm.h&gt;#include &lt;netinet/in.h&gt;#include &lt;stdio.h&gt;#include &lt;sys/socket.h&gt;#include &lt;arpa/inet.h&gt;#include &lt;string.h&gt;#include &lt;netdb.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/select.h&gt;#include &lt;sys/time.h&gt;#include &lt;unistd.h&gt;#include &lt;sys/uio.h&gt;#include &lt;sys/stat.h&gt;#include &lt;fcntl.h&gt;#include &lt;unistd.h&gt;#include &lt;sys/ipc.h&gt;#include &lt;sys/shm.h&gt; processA.cpp：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798#include "func.h"int shmid;int pidB; // 存放对端进程B的进程id号char *p; // 共享内存指针// 回收共享内存资源前先杀死对端进程，否则回收失败void handle(int num)&#123; kill(pidB, SIGINT); shmdt(p); int ret; if(-1 == (ret=shmctl(shmid, IPC_RMID, NULL))) &#123; perror("shmctl"); return (void)-1; &#125; exit(0);&#125;int main(int argc, char **argv)&#123; signal(SIGINT, handle); if(-1 == (shmid=shmget(1234, 4096, IPC_CREAT|0666))) &#123; perror("shmget"); return -1; &#125; if((char*)-1 == (p=(char*)shmat(shmid, NULL, 0))) &#123; perror("shmat"); return -1; &#125; // 管道文件为单工通信方式，因此需要建立两条管道 // A进程通过管道文件fifo1的读端fdr读取B进程发送的数据 // A进程通过管道文件fifo2的写端fdw向B进程发送数据 int fdr, fdw; if(-1 == (fdr=open("fifo1", O_RDONLY)) || -1 == (fdw=open("fifo2", O_WRONLY))) &#123; perror("open fifo1 or open fifo2"); return -1; &#125; // 通信之前先通过管道互相告知对方自己的进程id char s1[10] = &#123;0&#125;; char s2[10] = &#123;0&#125;; sprintf(s1, "%d\n", getpid()); write(fdw, s1, strlen(s1) - 1); read(fdr, s2, strlen(s1) - 1); pidB = atoi(s2); printf("pipe connect success, A to A1 shmid:[%d], pidA:[%d], pidB:[%d]\n", shmid, getpid(), pidB); char buf[1024] = &#123;0&#125;; int ret; fd_set rdset; while(true) &#123; FD_ZERO(&amp;rdset); FD_SET(0, &amp;rdset); FD_SET(fdr, &amp;rdset); if((ret=select(fdr+1, &amp;rdset, NULL, NULL, NULL) &gt; 0)) &#123; // fdr可读,则接收数据之后通过共享内存传给A1 if(FD_ISSET(fdr, &amp;rdset)) &#123; bzero(buf, sizeof(buf)); if(read(fdr, buf, sizeof(buf)) &gt; 0) &#123; strncpy(p, buf, sizeof(buf)); &#125; else &#123; break; &#125; &#125; // 标准输入可读,读出来传递给B进程 if(FD_ISSET(0, &amp;rdset)) &#123; bzero(buf, sizeof(buf)); if(read(STDIN_FILENO, buf, sizeof(buf)) &gt; 0) &#123; write(fdw, buf, strlen(buf) - 1); &#125; else &#123; break; &#125; &#125; &#125; &#125; close(fdr); close(fdw); return 0;&#125; processB.cpp：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798#include "func.h"int shmid;int pidA; // 存放对端进程idchar *p; // 共享内存指针// 回收共享内存资源前先杀死对端进程，否则回收失败void handle(int num)&#123; kill(pidA, SIGINT); shmdt(p); int ret; if(-1 == (ret=shmctl(shmid, IPC_RMID, NULL))) &#123; perror("shmctl"); return (void)-1; &#125; exit(0);&#125;int main(int argc, char **argv)&#123; signal(SIGINT, handle); if(-1 == (shmid=shmget(1235, 4096, IPC_CREAT|0666))) &#123; perror("shmget"); return -1; &#125; if((char*)-1 == (p=(char*)shmat(shmid, NULL, 0))) &#123; perror("shmat"); return -1; &#125; // 管道文件为单工通信方式 // B进程通过管道文件fifo1的写端fdw向A进程发送数据 // B进程通过管道文件fifo2的读端fdr接收A进程的数据 int fdr, fdw; if(-1 == (fdw=open("fifo1", O_WRONLY)) || -1 == (fdr=open("fifo2", O_RDONLY))) &#123; perror("open fifo1 or open fifo2"); return -1; &#125; // 通信之前先通过管道互相告知对方自己的进程id char s1[10] = &#123;0&#125;; char s2[10] = &#123;0&#125;; sprintf(s1, "%d\n", getpid()); write(fdw, s1, strlen(s1) - 1); read(fdr, s2, strlen(s1) - 1); pidA = atoi(s2); printf("pipe connect success, B to B1 shmid:[%d], pidA:[%d], pidB:[%d]\n", shmid, pidA, getpid()); char buf[1024] = &#123;0&#125;; int ret; fd_set rdset; while(true) &#123; FD_ZERO(&amp;rdset); FD_SET(0, &amp;rdset); FD_SET(fdr, &amp;rdset); if((ret=select(fdr+1, &amp;rdset, NULL, NULL, NULL) &gt; 0)) &#123; // fdr可读,则接收数据之后通过共享内存传给B1 if(FD_ISSET(fdr, &amp;rdset)) &#123; bzero(buf, sizeof(buf)); if(read(fdr, buf, sizeof(buf)) &gt; 0) &#123; strncpy(p, buf, sizeof(buf)); &#125; else &#123; break; &#125; &#125; // 标注输入可读,读出来传递给A进程 if(FD_ISSET(0, &amp;rdset)) &#123; bzero(buf, sizeof(buf)); if(read(STDIN_FILENO, buf, sizeof(buf)) &gt; 0) &#123; write(fdw, buf, strlen(buf) - 1); &#125; else &#123; break; &#125; &#125; &#125; &#125; close(fdr); close(fdw); return 0;&#125; processA1.cpp：123456789101112131415161718192021222324252627282930313233343536373839404142#include "func.h"int main(void)&#123; char buf[1024] = &#123;0&#125;; int shmid; if(-1 == (shmid=shmget(1234, 4096, IPC_CREAT|0666))) &#123; perror("shmget"); return -1; &#125; char *p; if((char*)-1 == (p=(char*)shmat(shmid, NULL, 0))) &#123; perror("shmat"); return -1; &#125; while(true) &#123; if(!(strcmp(buf, p))) &#123; continue; &#125; else &#123; // 共享内存有数据可读 bzero(buf, sizeof(buf)); strcpy(buf, p); printf("I am A1, recv from A:[%s]\n", buf); &#125; &#125; if(-1 ==(shmctl(shmid, IPC_RMID, 0))) &#123; perror("shmctl"); return -1; &#125; return 0;&#125; processB1.cpp：123456789101112131415161718192021222324252627282930313233343536373839404142#include "func.h"int main(void)&#123; char buf[1024] = &#123;0&#125;; int shmid; if(-1 == (shmid=shmget(1235, 4096, IPC_CREAT|0666))) &#123; perror("shmget"); return -1; &#125; char *p; if((char*)-1 == (p=(char*)shmat(shmid, NULL, 0))) &#123; perror("shmat"); return -1; &#125; while(true) &#123; if(!(strcmp(buf, p))) &#123; continue; &#125; else &#123; // 共享内存有数据可读 bzero(buf, sizeof(buf)); strcpy(buf, p); printf("I am B1, recv from B:[%s]\n", buf); &#125; &#125; if(-1 ==(shmctl(shmid, IPC_RMID, 0))) &#123; perror("shmctl"); return -1; &#125; return 0;&#125; 回收资源 这里首先通过ctrl+c退出A进程，然后B进程收到SIGPIPE信号退出，A、B进程同时调用各自的信号处理函数回收资源，通过ipcs命令发现拥有者为root的共享内存资源的nattch都为1，分别被A1和B1占有。 然后手动关闭A1、B1进程，再次执行ipcs命令，发现拥有者为root的共享内存资源不存在，已经释放成功。1$ ipcs # 查看共性内存资源数量 源码获取本文所有源码链接]]></content>
       <categories>
+        <category>IO多路复用模型</category>
         <category>同步机制</category>
         <category>进程间通信</category>
-        <category>IO多路复用模型</category>
       </categories>
       <tags>
         <tag>Linux</tag>
