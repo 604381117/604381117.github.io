@@ -97,7 +97,7 @@
 
 
   <meta name="description" content="引言并发是什么？企业在进行产品开发过程中为什么需要考虑这个问题？想象一下天猫的双11和京东的618活动，一秒的点击量就有几十万甚至上百万，这么多请求一下子涌入到服务器，服务器需要对这么多的请求逐个进行消化掉，假如服务器一秒的处理能力就几万，那么剩下的不能及时得到处理的这些请求作何处理？总不能让用户界面一直等着，因此消息队列应运而生，所有的请求都统一放入消息队列，工作线程从消息队列不断的消费，消息队">
-<meta name="keywords" content="线程池,TCP&#x2F;Socket编程,消息队列,条件变量实现,锁实现,面向对象编程,单例设计模式,Log4cpp,Makefile,智能指针,UML,类图,时序图,C++">
+<meta name="keywords" content="线程池,TCP&#x2F;Socket编程,消息队列,条件变量实现,锁实现,面向对象编程,单例设计模式,epoll,Log4cpp,Makefile,智能指针,UML,类图,时序图,C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于线程池、消息队列和epoll模型实现Client-Server并发架构">
 <meta property="og:url" content="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/index.html">
@@ -108,7 +108,7 @@
 <meta property="og:image" content="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/cs-sequence.png">
 <meta property="og:image" content="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/cs-ret.png">
 <meta property="og:image" content="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/cs-log.png">
-<meta property="og:updated_time" content="2019-05-25T16:17:27.000Z">
+<meta property="og:updated_time" content="2019-05-27T02:22:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于线程池、消息队列和epoll模型实现Client-Server并发架构">
 <meta name="twitter:description" content="引言并发是什么？企业在进行产品开发过程中为什么需要考虑这个问题？想象一下天猫的双11和京东的618活动，一秒的点击量就有几十万甚至上百万，这么多请求一下子涌入到服务器，服务器需要对这么多的请求逐个进行消化掉，假如服务器一秒的处理能力就几万，那么剩下的不能及时得到处理的这些请求作何处理？总不能让用户界面一直等着，因此消息队列应运而生，所有的请求都统一放入消息队列，工作线程从消息队列不断的消费，消息队">
@@ -414,12 +414,24 @@
                 
               
 
-              <time title="创建时间：2019-05-25 08:16:55 / 修改时间：16:17:27" itemprop="dateCreated datePublished" datetime="2019-05-25T08:16:55+00:00">2019-05-25</time>
+              <time title="创建时间：2019-05-25 08:16:55" itemprop="dateCreated datePublished" datetime="2019-05-25T08:16:55+00:00">2019-05-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-27 02:22:06" itemprop="dateModified" datetime="2019-05-27T02:22:06+00:00">2019-05-27</time>
               
             
           </span>
@@ -606,7 +618,7 @@
   <p><span>本文标题:</span><a href="/2019/05/25/cs-threadpool-message-queue/">基于线程池、消息队列和epoll模型实现Client-Server并发架构</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 icoty 的个人博客">icoty</a></p>
   <p><span>发布时间:</span>2019年05月25日 - 08:05</p>
-  <p><span>最后更新:</span>2019年05月25日 - 16:05</p>
+  <p><span>最后更新:</span>2019年05月27日 - 02:05</p>
   <p><span>原始链接:</span><a href="/2019/05/25/cs-threadpool-message-queue/" title="基于线程池、消息队列和epoll模型实现Client-Server并发架构">https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/" aria-label="复制成功！"></i></span>
   </p>
@@ -689,6 +701,8 @@
             <a href="/tags/面向对象编程/" rel="tag"><i class="fa fa-tag"></i> 面向对象编程</a>
           
             <a href="/tags/单例设计模式/" rel="tag"><i class="fa fa-tag"></i> 单例设计模式</a>
+          
+            <a href="/tags/epoll/" rel="tag"><i class="fa fa-tag"></i> epoll</a>
           
             <a href="/tags/Log4cpp/" rel="tag"><i class="fa fa-tag"></i> Log4cpp</a>
           
@@ -959,7 +973,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">44</span>
+                      
+                    
+                    <span class="site-state-item-count">45</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
