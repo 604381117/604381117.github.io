@@ -8711,7 +8711,8 @@
 								"$ref": "AAAAAAFq7oiv6v3dmVk="
 							},
 							"name": "Configuration     _conf",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -8720,7 +8721,8 @@
 								"$ref": "AAAAAAFq7oiv6v3dmVk="
 							},
 							"name": "String2Upper     _wordquery",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -8729,7 +8731,8 @@
 								"$ref": "AAAAAAFq7oiv6v3dmVk="
 							},
 							"name": "Threadpool        _threadpool",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -8738,7 +8741,8 @@
 								"$ref": "AAAAAAFq7oiv6v3dmVk="
 							},
 							"name": "TcpServer          _tcpserver",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -8901,7 +8905,8 @@
 								"$ref": "AAAAAAFq7pH4Pf8Wnh0="
 							},
 							"name": "Configuration & _conf",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -8990,7 +8995,8 @@
 								"$ref": "AAAAAAFq7pT+gP9kU10="
 							},
 							"name": "bool     _isExit",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -8999,7 +9005,8 @@
 								"$ref": "AAAAAAFq7pT+gP9kU10="
 							},
 							"name": "size_t  _threadNum; 工作线程数量",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9008,7 +9015,8 @@
 								"$ref": "AAAAAAFq7pT+gP9kU10="
 							},
 							"name": "size_t  _bufSize; 消息队列大小",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9017,7 +9025,8 @@
 								"$ref": "AAAAAAFq7pT+gP9kU10="
 							},
 							"name": "Buffer  _buff; 消息队列类",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9026,7 +9035,8 @@
 								"$ref": "AAAAAAFq7pT+gP9kU10="
 							},
 							"name": "vector { shared_ptr { Thread } }   _threads; 工作线程",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -9166,7 +9176,8 @@
 								"$ref": "AAAAAAFq7qn/9AKOvuM="
 							},
 							"name": "bool           _flag",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9175,7 +9186,8 @@
 								"$ref": "AAAAAAFq7qn/9AKOvuM="
 							},
 							"name": "MutexLock _mutex; 互斥量",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9184,7 +9196,8 @@
 								"$ref": "AAAAAAFq7qn/9AKOvuM="
 							},
 							"name": "Condition   _notFull",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9193,7 +9206,8 @@
 								"$ref": "AAAAAAFq7qn/9AKOvuM="
 							},
 							"name": "Condition   _notEmpty",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9202,7 +9216,8 @@
 								"$ref": "AAAAAAFq7qn/9AKOvuM="
 							},
 							"name": "size_t         _size; 队列大小",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9211,7 +9226,8 @@
 								"$ref": "AAAAAAFq7qn/9AKOvuM="
 							},
 							"name": "queue { ElemType }  _que;",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -9332,7 +9348,8 @@
 								"$ref": "AAAAAAFq7q+hOwpu6p4="
 							},
 							"name": "InetAddress _addr",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9341,7 +9358,8 @@
 								"$ref": "AAAAAAFq7q+hOwpu6p4="
 							},
 							"name": "Socket         _sockfd",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9350,7 +9368,8 @@
 								"$ref": "AAAAAAFq7q+hOwpu6p4="
 							},
 							"name": "EpollPoller   _poller; IO模型",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -9464,7 +9483,8 @@
 								"$ref": "AAAAAAFq7rKKjRAwqAc="
 							},
 							"name": "string  _filepath;",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9473,7 +9493,8 @@
 								"$ref": "AAAAAAFq7rKKjRAwqAc="
 							},
 							"name": "map { string string }  _configMap",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -9567,7 +9588,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "const int _epollfd",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9576,7 +9598,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "const int _listenfd",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9585,7 +9608,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "const int _eventfd; 工作线程把处理结果交给IO线程时通知用",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9594,7 +9618,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "bool        _isLooping",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9603,7 +9628,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "MutexLock _mutex; 结果队列锁",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9612,7 +9638,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "svector { Function }  _pendingFunctors; 结果队列",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9621,7 +9648,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "vector { struct epoll_event}  _events; 所有就绪socket",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9630,7 +9658,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "map { int TcpConnectionPtr }   _lists; sfd和tcpconnection映射",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9639,7 +9668,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "EpollCallback _onConnectCallback; 新连接请求回调",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9648,7 +9678,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "EpollCallback _onMessageCallback; 业务请求回调",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9657,7 +9688,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "EpollCallback _onCloseCallback; 断开连接回调",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -9884,7 +9916,8 @@
 								"$ref": "AAAAAAFq7sSdkDyZxrY="
 							},
 							"name": "pthread_cond_t _cond",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9893,7 +9926,8 @@
 								"$ref": "AAAAAAFq7sSdkDyZxrY="
 							},
 							"name": "MutexLock & _mutex",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -10015,7 +10049,8 @@
 								"$ref": "AAAAAAFq7sZt60JevJA="
 							},
 							"name": "bool _islocking",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10024,7 +10059,8 @@
 								"$ref": "AAAAAAFq7sZt60JevJA="
 							},
 							"name": "pthread_mutex_t _mutex",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -10099,7 +10135,8 @@
 								"$ref": "AAAAAAFq7st3llL2VXg="
 							},
 							"name": "pthread_t  _pthId",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10108,7 +10145,8 @@
 								"$ref": "AAAAAAFq7st3llL2VXg="
 							},
 							"name": "bool           _isRunning",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10117,7 +10155,8 @@
 								"$ref": "AAAAAAFq7st3llL2VXg="
 							},
 							"name": "ThreadCallback _cb",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -10222,7 +10261,8 @@
 								"$ref": "AAAAAAFq7s71TGFvX9A="
 							},
 							"name": "const int _sockfd",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -10376,7 +10416,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "Socket _sockfd",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10385,7 +10426,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "SocketIO _sockIO",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10394,7 +10436,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "const InetAddress _localAddr",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10403,7 +10446,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "const InetAddress _peerAddr",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10412,7 +10456,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "bool _isShutdownWrite",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10421,7 +10466,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "EpollPoller *_epollPoller",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10430,7 +10476,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "TcpConnectionCallback onConnectCallback_",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10439,7 +10486,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "TcpConnectionCallback onMessageCallback_",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10448,7 +10496,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "TcpConnectionCallback onCloseCallback_",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -10762,7 +10811,8 @@
 								"$ref": "AAAAAAFq7tqIp5ZhMSE="
 							},
 							"name": "const int _sockfd",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -10997,7 +11047,8 @@
 								"$ref": "AAAAAAFq7t3ioKnld54="
 							},
 							"name": "struct sockaddr_in _addr",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -12912,7 +12963,7 @@
 											"left": 295,
 											"top": 272,
 											"width": 14,
-											"height": 41
+											"height": 81
 										}
 									],
 									"font": "Arial;13;0",
@@ -13179,8 +13230,8 @@
 												"$ref": "AAAAAAFq71gM5P50WwM="
 											},
 											"font": "Arial;13;0",
-											"left": 590,
-											"top": 336,
+											"left": 594,
+											"top": 328,
 											"width": 187.16064453125,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -13202,8 +13253,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 683,
-											"top": 321,
+											"left": 687,
+											"top": 313,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 25,
@@ -13223,8 +13274,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 683,
-											"top": 356,
+											"left": 687,
+											"top": 348,
 											"height": 13,
 											"alpha": -1.5707963267948966,
 											"distance": 10,
@@ -13244,7 +13295,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1066,
-											"top": 352,
+											"top": 344,
 											"width": 14,
 											"height": 29
 										}
@@ -13256,7 +13307,7 @@
 									"tail": {
 										"$ref": "AAAAAAFq7vN5SPXJ2JA="
 									},
-									"points": "301:352;1066:352",
+									"points": "308:344;1066:344",
 									"nameLabel": {
 										"$ref": "AAAAAAFq71gM5P52KEs="
 									},
@@ -13291,11 +13342,11 @@
 											},
 											"font": "Arial;13;0",
 											"left": 865,
-											"top": 326,
+											"top": 335,
 											"width": 599.7392578125,
 											"height": 13,
-											"alpha": -3.9540115435468417,
-											"distance": 26.1725046566048,
+											"alpha": -3.648691393831287,
+											"distance": 20.591260281974,
 											"hostEdge": {
 												"$ref": "AAAAAAFq71jQN/6MxdY="
 											},
@@ -13926,14 +13977,14 @@
 											"left": 60,
 											"top": 80,
 											"width": 1,
-											"height": 875
+											"height": 887
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 24,
 									"top": 40,
 									"width": 72.736328125,
-									"height": 915,
+									"height": 927,
 									"nameCompartment": {
 										"$ref": "AAAAAAFq7zYpIfvVdF8="
 									},
@@ -15047,7 +15098,7 @@
 											"left": 1292,
 											"top": 756,
 											"width": 14,
-											"height": 61
+											"height": 96
 										}
 									],
 									"font": "Arial;13;0",
@@ -15318,8 +15369,8 @@
 												"$ref": "AAAAAAFq7zx1lPwmFDo="
 											},
 											"font": "Arial;13;0",
-											"left": 1266,
-											"top": 803,
+											"left": 1273,
+											"top": 795,
 											"width": 156.1015625,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -15341,8 +15392,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 1359,
-											"top": 803,
+											"left": 1366,
+											"top": 795,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 25,
@@ -15362,8 +15413,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 1325,
-											"top": 804,
+											"left": 1332,
+											"top": 796,
 											"height": 13,
 											"alpha": -1.5707963267948966,
 											"distance": 10,
@@ -15382,8 +15433,8 @@
 												"$ref": "AAAAAAFq7zx1lPwmFDo="
 											},
 											"font": "Arial;13;0",
-											"left": 1292,
-											"top": 820,
+											"left": 1299,
+											"top": 812,
 											"width": 14,
 											"height": 29
 										}
@@ -15395,7 +15446,7 @@
 									"tail": {
 										"$ref": "AAAAAAFq7vbdlfYqwZQ="
 									},
-									"points": "1305:800;1335:800;1335:820;1305:820",
+									"points": "1312:792;1342:792;1342:812;1312:812",
 									"nameLabel": {
 										"$ref": "AAAAAAFq7zx1lPwoajI="
 									},
@@ -15429,7 +15480,7 @@
 												"$ref": "AAAAAAFq70A9mvxjvG0="
 											},
 											"font": "Arial;13;0",
-											"left": 1090,
+											"left": 1094,
 											"top": 837,
 											"width": 188.60791015625,
 											"height": 13,
@@ -15452,7 +15503,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 1184,
+											"left": 1188,
 											"top": 852,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -15473,7 +15524,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 1185,
+											"left": 1189,
 											"top": 817,
 											"height": 13,
 											"alpha": -1.5707963267948966,
@@ -15506,7 +15557,7 @@
 									"tail": {
 										"$ref": "AAAAAAFq7vbdlfYqwZQ="
 									},
-									"points": "1292:833;1079:833",
+									"points": "1299:833;1079:833",
 									"nameLabel": {
 										"$ref": "AAAAAAFq70A9mvxlGw4="
 									},
@@ -15607,7 +15658,7 @@
 											"left": 295,
 											"top": 840,
 											"width": 14,
-											"height": 29
+											"height": 41
 										}
 									],
 									"font": "Arial;13;0",
@@ -15651,8 +15702,8 @@
 												"$ref": "AAAAAAFq70K/Qvy2Csg="
 											},
 											"font": "Arial;13;0",
-											"left": 503,
-											"top": 864,
+											"left": 507,
+											"top": 856,
 											"width": 361.8291015625,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -15674,8 +15725,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 683,
-											"top": 849,
+											"left": 687,
+											"top": 841,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 25,
@@ -15695,8 +15746,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 683,
-											"top": 884,
+											"left": 687,
+											"top": 876,
 											"height": 13,
 											"alpha": -1.5707963267948966,
 											"distance": 10,
@@ -15716,7 +15767,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1066,
-											"top": 880,
+											"top": 872,
 											"width": 14,
 											"height": 29
 										}
@@ -15728,7 +15779,7 @@
 									"tail": {
 										"$ref": "AAAAAAFq7vN5SPXJ2JA="
 									},
-									"points": "301:880;1066:880",
+									"points": "308:872;1066:872",
 									"nameLabel": {
 										"$ref": "AAAAAAFq70K/Qvy4u7g="
 									},
@@ -15829,7 +15880,7 @@
 											"left": 1292,
 											"top": 912,
 											"width": 14,
-											"height": 29
+											"height": 41
 										}
 									],
 									"font": "Arial;13;0",
@@ -15873,7 +15924,7 @@
 												"$ref": "AAAAAAFq70fdUv0YcLw="
 											},
 											"font": "Arial;13;0",
-											"left": 1066,
+											"left": 1069,
 											"top": 927,
 											"width": 231.25146484375,
 											"height": 13,
@@ -15896,7 +15947,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 1181,
+											"left": 1184,
 											"top": 963,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -15917,7 +15968,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 1182,
+											"left": 1185,
 											"top": 928,
 											"height": 13,
 											"alpha": -1.5707963267948966,
@@ -15950,7 +16001,7 @@
 									"tail": {
 										"$ref": "AAAAAAFq7vbdlfYqwZQ="
 									},
-									"points": "1285:944;1079:944",
+									"points": "1292:944;1079:944",
 									"nameLabel": {
 										"$ref": "AAAAAAFq70fdUv0arZ8="
 									},
@@ -16951,7 +17002,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role1"
+					"name": "Role1",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -16959,7 +17011,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role2"
+					"name": "Role2",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -16967,7 +17020,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role3"
+					"name": "Role3",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -16975,7 +17029,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role4"
+					"name": "Role4",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -16983,7 +17038,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role5"
+					"name": "Role5",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -16991,7 +17047,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role6"
+					"name": "Role6",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -16999,7 +17056,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role7"
+					"name": "Role7",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -17007,7 +17065,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role8"
+					"name": "Role8",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -17015,7 +17074,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role9"
+					"name": "Role9",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -17023,7 +17083,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role10"
+					"name": "Role10",
+					"type": ""
 				}
 			]
 		}
