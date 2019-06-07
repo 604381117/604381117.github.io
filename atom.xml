@@ -229,9 +229,9 @@
     
     </summary>
     
-      <category term="操作系统" scheme="https://icoty.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
       <category term="线程调度算法" scheme="https://icoty.github.io/categories/%E7%BA%BF%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="操作系统" scheme="https://icoty.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
     
       <category term="Nachos-3.4" scheme="https://icoty.github.io/tags/Nachos-3-4/"/>
