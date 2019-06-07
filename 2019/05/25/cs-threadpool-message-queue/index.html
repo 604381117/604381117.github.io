@@ -104,15 +104,15 @@
 <meta property="og:site_name" content="荒野之萍">
 <meta property="og:description" content="引言并发是什么？企业在进行产品开发过程中为什么需要考虑这个问题？想象一下天猫的双11和京东的618活动，一秒的点击量就有几十万甚至上百万，这么多请求一下子涌入到服务器，服务器需要对这么多的请求逐个进行消化掉，假如服务器一秒的处理能力就几万，那么剩下的不能及时得到处理的这些请求作何处理？总不能让用户界面一直等着，因此消息队列应运而生，所有的请求都统一放入消息队列，工作线程从消息队列不断的消费，消息队">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/cs-uml.png">
-<meta property="og:image" content="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/cs-sequence.png">
+<meta property="og:image" content="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/cs-uml">
+<meta property="og:image" content="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/cs-sequence">
 <meta property="og:image" content="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/cs-ret.png">
 <meta property="og:image" content="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/cs-log.png">
-<meta property="og:updated_time" content="2019-06-07T03:00:41.000Z">
+<meta property="og:updated_time" content="2019-06-07T05:56:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于线程池、消息队列和epoll模型实现Client-Server并发架构">
 <meta name="twitter:description" content="引言并发是什么？企业在进行产品开发过程中为什么需要考虑这个问题？想象一下天猫的双11和京东的618活动，一秒的点击量就有几十万甚至上百万，这么多请求一下子涌入到服务器，服务器需要对这么多的请求逐个进行消化掉，假如服务器一秒的处理能力就几万，那么剩下的不能及时得到处理的这些请求作何处理？总不能让用户界面一直等着，因此消息队列应运而生，所有的请求都统一放入消息队列，工作线程从消息队列不断的消费，消息队">
-<meta name="twitter:image" content="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/cs-uml.png">
+<meta name="twitter:image" content="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/cs-uml">
 
 
 
@@ -431,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-07 03:00:41" itemprop="dateModified" datetime="2019-06-07T03:00:41+00:00">2019-06-07</time>
+                <time title="修改时间：2019-06-07 05:56:41" itemprop="dateModified" datetime="2019-06-07T05:56:41+00:00">2019-06-07</time>
               
             
           </span>
@@ -568,13 +568,13 @@
 <li>分析完这些，一个整体架构和大体的样子在脑海中就已经形成了，接着就需要编写设计文档和画流程图、类图和时序图了。</li>
 </ol>
 <h2 id="详细设计文档"><a href="#详细设计文档" class="headerlink" title="详细设计文档"></a>详细设计文档</h2><ol>
-<li>uml静态类图：</li>
+<li>UML静态类图：</li>
 </ol>
-<p><img src="/2019/05/25/cs-threadpool-message-queue/cs-uml.png" alt="cmd"></p>
+<p><img src="/2019/05/25/cs-threadpool-message-queue/cs-uml" alt="cmd"></p>
 <ol start="2">
-<li>uml动态时序图：</li>
+<li>UML动态时序图：</li>
 </ol>
-<p><img src="/2019/05/25/cs-threadpool-message-queue/cs-sequence.png" alt="cmd"></p>
+<p><img src="/2019/05/25/cs-threadpool-message-queue/cs-sequence" alt="cmd"></p>
 <h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><ol>
 <li>如图，开了三个Client，运行结果正确：</li>
 </ol>
@@ -618,7 +618,7 @@
   <p><span>本文标题:</span><a href="/2019/05/25/cs-threadpool-message-queue/">基于线程池、消息队列和epoll模型实现Client-Server并发架构</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 icoty 的个人博客">icoty</a></p>
   <p><span>发布时间:</span>2019年05月25日 - 08:05</p>
-  <p><span>最后更新:</span>2019年06月07日 - 03:06</p>
+  <p><span>最后更新:</span>2019年06月07日 - 05:06</p>
   <p><span>原始链接:</span><a href="/2019/05/25/cs-threadpool-message-queue/" title="基于线程池、消息队列和epoll模型实现Client-Server并发架构">https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/" aria-label="复制成功！"></i></span>
   </p>

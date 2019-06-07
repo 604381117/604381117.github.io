@@ -17,7 +17,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Main",
+					"name": "cs_threadpool_mq_class",
 					"defaultDiagram": true,
 					"ownedViews": [
 						{
@@ -8711,7 +8711,8 @@
 								"$ref": "AAAAAAFq7oiv6v3dmVk="
 							},
 							"name": "Configuration     _conf",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -8720,7 +8721,8 @@
 								"$ref": "AAAAAAFq7oiv6v3dmVk="
 							},
 							"name": "String2Upper     _wordquery",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -8729,7 +8731,8 @@
 								"$ref": "AAAAAAFq7oiv6v3dmVk="
 							},
 							"name": "Threadpool        _threadpool",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -8738,7 +8741,8 @@
 								"$ref": "AAAAAAFq7oiv6v3dmVk="
 							},
 							"name": "TcpServer          _tcpserver",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -8901,7 +8905,8 @@
 								"$ref": "AAAAAAFq7pH4Pf8Wnh0="
 							},
 							"name": "Configuration & _conf",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -8990,7 +8995,8 @@
 								"$ref": "AAAAAAFq7pT+gP9kU10="
 							},
 							"name": "bool     _isExit",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -8999,7 +9005,8 @@
 								"$ref": "AAAAAAFq7pT+gP9kU10="
 							},
 							"name": "size_t  _threadNum; 工作线程数量",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9008,7 +9015,8 @@
 								"$ref": "AAAAAAFq7pT+gP9kU10="
 							},
 							"name": "size_t  _bufSize; 消息队列大小",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9017,7 +9025,8 @@
 								"$ref": "AAAAAAFq7pT+gP9kU10="
 							},
 							"name": "Buffer  _buff; 消息队列类",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9026,7 +9035,8 @@
 								"$ref": "AAAAAAFq7pT+gP9kU10="
 							},
 							"name": "vector { shared_ptr { Thread } }   _threads; 工作线程",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -9166,7 +9176,8 @@
 								"$ref": "AAAAAAFq7qn/9AKOvuM="
 							},
 							"name": "bool           _flag",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9175,7 +9186,8 @@
 								"$ref": "AAAAAAFq7qn/9AKOvuM="
 							},
 							"name": "MutexLock _mutex; 互斥量",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9184,7 +9196,8 @@
 								"$ref": "AAAAAAFq7qn/9AKOvuM="
 							},
 							"name": "Condition   _notFull",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9193,7 +9206,8 @@
 								"$ref": "AAAAAAFq7qn/9AKOvuM="
 							},
 							"name": "Condition   _notEmpty",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9202,7 +9216,8 @@
 								"$ref": "AAAAAAFq7qn/9AKOvuM="
 							},
 							"name": "size_t         _size; 队列大小",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9211,7 +9226,8 @@
 								"$ref": "AAAAAAFq7qn/9AKOvuM="
 							},
 							"name": "queue { ElemType }  _que;",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -9332,7 +9348,8 @@
 								"$ref": "AAAAAAFq7q+hOwpu6p4="
 							},
 							"name": "InetAddress _addr",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9341,7 +9358,8 @@
 								"$ref": "AAAAAAFq7q+hOwpu6p4="
 							},
 							"name": "Socket         _sockfd",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9350,7 +9368,8 @@
 								"$ref": "AAAAAAFq7q+hOwpu6p4="
 							},
 							"name": "EpollPoller   _poller; IO模型",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -9464,7 +9483,8 @@
 								"$ref": "AAAAAAFq7rKKjRAwqAc="
 							},
 							"name": "string  _filepath;",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9473,7 +9493,8 @@
 								"$ref": "AAAAAAFq7rKKjRAwqAc="
 							},
 							"name": "map { string string }  _configMap",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -9567,7 +9588,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "const int _epollfd",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9576,7 +9598,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "const int _listenfd",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9585,7 +9608,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "const int _eventfd; 工作线程把处理结果交给IO线程时通知用",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9594,7 +9618,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "bool        _isLooping",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9603,7 +9628,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "MutexLock _mutex; 结果队列锁",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9612,7 +9638,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "svector { Function }  _pendingFunctors; 结果队列",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9621,7 +9648,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "vector { struct epoll_event}  _events; 所有就绪socket",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9630,7 +9658,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "map { int TcpConnectionPtr }   _lists; sfd和tcpconnection映射",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9639,7 +9668,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "EpollCallback _onConnectCallback; 新连接请求回调",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9648,7 +9678,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "EpollCallback _onMessageCallback; 业务请求回调",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9657,7 +9688,8 @@
 								"$ref": "AAAAAAFq7rfRRBoc4TQ="
 							},
 							"name": "EpollCallback _onCloseCallback; 断开连接回调",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -9884,7 +9916,8 @@
 								"$ref": "AAAAAAFq7sSdkDyZxrY="
 							},
 							"name": "pthread_cond_t _cond",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -9893,7 +9926,8 @@
 								"$ref": "AAAAAAFq7sSdkDyZxrY="
 							},
 							"name": "MutexLock & _mutex",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -10015,7 +10049,8 @@
 								"$ref": "AAAAAAFq7sZt60JevJA="
 							},
 							"name": "bool _islocking",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10024,7 +10059,8 @@
 								"$ref": "AAAAAAFq7sZt60JevJA="
 							},
 							"name": "pthread_mutex_t _mutex",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -10099,7 +10135,8 @@
 								"$ref": "AAAAAAFq7st3llL2VXg="
 							},
 							"name": "pthread_t  _pthId",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10108,7 +10145,8 @@
 								"$ref": "AAAAAAFq7st3llL2VXg="
 							},
 							"name": "bool           _isRunning",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10117,7 +10155,8 @@
 								"$ref": "AAAAAAFq7st3llL2VXg="
 							},
 							"name": "ThreadCallback _cb",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -10222,7 +10261,8 @@
 								"$ref": "AAAAAAFq7s71TGFvX9A="
 							},
 							"name": "const int _sockfd",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -10376,7 +10416,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "Socket _sockfd",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10385,7 +10426,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "SocketIO _sockIO",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10394,7 +10436,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "const InetAddress _localAddr",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10403,7 +10446,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "const InetAddress _peerAddr",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10412,7 +10456,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "bool _isShutdownWrite",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10421,7 +10466,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "EpollPoller *_epollPoller",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10430,7 +10476,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "TcpConnectionCallback onConnectCallback_",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10439,7 +10486,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "TcpConnectionCallback onMessageCallback_",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10448,7 +10496,8 @@
 								"$ref": "AAAAAAFq7tHbWGlN67k="
 							},
 							"name": "TcpConnectionCallback onCloseCallback_",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -10762,7 +10811,8 @@
 								"$ref": "AAAAAAFq7tqIp5ZhMSE="
 							},
 							"name": "const int _sockfd",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -10997,7 +11047,8 @@
 								"$ref": "AAAAAAFq7t3ioKnld54="
 							},
 							"name": "struct sockaddr_in _addr",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -11071,7 +11122,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFq7vFA7/U4Mv8="
 							},
-							"name": "SequenceDiagram1",
+							"name": "cs_threadpool_mq_sequence",
 							"ownedViews": [
 								{
 									"_type": "UMLFrameView",
@@ -11092,9 +11143,9 @@
 											"font": "Arial;13;0",
 											"left": 75.97900390625,
 											"top": 10,
-											"width": 115.9052734375,
+											"width": 171.56787109375,
 											"height": 13,
-											"text": "SequenceDiagram1"
+											"text": "cs_threadpool_mq_sequence"
 										},
 										{
 											"_type": "LabelView",
@@ -11113,8 +11164,8 @@
 									"font": "Arial;13;0",
 									"left": 5,
 									"top": 5,
-									"width": 1700,
-									"height": 1436,
+									"width": 1588,
+									"height": 1060,
 									"nameLabel": {
 										"$ref": "AAAAAAFq7vFA8PU7MY4="
 									},
@@ -16951,7 +17002,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role1"
+					"name": "Role1",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -16959,7 +17011,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role2"
+					"name": "Role2",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -16967,7 +17020,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role3"
+					"name": "Role3",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -16975,7 +17029,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role4"
+					"name": "Role4",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -16983,7 +17038,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role5"
+					"name": "Role5",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -16991,7 +17047,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role6"
+					"name": "Role6",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -16999,7 +17056,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role7"
+					"name": "Role7",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -17007,7 +17065,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role8"
+					"name": "Role8",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -17015,7 +17074,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role9"
+					"name": "Role9",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -17023,7 +17083,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFq7vFA7fU3m34="
 					},
-					"name": "Role10"
+					"name": "Role10",
+					"type": ""
 				}
 			]
 		}
