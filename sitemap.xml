@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://icoty.github.io/2019/06/09/xv6-virtual-memory/</loc>
+    <loc>https://icoty.github.io/2019/06/09/xv6-interrupt-systemcall/</loc>
     
-    <lastmod>2019-06-09T04:36:15.000Z</lastmod>
+    <lastmod>2019-06-09T04:43:20.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://icoty.github.io/2019/06/09/xv6-interrupt-systemcall/</loc>
+    <loc>https://icoty.github.io/2019/06/09/xv6-virtual-memory/</loc>
     
-    <lastmod>2019-06-09T04:09:09.000Z</lastmod>
+    <lastmod>2019-06-09T04:40:46.000Z</lastmod>
     
   </url>
   

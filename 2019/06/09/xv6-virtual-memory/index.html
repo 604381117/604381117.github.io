@@ -106,7 +106,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://icoty.github.io/2019/06/09/xv6-virtual-memory/memlayout">
 <meta property="og:image" content="https://icoty.github.io/2019/06/09/xv6-virtual-memory/V2P">
-<meta property="og:updated_time" content="2019-06-09T04:36:15.000Z">
+<meta property="og:updated_time" content="2019-06-09T04:40:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xv6源代码阅读-虚拟内存管理">
 <meta name="twitter:description" content="Exercise1 源代码阅读 内存管理部分: kalloc.c vm.c 以及相关其他文件代码   kalloc.c：char  kalloc(void)负责在需要的时候为用户空间、内核栈、页表页以及缓冲区分配物理内存，将物理地址转为虚拟地址返回，物理页大小为4k。void kfree(char  v)接收一个虚拟地址，找对对应的物理地址进行释放。xv6使用空闲内存的前部分作为指针域来指向下一页">
@@ -412,7 +412,7 @@
                 
               
 
-              <time title="创建时间：2019-06-09 03:18:06 / 修改时间：04:36:15" itemprop="dateCreated datePublished" datetime="2019-06-09T03:18:06+00:00">2019-06-09</time>
+              <time title="创建时间：2019-06-09 03:18:06 / 修改时间：04:40:46" itemprop="dateCreated datePublished" datetime="2019-06-09T03:18:06+00:00">2019-06-09</time>
             
 
             
@@ -530,7 +530,7 @@
 </li>
 </ol>
 <ul>
-<li><p>main函数通过调用void kinit1(void <em>vstart, void </em>vend), void kinit2(void <em>vstart, void </em>vend), void kvmalloc(void)函数来实现内核新页表的初始化。虚拟地址与物理地址的转换接口：</p>
+<li><p>main函数通过调用void kinit1(void <em> vstart, void </em> vend), void kinit2(void <em> vstart, void </em> vend), void kvmalloc(void)函数来实现内核新页表的初始化。虚拟地址与物理地址的转换接口：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">// memlayout.h</span><br><span class="line">// Memory layout</span><br><span class="line"></span><br><span class="line"><span class="comment">#define EXTMEM  0x100000            // Start of extended memory</span></span><br><span class="line"><span class="comment">#define PHYSTOP 0xE000000           // Top physical memory</span></span><br><span class="line"><span class="comment">#define DEVSPACE 0xFE000000         // Other devices are at high addresses</span></span><br><span class="line"></span><br><span class="line">// Key addresses <span class="keyword">for</span> address space layout (see kmap <span class="keyword">in</span> vm.c <span class="keyword">for</span> layout)</span><br><span class="line"><span class="comment">#define KERNBASE 0x80000000         // First kernel virtual address</span></span><br><span class="line"><span class="comment">#define KERNLINK (KERNBASE+EXTMEM)  // Address where kernel is linked</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#ifndef __ASSEMBLER__</span></span><br><span class="line"></span><br><span class="line">static inline uint v2p(void *a) &#123; <span class="built_in">return</span> ((uint) (a))  - KERNBASE; &#125;</span><br><span class="line">static inline void *p2v(uint a) &#123; <span class="built_in">return</span> (void *) ((a) + KERNBASE); &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#endif</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#define V2P(a) (((uint) (a)) - KERNBASE)</span></span><br><span class="line"><span class="comment">#define P2V(a) (((void *) (a)) + KERNBASE)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#define V2P_WO(x) ((x) - KERNBASE)    // same as V2P, but without casts</span></span><br><span class="line"><span class="comment">#define P2V_WO(x) ((x) + KERNBASE)    // same as V2P, but without casts</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>内存布局：</p>
@@ -545,7 +545,7 @@
 </ul>
 <p><img src="/2019/06/09/xv6-virtual-memory/V2P" alt="聊天窗口模型"></p>
 <ul>
-<li>物理内存页的申请与释放，虚拟地址与物理地址如何映射等在“Exercise 1  源代码阅读”都已经详述了，在此主要说下mappages接口，虚拟地址<em>va与物理地址</em>pa映射size个字节，同时赋予该页的权限perm，如下:</li>
+<li>物理内存页的申请与释放，虚拟地址与物理地址如何映射等在“Exercise 1  源代码阅读”都已经详述了，在此主要说下mappages接口，虚拟地址 <em> va与物理地址 </em> pa映射size个字节，同时赋予该页的权限perm，如下:</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// vm.c</span><br><span class="line">……</span><br><span class="line">// Create PTEs <span class="keyword">for</span> virtual addresses starting at va that refer to</span><br><span class="line">// physical addresses starting at pa. va and size might not</span><br><span class="line">// be page-aligned.</span><br><span class="line">static int</span><br><span class="line">mappages(pde_t *pgdir, void *va, uint size, uint pa, int perm)</span><br><span class="line">&#123;</span><br><span class="line">  char *a, *last;</span><br><span class="line">  pte_t *pte;</span><br><span class="line">  </span><br><span class="line">  a = (char*)PGROUNDDOWN((uint)va);</span><br><span class="line">  last = (char*)PGROUNDDOWN(((uint)va) + size - 1);</span><br><span class="line">  <span class="keyword">for</span>(;;)&#123;</span><br><span class="line">    <span class="keyword">if</span>((pte = walkpgdir(pgdir, a, 1)) == 0)</span><br><span class="line">      <span class="built_in">return</span> -1;</span><br><span class="line">    <span class="keyword">if</span>(*pte &amp; PTE_P)</span><br><span class="line">      panic(<span class="string">"remap"</span>);</span><br><span class="line">    *pte = pa | perm | PTE_P;</span><br><span class="line">    <span class="keyword">if</span>(a == last)</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">    a += PGSIZE;</span><br><span class="line">    pa += PGSIZE;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br><span class="line">……</span><br></pre></td></tr></table></figure>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1] <a href="https://www.cnblogs.com/hehao98/p/10683588.html" rel="external nofollow noopener noreferrer" target="_blank">xv6虚拟内存-博客园</a><br>[2] <a href="http://linbo.github.io/2017/10/01/xv6-vm" rel="external nofollow noopener noreferrer" target="_blank">xv6 virtual memory-hexo</a><br>[3] <a href="https://www.jianshu.com/p/13921afe0fde" rel="external nofollow noopener noreferrer" target="_blank">xv6内存管理-简书</a><br>[4] <a href="https://blog.csdn.net/qq_25426415/article/details/54633843" rel="external nofollow noopener noreferrer" target="_blank">xv6内存管理-CSDN</a></p>
@@ -1584,6 +1584,46 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
