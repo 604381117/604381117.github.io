@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://icoty.github.io/2019/06/08/xv6-filesystem/</loc>
+    
+    <lastmod>2019-06-09T04:47:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://icoty.github.io/2019/06/09/xv6-interrupt-systemcall/</loc>
     
     <lastmod>2019-06-09T04:46:05.000Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://icoty.github.io/2019/06/09/xv6-process-thread/</loc>
     
     <lastmod>2019-06-09T02:56:38.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://icoty.github.io/2019/06/08/xv6-filesystem/</loc>
-    
-    <lastmod>2019-06-09T02:54:06.000Z</lastmod>
     
   </url>
   
