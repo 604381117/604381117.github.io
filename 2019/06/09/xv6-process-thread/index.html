@@ -106,7 +106,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://icoty.github.io/2019/06/09/xv6-process-thread/process-status.png">
 <meta property="og:image" content="https://icoty.github.io/2019/06/09/xv6-process-thread/addr-space">
-<meta property="og:updated_time" content="2019-06-09T02:06:41.000Z">
+<meta property="og:updated_time" content="2019-06-09T02:11:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XV6源代码阅读-进程线程">
 <meta name="twitter:description" content="Exercise1 源代码阅读 基本头文件：types.h param.h memlayout.h defs.h x86.h asm.h mmu.h elf.h   types.h：仅仅是定义uint, ushort, uchar pde_t别名； 1234typedef unsigned int   uint;typedef unsigned short ushort;typedef unsig">
@@ -412,7 +412,7 @@
                 
               
 
-              <time title="创建时间：2019-06-09 01:29:07 / 修改时间：02:06:41" itemprop="dateCreated datePublished" datetime="2019-06-09T01:29:07+00:00">2019-06-09</time>
+              <time title="创建时间：2019-06-09 01:29:07 / 修改时间：02:11:47" itemprop="dateCreated datePublished" datetime="2019-06-09T01:29:07+00:00">2019-06-09</time>
             
 
             
@@ -513,7 +513,7 @@
 <ul>
 <li>vm.c：内存管理接口，比如页表申请，页表释放，页目录的转换，cpu与进程的绑定等；</li>
 <li>proc.h：声明了cpu、进程、进程上下文等数据结构；<br>swtch.S：内部是上下文切换的汇编指令，保存换出进程的现场，加载换入进程的现场；</li>
-<li>kalloc.c：物理内存的申请和释放。主要接口：void kinit1(void <em>vstart, void </em>vend), kinit2(void <em>vstart, void </em>vend), char<em> kalloc(void), void kfree(char </em>v)。</li>
+<li>kalloc.c：物理内存的申请和释放。主要接口：void kinit1(void <em> vstart, void </em> vend), kinit2(void <em> vstart, void </em> vend), char <em> kalloc(void), void kfree(char </em> v)。</li>
 </ul>
 <h2 id="Exercise2-带着问题阅读"><a href="#Exercise2-带着问题阅读" class="headerlink" title="Exercise2 带着问题阅读"></a>Exercise2 带着问题阅读</h2><ol>
 <li>什么是进程？什么是线程？操作系统的资源分配单位和调度单位分别是什么？XV6 中的进程和线程分别是什么，都实现了吗?    </li>
