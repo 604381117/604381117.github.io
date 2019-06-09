@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="荒野之萍">
 <meta property="og:description" content="Exercise1 源代码阅读 启动部分: bootasm.S bootmain.c 和xv6初始化模块:main.c   bootasm.S 由16位和32位汇编混合编写成的XV6引导加载器。bootasm.S内的汇编代码会调用bootmain.c中的void bootmain(void)；main.c主函数内部初始化各模块； 当x86 PC启动时，它执行的是一个叫BIOS的程序。BIOS存放在">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-09T06:53:57.000Z">
+<meta property="og:updated_time" content="2019-06-09T08:45:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XV6源代码阅读-中断与系统调用">
 <meta name="twitter:description" content="Exercise1 源代码阅读 启动部分: bootasm.S bootmain.c 和xv6初始化模块:main.c   bootasm.S 由16位和32位汇编混合编写成的XV6引导加载器。bootasm.S内的汇编代码会调用bootmain.c中的void bootmain(void)；main.c主函数内部初始化各模块； 当x86 PC启动时，它执行的是一个叫BIOS的程序。BIOS存放在">
@@ -409,7 +409,7 @@
                 
               
 
-              <time title="创建时间：2019-06-09 03:17:35 / 修改时间：06:53:57" itemprop="dateCreated datePublished" datetime="2019-06-09T03:17:35+00:00">2019-06-09</time>
+              <time title="创建时间：2019-06-09 03:17:35 / 修改时间：08:45:14" itemprop="dateCreated datePublished" datetime="2019-06-09T03:17:35+00:00">2019-06-09</time>
             
 
             
@@ -593,7 +593,7 @@
 <li>在usys.S添加SYSCALL(setrlimit)。</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// usys.S</span><br><span class="line">……</span><br><span class="line">SYSCALL(sleep)</span><br><span class="line">SYSCALL(uptime)</span><br><span class="line">SYSCALL(setrlimit)  // add by yangyu</span><br></pre></td></tr></table></figure>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1] <a href="https://www.cnblogs.com/qiangua/articles/3794696.html" rel="external nofollow noopener noreferrer" target="_blank">xv6 idt初始化</a><br>[2] <a href="https://th0ar.gitbooks.io/xv6- chinese/content/content/chapter3.html https://www.cnblogs.com/qiangua/articles/3794696.html" rel="external nofollow noopener noreferrer" target="_blank">xv6中文文档</a><br>[3] <a href="http://ybin.cc/os/xv6-trap-and-interrupt/" rel="external nofollow noopener noreferrer" target="_blank">xv6 trap/interrupt</a></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1] <a href="https://www.cnblogs.com/qiangua/articles/3794696.html" rel="external nofollow noopener noreferrer" target="_blank">xv6 idt初始化</a><br>[2] <a href="https://th0ar.gitbooks.io/xv6- chinese/content/content/chapter3.html" rel="external nofollow noopener noreferrer" target="_blank">xv6中文文档</a><br>[3] <a href="https://www.cnblogs.com/qiangua/articles/3794696.html" rel="external nofollow noopener noreferrer" target="_blank">xv6 alltraps</a><br>[4] <a href="http://ybin.cc/os/xv6-trap-and-interrupt/" rel="external nofollow noopener noreferrer" target="_blank">xv6 trap/interrupt</a></p>
 
       
     </div>
@@ -626,7 +626,7 @@
   <p><span>本文标题:</span><a href="/2019/06/09/xv6-interrupt-systemcall/">XV6源代码阅读-中断与系统调用</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 杨宇 的个人博客">杨宇</a></p>
   <p><span>发布时间:</span>2019年06月09日 - 03:06</p>
-  <p><span>最后更新:</span>2019年06月09日 - 06:06</p>
+  <p><span>最后更新:</span>2019年06月09日 - 08:06</p>
   <p><span>原始链接:</span><a href="/2019/06/09/xv6-interrupt-systemcall/" title="XV6源代码阅读-中断与系统调用">https://icoty.github.io/2019/06/09/xv6-interrupt-systemcall/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://icoty.github.io/2019/06/09/xv6-interrupt-systemcall/" aria-label="复制成功！"></i></span>
   </p>
