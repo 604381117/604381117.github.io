@@ -99,14 +99,14 @@
   <meta name="description" content="Exercise1 源代码阅读 启动部分: bootasm.S bootmain.c 和xv6初始化模块:main.c   bootasm.S 由16位和32位汇编混合编写成的XV6引导加载器。bootasm.S内的汇编代码会调用bootmain.c中的void bootmain(void)；main.c主函数内部初始化各模块； 当x86 PC启动时，它执行的是一个叫BIOS的程序。BIOS存放在">
 <meta name="keywords" content="XV6,中断,文件系统,系统调用,中断描述符表IDT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="xv6源代码阅读-中断与系统调用">
+<meta property="og:title" content="XV6源代码阅读-中断与系统调用">
 <meta property="og:url" content="https://icoty.github.io/2019/06/09/xv6-interrupt-systemcall/index.html">
 <meta property="og:site_name" content="荒野之萍">
 <meta property="og:description" content="Exercise1 源代码阅读 启动部分: bootasm.S bootmain.c 和xv6初始化模块:main.c   bootasm.S 由16位和32位汇编混合编写成的XV6引导加载器。bootasm.S内的汇编代码会调用bootmain.c中的void bootmain(void)；main.c主函数内部初始化各模块； 当x86 PC启动时，它执行的是一个叫BIOS的程序。BIOS存放在">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-09T04:46:05.000Z">
+<meta property="og:updated_time" content="2019-06-09T05:11:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xv6源代码阅读-中断与系统调用">
+<meta name="twitter:title" content="XV6源代码阅读-中断与系统调用">
 <meta name="twitter:description" content="Exercise1 源代码阅读 启动部分: bootasm.S bootmain.c 和xv6初始化模块:main.c   bootasm.S 由16位和32位汇编混合编写成的XV6引导加载器。bootasm.S内的汇编代码会调用bootmain.c中的void bootmain(void)；main.c主函数内部初始化各模块； 当x86 PC启动时，它执行的是一个叫BIOS的程序。BIOS存放在">
 
 
@@ -127,7 +127,7 @@
   };
 </script>
 
-  <title>xv6源代码阅读-中断与系统调用 | 荒野之萍</title>
+  <title>XV6源代码阅读-中断与系统调用 | 荒野之萍</title>
   
 
 
@@ -383,7 +383,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">xv6源代码阅读-中断与系统调用
+          <h1 class="post-title" itemprop="name headline">XV6源代码阅读-中断与系统调用
 
               
             
@@ -409,7 +409,7 @@
                 
               
 
-              <time title="创建时间：2019-06-09 03:17:35 / 修改时间：04:46:05" itemprop="dateCreated datePublished" datetime="2019-06-09T03:17:35+00:00">2019-06-09</time>
+              <time title="创建时间：2019-06-09 03:17:35 / 修改时间：05:11:22" itemprop="dateCreated datePublished" datetime="2019-06-09T03:17:35+00:00">2019-06-09</time>
             
 
             
@@ -595,11 +595,11 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/06/09/xv6-interrupt-systemcall/">xv6源代码阅读-中断与系统调用</a></p>
+  <p><span>本文标题:</span><a href="/2019/06/09/xv6-interrupt-systemcall/">XV6源代码阅读-中断与系统调用</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 杨宇 的个人博客">杨宇</a></p>
   <p><span>发布时间:</span>2019年06月09日 - 03:06</p>
-  <p><span>最后更新:</span>2019年06月09日 - 04:06</p>
-  <p><span>原始链接:</span><a href="/2019/06/09/xv6-interrupt-systemcall/" title="xv6源代码阅读-中断与系统调用">https://icoty.github.io/2019/06/09/xv6-interrupt-systemcall/</a>
+  <p><span>最后更新:</span>2019年06月09日 - 05:06</p>
+  <p><span>原始链接:</span><a href="/2019/06/09/xv6-interrupt-systemcall/" title="XV6源代码阅读-中断与系统调用">https://icoty.github.io/2019/06/09/xv6-interrupt-systemcall/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://icoty.github.io/2019/06/09/xv6-interrupt-systemcall/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
@@ -699,8 +699,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/09/xv6-virtual-memory/" rel="prev" title="xv6源代码阅读-虚拟内存管理">
-                xv6源代码阅读-虚拟内存管理 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/09/xv6-virtual-memory/" rel="prev" title="XV6源代码阅读-虚拟内存管理">
+                XV6源代码阅读-虚拟内存管理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
