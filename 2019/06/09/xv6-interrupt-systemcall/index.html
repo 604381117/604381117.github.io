@@ -97,14 +97,14 @@
 
 
   <meta name="description" content="Exercise1 源代码阅读 启动部分: bootasm.S bootmain.c 和xv6初始化模块:main.c   bootasm.S 由16位和32位汇编混合编写成的XV6引导加载器。bootasm.S内的汇编代码会调用bootmain.c中的void bootmain(void)；main.c主函数内部初始化各模块； 当x86 PC启动时，它执行的是一个叫BIOS的程序。BIOS存放在">
-<meta name="keywords" content="XV6,中断,文件系统,系统调用,中断描述符表IDT">
+<meta name="keywords" content="XV6,中断,系统调用,中断描述符表IDT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XV6源代码阅读-中断与系统调用">
 <meta property="og:url" content="https://icoty.github.io/2019/06/09/xv6-interrupt-systemcall/index.html">
 <meta property="og:site_name" content="荒野之萍">
 <meta property="og:description" content="Exercise1 源代码阅读 启动部分: bootasm.S bootmain.c 和xv6初始化模块:main.c   bootasm.S 由16位和32位汇编混合编写成的XV6引导加载器。bootasm.S内的汇编代码会调用bootmain.c中的void bootmain(void)；main.c主函数内部初始化各模块； 当x86 PC启动时，它执行的是一个叫BIOS的程序。BIOS存放在">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-09T05:11:22.000Z">
+<meta property="og:updated_time" content="2019-06-09T06:53:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XV6源代码阅读-中断与系统调用">
 <meta name="twitter:description" content="Exercise1 源代码阅读 启动部分: bootasm.S bootmain.c 和xv6初始化模块:main.c   bootasm.S 由16位和32位汇编混合编写成的XV6引导加载器。bootasm.S内的汇编代码会调用bootmain.c中的void bootmain(void)；main.c主函数内部初始化各模块； 当x86 PC启动时，它执行的是一个叫BIOS的程序。BIOS存放在">
@@ -409,7 +409,7 @@
                 
               
 
-              <time title="创建时间：2019-06-09 03:17:35 / 修改时间：05:11:22" itemprop="dateCreated datePublished" datetime="2019-06-09T03:17:35+00:00">2019-06-09</time>
+              <time title="创建时间：2019-06-09 03:17:35 / 修改时间：06:53:57" itemprop="dateCreated datePublished" datetime="2019-06-09T03:17:35+00:00">2019-06-09</time>
             
 
             
@@ -598,7 +598,7 @@
   <p><span>本文标题:</span><a href="/2019/06/09/xv6-interrupt-systemcall/">XV6源代码阅读-中断与系统调用</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 杨宇 的个人博客">杨宇</a></p>
   <p><span>发布时间:</span>2019年06月09日 - 03:06</p>
-  <p><span>最后更新:</span>2019年06月09日 - 05:06</p>
+  <p><span>最后更新:</span>2019年06月09日 - 06:06</p>
   <p><span>原始链接:</span><a href="/2019/06/09/xv6-interrupt-systemcall/" title="XV6源代码阅读-中断与系统调用">https://icoty.github.io/2019/06/09/xv6-interrupt-systemcall/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://icoty.github.io/2019/06/09/xv6-interrupt-systemcall/" aria-label="复制成功！"></i></span>
   </p>
@@ -671,8 +671,6 @@
             <a href="/tags/XV6/" rel="tag"><i class="fa fa-tag"></i> XV6</a>
           
             <a href="/tags/中断/" rel="tag"><i class="fa fa-tag"></i> 中断</a>
-          
-            <a href="/tags/文件系统/" rel="tag"><i class="fa fa-tag"></i> 文件系统</a>
           
             <a href="/tags/系统调用/" rel="tag"><i class="fa fa-tag"></i> 系统调用</a>
           
@@ -832,9 +830,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -957,9 +953,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">54</span>
+                    <span class="site-state-item-count">53</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
