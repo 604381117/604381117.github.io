@@ -169,10 +169,10 @@
         <category>线程调度算法</category>
       </categories>
       <tags>
+        <tag>Nachos-3.4</tag>
         <tag>时间片轮转调度策略</tag>
         <tag>FIFO线程调度策略</tag>
         <tag>基于优先级的可抢占式调度策略</tag>
-        <tag>Nachos-3.4</tag>
       </tags>
   </entry>
   <entry>
@@ -183,8 +183,8 @@
         <category>操作系统</category>
       </categories>
       <tags>
-        <tag>Nachos-3.4</tag>
         <tag>PCB</tag>
+        <tag>Nachos-3.4</tag>
       </tags>
   </entry>
   <entry>
@@ -210,9 +210,9 @@
       </categories>
       <tags>
         <tag>Dockerfile</tag>
-        <tag>Docker教程</tag>
         <tag>镜像</tag>
         <tag>容器</tag>
+        <tag>Docker教程</tag>
       </tags>
   </entry>
   <entry>
@@ -224,9 +224,9 @@
       </categories>
       <tags>
         <tag>Dockerfile</tag>
+        <tag>Hexo命令</tag>
         <tag>镜像</tag>
         <tag>容器</tag>
-        <tag>Hexo命令</tag>
       </tags>
   </entry>
   <entry>
