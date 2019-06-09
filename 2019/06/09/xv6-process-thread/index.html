@@ -96,20 +96,20 @@
 
 
 
-  <meta name="description" content="Exercise1 源代码阅读 基本头文件：types.h param.h memlayout.h defs.h x86.h asm.h mmu.h elf.h   types.h：仅仅是定义uint, ushort, uchar pde_t别名； 1234typedef unsigned int   uint;typedef unsigned short ushort;typedef unsig">
+  <meta name="description" content="Exercise1 源代码阅读 基本头文件：types.h param.h memlayout.h defs.h x86.h asm.h mmu.h elf.h   types.h：仅仅是定义uint, ushort, uchar pde_t别名；  1234typedef unsigned int   uint;typedef unsigned short ushort;typedef unsi">
 <meta name="keywords" content="XV6,进程,线程,内核态,用户态">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XV6源代码阅读-进程线程">
 <meta property="og:url" content="https://icoty.github.io/2019/06/09/xv6-process-thread/index.html">
 <meta property="og:site_name" content="荒野之萍">
-<meta property="og:description" content="Exercise1 源代码阅读 基本头文件：types.h param.h memlayout.h defs.h x86.h asm.h mmu.h elf.h   types.h：仅仅是定义uint, ushort, uchar pde_t别名； 1234typedef unsigned int   uint;typedef unsigned short ushort;typedef unsig">
+<meta property="og:description" content="Exercise1 源代码阅读 基本头文件：types.h param.h memlayout.h defs.h x86.h asm.h mmu.h elf.h   types.h：仅仅是定义uint, ushort, uchar pde_t别名；  1234typedef unsigned int   uint;typedef unsigned short ushort;typedef unsi">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://icoty.github.io/2019/06/09/xv6-process-thread/process-status.png">
 <meta property="og:image" content="https://icoty.github.io/2019/06/09/xv6-process-thread/addr-space">
-<meta property="og:updated_time" content="2019-06-09T02:11:47.000Z">
+<meta property="og:updated_time" content="2019-06-09T02:56:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XV6源代码阅读-进程线程">
-<meta name="twitter:description" content="Exercise1 源代码阅读 基本头文件：types.h param.h memlayout.h defs.h x86.h asm.h mmu.h elf.h   types.h：仅仅是定义uint, ushort, uchar pde_t别名； 1234typedef unsigned int   uint;typedef unsigned short ushort;typedef unsig">
+<meta name="twitter:description" content="Exercise1 源代码阅读 基本头文件：types.h param.h memlayout.h defs.h x86.h asm.h mmu.h elf.h   types.h：仅仅是定义uint, ushort, uchar pde_t别名；  1234typedef unsigned int   uint;typedef unsigned short ushort;typedef unsi">
 <meta name="twitter:image" content="https://icoty.github.io/2019/06/09/xv6-process-thread/process-status.png">
 
 
@@ -412,7 +412,7 @@
                 
               
 
-              <time title="创建时间：2019-06-09 01:29:07 / 修改时间：02:11:47" itemprop="dateCreated datePublished" datetime="2019-06-09T01:29:07+00:00">2019-06-09</time>
+              <time title="创建时间：2019-06-09 01:29:07 / 修改时间：02:56:38" itemprop="dateCreated datePublished" datetime="2019-06-09T01:29:07+00:00">2019-06-09</time>
             
 
             
@@ -493,14 +493,15 @@
 <li>基本头文件：types.h param.h memlayout.h defs.h x86.h asm.h mmu.h elf.h</li>
 </ol>
 <ul>
-<li><p>types.h：仅仅是定义uint, ushort, uchar pde_t别名；</p>
+<li>types.h：仅仅是定义uint, ushort, uchar pde_t别名；</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">typedef unsigned int   uint;</span><br><span class="line">typedef unsigned short ushort;</span><br><span class="line">typedef unsigned char  uchar;</span><br><span class="line">typedef uint pde_t;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>parame.h 利用宏定义了进程最大数量，进程的内核栈大小，CPU的最大数量，进程能打开的文件描述符数等；</p>
+<ul>
+<li>parame.h 利用宏定义了进程最大数量，进程的内核栈大小，CPU的最大数量，进程能打开的文件描述符数等；</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#define NPROC        64  // maximum number of processes</span></span><br><span class="line"><span class="comment">#define KSTACKSIZE 4096  // size of per-process kernel stack</span></span><br><span class="line"><span class="comment">#define NCPU          8  // maximum number of CPUs</span></span><br><span class="line"><span class="comment">#define NOFILE       16  // open files per process</span></span><br><span class="line"><span class="comment">#define NFILE       100  // open files per system</span></span><br><span class="line"><span class="comment">#define NBUF         10  // size of disk block cache</span></span><br><span class="line"><span class="comment">#define NINODE       50  // maximum number of active i-nodes</span></span><br><span class="line"><span class="comment">#define NDEV         10  // maximum major device number</span></span><br><span class="line"><span class="comment">#define ROOTDEV       1  // device number of file system root disk</span></span><br><span class="line"><span class="comment">#define MAXARG       32  // max exec arguments</span></span><br><span class="line"><span class="comment">#define LOGSIZE      10  // max data sectors in on-disk log</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>memlayout.h：利用宏定义内存空间范围，地址和偏移的转换等；</p>
-</li>
+<ul>
+<li>memlayout.h：利用宏定义内存空间范围，地址和偏移的转换等；</li>
 <li>defs.h：内部包含了许多前向声明，同时声明了许多全局函数，这些全局函数的实现在具体使用的模块定义；</li>
 <li>x86.h：定义了许多C代码与汇编指令交互的内敛函数，同时定义了从用户态陷入内核态的数据结构struct trapframe; </li>
 <li>asm.h：汇编宏定义；</li>
@@ -839,9 +840,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
