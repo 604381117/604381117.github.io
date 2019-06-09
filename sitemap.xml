@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://icoty.github.io/2019/05/14/nachos-3-4-Lab3/</loc>
+    
+    <lastmod>2019-06-09T05:43:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/</loc>
+    
+    <lastmod>2019-06-09T05:43:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://icoty.github.io/2019/06/09/xv6-process-thread/</loc>
+    
+    <lastmod>2019-06-09T05:41:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://icoty.github.io/2019/04/18/docker-hexo-blog/</loc>
+    
+    <lastmod>2019-06-09T05:41:14.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://icoty.github.io/2019/06/09/xv6-interrupt-systemcall/</loc>
     
     <lastmod>2019-06-09T05:11:22.000Z</lastmod>
@@ -23,13 +51,6 @@
   </url>
   
   <url>
-    <loc>https://icoty.github.io/2019/06/09/xv6-process-thread/</loc>
-    
-    <lastmod>2019-06-09T02:56:38.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://icoty.github.io/2019/06/08/xv6-synch/</loc>
     
     <lastmod>2019-06-09T02:20:34.000Z</lastmod>
@@ -37,23 +58,9 @@
   </url>
   
   <url>
-    <loc>https://icoty.github.io/2019/05/25/cs-threadpool-message-queue/</loc>
-    
-    <lastmod>2019-06-08T03:23:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://icoty.github.io/2019/06/03/epoll-source/</loc>
     
     <lastmod>2019-06-08T02:33:33.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://icoty.github.io/2019/04/18/docker-hexo-blog/</loc>
-    
-    <lastmod>2019-06-07T03:00:25.000Z</lastmod>
     
   </url>
   
@@ -75,13 +82,6 @@
     <loc>https://icoty.github.io/2019/04/18/ipc-chat/</loc>
     
     <lastmod>2019-05-28T03:47:20.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://icoty.github.io/2019/05/14/nachos-3-4-Lab3/</loc>
-    
-    <lastmod>2019-05-25T09:29:34.000Z</lastmod>
     
   </url>
   

@@ -38,8 +38,6 @@
         <tag>XV6</tag>
         <tag>进程</tag>
         <tag>线程</tag>
-        <tag>内核态</tag>
-        <tag>用户态</tag>
       </tags>
   </entry>
   <entry>
@@ -100,8 +98,8 @@
         <tag>线程池</tag>
         <tag>TCP/Socket编程</tag>
         <tag>消息队列</tag>
-        <tag>条件变量实现</tag>
-        <tag>锁实现</tag>
+        <tag>条件变量</tag>
+        <tag>锁</tag>
         <tag>面向对象编程</tag>
         <tag>单例设计模式</tag>
         <tag>epoll</tag>
@@ -109,8 +107,6 @@
         <tag>Makefile</tag>
         <tag>智能指针</tag>
         <tag>UML</tag>
-        <tag>类图</tag>
-        <tag>时序图</tag>
         <tag>C++</tag>
       </tags>
   </entry>
@@ -151,10 +147,10 @@
         <category>互斥机制</category>
       </categories>
       <tags>
-        <tag>条件变量实现</tag>
-        <tag>锁实现</tag>
+        <tag>条件变量</tag>
         <tag>信号量</tag>
         <tag>Nachos-3.4</tag>
+        <tag>锁实现</tag>
         <tag>生产者消费者问题</tag>
         <tag>读者写者问题</tag>
         <tag>Barrier实现</tag>
@@ -169,10 +165,10 @@
         <category>线程调度算法</category>
       </categories>
       <tags>
+        <tag>Nachos-3.4</tag>
         <tag>时间片轮转调度策略</tag>
         <tag>FIFO线程调度策略</tag>
         <tag>基于优先级的可抢占式调度策略</tag>
-        <tag>Nachos-3.4</tag>
       </tags>
   </entry>
   <entry>
@@ -183,8 +179,8 @@
         <category>操作系统</category>
       </categories>
       <tags>
-        <tag>Nachos-3.4</tag>
         <tag>PCB</tag>
+        <tag>Nachos-3.4</tag>
       </tags>
   </entry>
   <entry>
@@ -210,9 +206,9 @@
       </categories>
       <tags>
         <tag>Dockerfile</tag>
-        <tag>Docker教程</tag>
         <tag>镜像</tag>
         <tag>容器</tag>
+        <tag>Docker教程</tag>
       </tags>
   </entry>
   <entry>
@@ -224,9 +220,9 @@
       </categories>
       <tags>
         <tag>Dockerfile</tag>
+        <tag>Hexo</tag>
         <tag>镜像</tag>
         <tag>容器</tag>
-        <tag>Hexo命令</tag>
       </tags>
   </entry>
   <entry>
