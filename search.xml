@@ -91,15 +91,17 @@
         <category>线程池</category>
         <category>UML</category>
         <category>C++</category>
+        <category>IPC</category>
       </categories>
       <tags>
+        <tag>eventfd</tag>
         <tag>线程池</tag>
         <tag>TCP/Socket编程</tag>
         <tag>消息队列</tag>
         <tag>条件变量</tag>
         <tag>锁</tag>
         <tag>面向对象编程</tag>
-        <tag>单例设计模式</tag>
+        <tag>单例模式</tag>
         <tag>epoll</tag>
         <tag>Log4cpp</tag>
         <tag>Makefile</tag>
@@ -230,7 +232,7 @@
       <categories>
         <category>IO多路复用模型</category>
         <category>同步机制</category>
-        <category>进程间通信</category>
+        <category>IPC</category>
       </categories>
       <tags>
         <tag>Linux</tag>
