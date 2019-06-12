@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://icoty.github.io/2019/06/12/activity-sign-system/</loc>
+    
+    <lastmod>2019-06-12T14:47:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://icoty.github.io/2019/04/18/docker-hexo-blog/</loc>
+    
+    <lastmod>2019-06-12T07:47:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://icoty.github.io/2019/04/16/docker-lamp/</loc>
     
     <lastmod>2019-06-11T13:15:55.000Z</lastmod>
@@ -75,13 +89,6 @@
     <loc>https://icoty.github.io/2019/06/09/xv6-process-thread/</loc>
     
     <lastmod>2019-06-09T05:41:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://icoty.github.io/2019/04/18/docker-hexo-blog/</loc>
-    
-    <lastmod>2019-06-09T05:41:14.000Z</lastmod>
     
   </url>
   

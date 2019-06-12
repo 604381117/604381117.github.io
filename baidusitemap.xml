@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://icoty.github.io/2019/06/12/activity-sign-system/</loc>
+    <lastmod>2019-06-12</lastmod>
+  </url>  <url>
+    <loc>https://icoty.github.io/2019/04/18/docker-hexo-blog/</loc>
+    <lastmod>2019-06-12</lastmod>
+  </url>  <url>
     <loc>https://icoty.github.io/2019/04/16/docker-lamp/</loc>
     <lastmod>2019-06-11</lastmod>
   </url>  <url>
@@ -32,9 +38,6 @@
     <lastmod>2019-06-09</lastmod>
   </url>  <url>
     <loc>https://icoty.github.io/2019/06/09/xv6-process-thread/</loc>
-    <lastmod>2019-06-09</lastmod>
-  </url>  <url>
-    <loc>https://icoty.github.io/2019/04/18/docker-hexo-blog/</loc>
     <lastmod>2019-06-09</lastmod>
   </url>  <url>
     <loc>https://icoty.github.io/2019/06/08/xv6-filesystem/</loc>
