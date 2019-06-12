@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://icoty.github.io/2019/06/12/activity-sign-system/activity-class.png">
 <meta property="og:image" content="https://icoty.github.io/2019/06/12/activity-sign-system/attend-all.png">
 <meta property="og:image" content="https://icoty.github.io/2019/06/12/activity-sign-system/log-manage.png">
-<meta property="og:updated_time" content="2019-06-12T15:20:43.000Z">
+<meta property="og:updated_time" content="2019-06-12T15:57:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于LAMP实现后台活动发布和前端扫码签到系统">
 <meta name="twitter:description" content="目的无论是公司、学校和社会团体，都会举办各式各样的活动，比如运动会、部门会议、项目会议、野炊、团建等。作为团队管理者来讲，当然希望能够把这类活动转移到线上形成完整的系统，类似于电子流的形式。本文以学院组织的所有活动为例，实现一个这样的系统。 群体学院由很多班级组成，每个班级由班干部（如班长、团支书等，视为二级管理员）和非班干部（视为普通成员），同时学院之下有很多老师（统称为教职工，视为一级管理员）">
@@ -413,7 +413,7 @@
                 
               
 
-              <time title="创建时间：2019-06-12 07:47:15 / 修改时间：15:20:43" itemprop="dateCreated datePublished" datetime="2019-06-12T07:47:15+00:00">2019-06-12</time>
+              <time title="创建时间：2019-06-12 07:47:15 / 修改时间：15:57:46" itemprop="dateCreated datePublished" datetime="2019-06-12T07:47:15+00:00">2019-06-12</time>
             
 
             
@@ -1043,7 +1043,7 @@
 </ul>
 <p>实际开发过程中，对于敏感信息我们都需要进行加密传输，一定不能传输明文，否则很容易被攻击者抓包获取到用户信息，manage_info表中m_password字段存储的并不是用户密码直接加密后的HASH值，如果直接存储用户密码加密后的HASH值，那么也很容易被攻击者暴力破解。</p>
 <p>本系统中给每个用户随机生成了一个m_salt字符串，用户登陆的时候对用户的密码采用SHA256计算一次HASH，网络传输过程中也是传输的该HASH值，后台收到该HASH值后，拼接到m_salt之后，然后对拼接后的整个字符串使用SHA256算法重新计算一次新的HASH值，并把该新的HASH值存储到数据表中。因此只要攻击者未攻破后台数据库，想要拿到用户的密码是非常困难的，除非数据库被拖库。</p>
-<p>不过，值得一提的是，企业项目实践过程中，如果对加密要求非常严格的话，数据库中也不会存储m_salt的明文，完全可以采用对称加密算法的密钥对m_salt加密啊后再存储到数据库中，这样一来就算数据库被攻破，也能够保证用户账户密码的安全性。</p>
+<p>不过，值得一提的是，企业项目实践过程中，如果对加密要求非常严格的话，数据库中也不会存储m_salt的明文，完全可以采用对称加密算法的密钥对m_salt加密后再存储到数据库中，这样一来就算数据库被攻破，也能够保证用户账户密码的安全性。</p>
 <h3 id="导入导出-amp-二维码生成"><a href="#导入导出-amp-二维码生成" class="headerlink" title="导入导出&amp;二维码生成"></a>导入导出&amp;二维码生成</h3><ul>
 <li>导入导出使用使用github上的 <a href="https://github.com/PHPOffice/PHPExcel" rel="external nofollow noopener noreferrer" target="_blank">PHPExcel</a> 实现；</li>
 <li>生成二维码使用github上的 <a href="https://github.com/t0k4rt/phpqrcode" rel="external nofollow noopener noreferrer" target="_blank">phpqrcode</a> 实现。</li>
