@@ -254,13 +254,13 @@
     
       <category term="IO多路复用模型" scheme="https://icoty.github.io/categories/IO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E6%A8%A1%E5%9E%8B/"/>
     
-      <category term="并发服务器架构" scheme="https://icoty.github.io/categories/%E5%B9%B6%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E6%9E%84/"/>
-    
-      <category term="TCP" scheme="https://icoty.github.io/categories/TCP/"/>
-    
       <category term="同步机制" scheme="https://icoty.github.io/categories/%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6/"/>
     
+      <category term="并发服务器架构" scheme="https://icoty.github.io/categories/%E5%B9%B6%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E6%9E%84/"/>
+    
       <category term="互斥机制" scheme="https://icoty.github.io/categories/%E4%BA%92%E6%96%A5%E6%9C%BA%E5%88%B6/"/>
+    
+      <category term="TCP" scheme="https://icoty.github.io/categories/TCP/"/>
     
       <category term="线程池" scheme="https://icoty.github.io/categories/%E7%BA%BF%E7%A8%8B%E6%B1%A0/"/>
     
