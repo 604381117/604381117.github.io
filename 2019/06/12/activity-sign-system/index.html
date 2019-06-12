@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="荒野之萍">
 <meta property="og:description" content="目的无论是公司、学校和社会团体，都会举办各式各样的活动，比如运动会、部门会议、项目会议、野炊、团建等。作为团队管理者来讲，当然希望能够把这类活动转移到线上形成完整的系统，类似于电子流的形式。本文以学院组织的所有活动为例，实现一个这样的系统。 群体学院由很多班级组成，每个班级由班干部（如班长、团支书等，视为二级管理员）和非班干部（视为普通成员），同时学院之下有很多老师（统称为教职工，视为一级管理员）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-12T14:47:12.000Z">
+<meta property="og:updated_time" content="2019-06-12T15:03:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LAMP实现后台活动发布和前端扫码签到系统">
 <meta name="twitter:description" content="目的无论是公司、学校和社会团体，都会举办各式各样的活动，比如运动会、部门会议、项目会议、野炊、团建等。作为团队管理者来讲，当然希望能够把这类活动转移到线上形成完整的系统，类似于电子流的形式。本文以学院组织的所有活动为例，实现一个这样的系统。 群体学院由很多班级组成，每个班级由班干部（如班长、团支书等，视为二级管理员）和非班干部（视为普通成员），同时学院之下有很多老师（统称为教职工，视为一级管理员）">
@@ -409,7 +409,7 @@
                 
               
 
-              <time title="创建时间：2019-06-12 07:47:15 / 修改时间：14:47:12" itemprop="dateCreated datePublished" datetime="2019-06-12T07:47:15+00:00">2019-06-12</time>
+              <time title="创建时间：2019-06-12 07:47:15 / 修改时间：15:03:21" itemprop="dateCreated datePublished" datetime="2019-06-12T07:47:15+00:00">2019-06-12</time>
             
 
             
@@ -626,7 +626,7 @@
 <tr>
 <td>m_delete_time</td>
 <td>timestamp</td>
-<td>非空</td>
+<td>默认为NULL</td>
 <td>软删除时间，YYYY-MM-DD HH:MM:SS</td>
 </tr>
 </tbody>
@@ -652,13 +652,13 @@
 <td>m_number</td>
 <td>int(11)</td>
 <td>非空</td>
-<td>FK，学号或教职工号</td>
+<td>FK，活动创建者，学号或教职工号</td>
 </tr>
 <tr>
 <td>c_id</td>
 <td>int(11)</td>
 <td>非空</td>
-<td>FK，组织活动的班级</td>
+<td>FK，组织活动的班级，班级ID</td>
 </tr>
 <tr>
 <td>a_name</td>
@@ -705,13 +705,13 @@
 <tr>
 <td>a_start_sign</td>
 <td>timestamp</td>
-<td>可以为空</td>
+<td>可以为空，发布活动时输入</td>
 <td>开始签到时间，YYYY-MM-DD HH:MM:SS</td>
 </tr>
 <tr>
 <td>a_end_sign</td>
 <td>timestamp</td>
-<td>可以为空</td>
+<td>可以为空，发布活动时输入</td>
 <td>结束签到时间，YYYY-MM-DD HH:MM:SS</td>
 </tr>
 <tr>
@@ -735,7 +735,7 @@
 <tr>
 <td>a_delete_time</td>
 <td>timestamp</td>
-<td>非空</td>
+<td>默认为NULL</td>
 <td>软删除时间，YYYY-MM-DD HH:MM:SS</td>
 </tr>
 </tbody>
@@ -784,7 +784,7 @@
 <tr>
 <td>c_delete_time</td>
 <td>timestamp</td>
-<td>非空</td>
+<td>默认为NULL</td>
 <td>软删除时间，YYYY-MM-DD HH:MM:SS</td>
 </tr>
 </tbody>
@@ -833,7 +833,7 @@
 <tr>
 <td>l_delete_time</td>
 <td>timestamp</td>
-<td>非空</td>
+<td>默认为NULL</td>
 <td>软删除时间，YYYY-MM-DD HH:MM:SS</td>
 </tr>
 </tbody>
@@ -853,7 +853,7 @@
 <td>a2l_id</td>
 <td>int(11)</td>
 <td>自增</td>
-<td>PK</td>
+<td>PK，编号</td>
 </tr>
 <tr>
 <td>a_id</td>
@@ -888,7 +888,7 @@
 <tr>
 <td>a2l_delete_time</td>
 <td>timestamp</td>
-<td>非空</td>
+<td>默认为NULL</td>
 <td>软删除时间，YYYY-MM-DD HH:MM:SS</td>
 </tr>
 </tbody>
@@ -955,7 +955,7 @@
 <tr>
 <td>a2s_delete_time</td>
 <td>timestamp</td>
-<td>非空</td>
+<td>默认为NULL</td>
 <td>软删除时间，YYYY-MM-DD HH:MM:SS</td>
 </tr>
 </tbody>
@@ -1032,18 +1032,20 @@
 <li>web端其实也就是后台管理部分可视化界面的呈现，需要使用html、css、javascript知识；</li>
 <li>微信端使用H5开发，除了要适配手机微信页面外，与web端基本无差异。</li>
 </ul>
-<h2 id="需求拆解"><a href="#需求拆解" class="headerlink" title="需求拆解"></a>需求拆解</h2><h3 id="LAMP搭建"><a href="#LAMP搭建" class="headerlink" title="LAMP搭建"></a>LAMP搭建</h3><p>既然前面都分析完了，心里已经很明确需要做什么事情了，第一步当然是在自己购买的服务器上部署LAMP环境了，如何部署，详见我另一篇文章<a href="https://icoty.github.io/2019/04/16/docker-lamp/">Linux下Docker快速部署LAMP</a></p>
+<h2 id="需求拆解与编码实现"><a href="#需求拆解与编码实现" class="headerlink" title="需求拆解与编码实现"></a>需求拆解与编码实现</h2><h3 id="LAMP搭建"><a href="#LAMP搭建" class="headerlink" title="LAMP搭建"></a>LAMP搭建</h3><p>既然前面都分析完了，心里已经很明确需要做什么事情了，第一步当然是在自己购买的服务器上部署LAMP环境了，如何部署，详见我另一篇文章<a href="https://icoty.github.io/2019/04/16/docker-lamp/">Linux下Docker快速部署LAMP</a></p>
 <h3 id="目录结构与模块拆分"><a href="#目录结构与模块拆分" class="headerlink" title="目录结构与模块拆分"></a>目录结构与模块拆分</h3><p>如下列出主要的模块。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── application</span><br><span class="line">│   ├── actquery  // 活动信息管理模块</span><br><span class="line">│   │   ├── controller</span><br><span class="line">│   │   ├── model</span><br><span class="line">│   │   └── view</span><br><span class="line">│   ├── adminquery // 管理员信息管理模块</span><br><span class="line">│   │   ├── controller</span><br><span class="line">│   │   ├── model</span><br><span class="line">│   │   └── view</span><br><span class="line">│   ├── attendquery // 活动出席名单统计模块</span><br><span class="line">│   │   ├── controller</span><br><span class="line">│   │   ├── model</span><br><span class="line">│   │   └── view</span><br><span class="line">│   ├── classquery // 班级信息管理模块</span><br><span class="line">│   │   ├── controller</span><br><span class="line">│   │   ├── model</span><br><span class="line">│   │   └── view</span><br><span class="line">│   ├── common // 提取的公共模块</span><br><span class="line">│   │   ├── controller</span><br><span class="line">│   │   ├── model</span><br><span class="line">│   │   └── view</span><br><span class="line">│   ├── common.php</span><br><span class="line">│   ├── config.php</span><br><span class="line">│   ├── database.php</span><br><span class="line">│   ├── index</span><br><span class="line">│   │   ├── controller</span><br><span class="line">│   │   └── view</span><br><span class="line">│   ├── labelquery // 标签信息管理模块</span><br><span class="line">│   │   ├── controller</span><br><span class="line">│   │   ├── model</span><br><span class="line">│   │   └── view</span><br><span class="line">│   ├── login // 登陆与鉴权模块</span><br><span class="line">│   │   ├── controller</span><br><span class="line">│   │   ├── model</span><br><span class="line">│   │   └── view</span><br><span class="line">│   ├── logmanage // 日志管理模块</span><br><span class="line">│   │   ├── controller</span><br><span class="line">│   │   ├── model</span><br><span class="line">│   │   └── view</span><br><span class="line">│   ├── route.php</span><br><span class="line">│   ├── tags.php</span><br><span class="line">│   └── wxcampus // 微信端H5开发模块</span><br><span class="line">│       ├── common</span><br><span class="line">│       ├── controller</span><br><span class="line">│       ├── model</span><br><span class="line">│       └── view</span><br><span class="line">├── build.php</span><br><span class="line">├── extend</span><br><span class="line">├── public</span><br><span class="line">│   ├── favicon.ico</span><br><span class="line">│   ├── index.html</span><br><span class="line">│   ├── index.php</span><br><span class="line">│   ├── router.php</span><br><span class="line">│   └── static</span><br><span class="line">├── README.md</span><br><span class="line">├── runtime</span><br><span class="line">├── think</span><br><span class="line">├── thinkphp</span><br><span class="line">└── vendor</span><br><span class="line">    ├── PHPExcel // Excel导入/导出需要用到</span><br><span class="line">    │   └── PHPExcel.php</span><br><span class="line">    ├── phpoffice</span><br><span class="line">    │   └── phpspreadsheet</span><br><span class="line">    └── phpqrcode // 发布签到生成二维码需要</span><br><span class="line">    	      └── phpqrcode.php</span><br></pre></td></tr></table></figure></p>
 <h3 id="登陆-amp-鉴权加密设计"><a href="#登陆-amp-鉴权加密设计" class="headerlink" title="登陆&amp;鉴权加密设计"></a>登陆&amp;鉴权加密设计</h3><ul>
 <li>sha256算法实现参见项目文件：public/static/assets/js/lib/sha256/sha256.js；</li>
 </ul>
-<p>实际开发过程中，对于敏感信息我们都需要进行加密传输，一定不能传输明文，否则很容易被攻击者抓包获取到用户信息，manage_info表中m_password字段存储的并不是用户密码直接加密后的HASH值，如果直接存储用户密码加密后的HASH值，那么也很容易被攻击者暴力破解。<br>本系统中给每个用户随机生成了一个m_salt字符串，用户登陆的时候对用户的密码采用SHA256计算一次HASH，网络传输过程中也是传输的该HASH值，后台收到该HASH值后，拼接到m_salt之后，然后对拼接后的整个字符串使用SHA256算法重新计算一次新的HASH值，并发该新的HASH值存储到数据表中。因此只要攻击未攻破后台数据库，想要拿到用户的密码是非常困难的，除非数据库被拖库。不过，值得一提的是，企业项目实践过程中，如果对加密要求非常严格的话，数据库中也不糊存储m_salt的明文，完全可以采用对称加密算法的密钥对m_salt加密啊后再存储到数据库中，这样一来就算数据库被攻破，也能够保证用户账户密码的安全性。</p>
+<p>实际开发过程中，对于敏感信息我们都需要进行加密传输，一定不能传输明文，否则很容易被攻击者抓包获取到用户信息，manage_info表中m_password字段存储的并不是用户密码直接加密后的HASH值，如果直接存储用户密码加密后的HASH值，那么也很容易被攻击者暴力破解。</p>
+<p>本系统中给每个用户随机生成了一个m_salt字符串，用户登陆的时候对用户的密码采用SHA256计算一次HASH，网络传输过程中也是传输的该HASH值，后台收到该HASH值后，拼接到m_salt之后，然后对拼接后的整个字符串使用SHA256算法重新计算一次新的HASH值，并把该新的HASH值存储到数据表中。因此只要攻击者未攻破后台数据库，想要拿到用户的密码是非常困难的，除非数据库被拖库。</p>
+<p>不过，值得一提的是，企业项目实践过程中，如果对加密要求非常严格的话，数据库中也不会存储m_salt的明文，完全可以采用对称加密算法的密钥对m_salt加密啊后再存储到数据库中，这样一来就算数据库被攻破，也能够保证用户账户密码的安全性。</p>
 <h3 id="导入导出-amp-二维码生成"><a href="#导入导出-amp-二维码生成" class="headerlink" title="导入导出&amp;二维码生成"></a>导入导出&amp;二维码生成</h3><ul>
-<li>导入导出使用使用github上的<a href="https://github.com/PHPOffice/PHPExcel" rel="external nofollow noopener noreferrer" target="_blank">PHPExcel</a>实现；</li>
-<li>生成二维码使用github上的<a href="https://github.com/t0k4rt/phpqrcode" rel="external nofollow noopener noreferrer" target="_blank">phpqrcode</a>实现。</li>
+<li>导入导出使用使用github上的 <a href="https://github.com/PHPOffice/PHPExcel" rel="external nofollow noopener noreferrer" target="_blank">PHPExcel</a> 实现；</li>
+<li>生成二维码使用github上的 <a href="https://github.com/t0k4rt/phpqrcode" rel="external nofollow noopener noreferrer" target="_blank">phpqrcode</a> 实现。</li>
 </ul>
 <h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="https://github.com/icoty/sign_system" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/icoty/sign_system</a></p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1] <a href="https://www.kancloud.cn/manual/thinkphp5/135186" rel="external nofollow noopener noreferrer" target="_blank">thinkPHP5完全开发手册</a><br>[2] <a href="https://github.com/PHPOffice/PHPExcel" rel="external nofollow noopener noreferrer" target="_blank">PHPExcel</a><br>[3] <a href="https://github.com/t0k4rt/phpqrcode" rel="external nofollow noopener noreferrer" target="_blank">phpqrcode</a><br>[4] <a href="https://www.cnblogs.com/qlqwjy/p/8425861.html" rel="external nofollow noopener noreferrer" target="_blank">mysql数据库设计规范与原则</a><br>[5] <a href="https://icoty.github.io/2019/05/20/crypt/">常用加密算法应用</a><br>[4] <a href="http://www.w3school.com.cn/h.asp" rel="external nofollow noopener noreferrer" target="_blank">html教程</a><br>[5] <a href="http://www.w3school.com.cn/css/index.asp" rel="external nofollow noopener noreferrer" target="_blank">css教程</a></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1] <a href="https://www.kancloud.cn/manual/thinkphp5/135186" rel="external nofollow noopener noreferrer" target="_blank">thinkPHP5完全开发手册</a><br>[2] <a href="https://github.com/PHPOffice/PHPExcel" rel="external nofollow noopener noreferrer" target="_blank">PHPExcel</a><br>[3] <a href="https://github.com/t0k4rt/phpqrcode" rel="external nofollow noopener noreferrer" target="_blank">phpqrcode</a><br>[4] <a href="https://www.cnblogs.com/qlqwjy/p/8425861.html" rel="external nofollow noopener noreferrer" target="_blank">mysql数据库设计规范与原则</a><br>[5] <a href="https://icoty.github.io/2019/05/20/crypt/">常用加密算法应用</a><br>[6] <a href="http://www.w3school.com.cn/h.asp" rel="external nofollow noopener noreferrer" target="_blank">html教程</a><br>[7] <a href="http://www.w3school.com.cn/css/index.asp" rel="external nofollow noopener noreferrer" target="_blank">css教程</a></p>
 
       
     </div>
@@ -1076,7 +1078,7 @@
   <p><span>本文标题:</span><a href="/2019/06/12/activity-sign-system/">LAMP实现后台活动发布和前端扫码签到系统</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 杨宇 的个人博客">杨宇</a></p>
   <p><span>发布时间:</span>2019年06月12日 - 07:06</p>
-  <p><span>最后更新:</span>2019年06月12日 - 14:06</p>
+  <p><span>最后更新:</span>2019年06月12日 - 15:06</p>
   <p><span>原始链接:</span><a href="/2019/06/12/activity-sign-system/" title="LAMP实现后台活动发布和前端扫码签到系统">https://icoty.github.io/2019/06/12/activity-sign-system/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://icoty.github.io/2019/06/12/activity-sign-system/" aria-label="复制成功！"></i></span>
   </p>
@@ -1551,7 +1553,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#群体"><span class="nav-number">2.</span> <span class="nav-text">群体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#期望需求"><span class="nav-number">3.</span> <span class="nav-text">期望需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql数据库-amp-数据表设计"><span class="nav-number">4.</span> <span class="nav-text">Mysql数据库&amp;数据表设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#manage-info"><span class="nav-number">4.1.</span> <span class="nav-text">manage_info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#activity-info"><span class="nav-number">4.2.</span> <span class="nav-text">activity_info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#class-info"><span class="nav-number">4.3.</span> <span class="nav-text">class_info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#label-info"><span class="nav-number">4.4.</span> <span class="nav-text">label_info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#act2label"><span class="nav-number">4.5.</span> <span class="nav-text">act2label</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#act2stu"><span class="nav-number">4.6.</span> <span class="nav-text">act2stu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#log-info"><span class="nav-number">4.7.</span> <span class="nav-text">log_info</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构设计"><span class="nav-number">5.</span> <span class="nav-text">架构设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务端"><span class="nav-number">5.1.</span> <span class="nav-text">服务端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web端-微信端"><span class="nav-number">5.2.</span> <span class="nav-text">web端/微信端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需求拆解"><span class="nav-number">6.</span> <span class="nav-text">需求拆解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LAMP搭建"><span class="nav-number">6.1.</span> <span class="nav-text">LAMP搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目录结构与模块拆分"><span class="nav-number">6.2.</span> <span class="nav-text">目录结构与模块拆分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登陆-amp-鉴权加密设计"><span class="nav-number">6.3.</span> <span class="nav-text">登陆&amp;鉴权加密设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导入导出-amp-二维码生成"><span class="nav-number">6.4.</span> <span class="nav-text">导入导出&amp;二维码生成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码"><span class="nav-number">7.</span> <span class="nav-text">源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">8.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#群体"><span class="nav-number">2.</span> <span class="nav-text">群体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#期望需求"><span class="nav-number">3.</span> <span class="nav-text">期望需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql数据库-amp-数据表设计"><span class="nav-number">4.</span> <span class="nav-text">Mysql数据库&amp;数据表设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#manage-info"><span class="nav-number">4.1.</span> <span class="nav-text">manage_info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#activity-info"><span class="nav-number">4.2.</span> <span class="nav-text">activity_info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#class-info"><span class="nav-number">4.3.</span> <span class="nav-text">class_info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#label-info"><span class="nav-number">4.4.</span> <span class="nav-text">label_info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#act2label"><span class="nav-number">4.5.</span> <span class="nav-text">act2label</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#act2stu"><span class="nav-number">4.6.</span> <span class="nav-text">act2stu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#log-info"><span class="nav-number">4.7.</span> <span class="nav-text">log_info</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构设计"><span class="nav-number">5.</span> <span class="nav-text">架构设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务端"><span class="nav-number">5.1.</span> <span class="nav-text">服务端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web端-微信端"><span class="nav-number">5.2.</span> <span class="nav-text">web端/微信端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需求拆解与编码实现"><span class="nav-number">6.</span> <span class="nav-text">需求拆解与编码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LAMP搭建"><span class="nav-number">6.1.</span> <span class="nav-text">LAMP搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目录结构与模块拆分"><span class="nav-number">6.2.</span> <span class="nav-text">目录结构与模块拆分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登陆-amp-鉴权加密设计"><span class="nav-number">6.3.</span> <span class="nav-text">登陆&amp;鉴权加密设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导入导出-amp-二维码生成"><span class="nav-number">6.4.</span> <span class="nav-text">导入导出&amp;二维码生成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码"><span class="nav-number">7.</span> <span class="nav-text">源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">8.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
