@@ -97,7 +97,7 @@
 
 
   <meta name="description" content="本文旨在让你用最短的时间弄懂Docker命令操作，什么虚拟化都太泛泛了，不讲大道理，实践出真知，让你从此的日常开发和工作中在面对Docker时不再茫然失措而是得心应手。本文也不谈安装，我实在认为作为程序员，要是我在这里教你如何安装Docker，既是在浪费你的时间也是在浪费我的时间，请参考Docker安装； Docker Hub是Docker官方维护的一个公共仓库，其中已经包括了数量超过15 000">
-<meta name="keywords" content="Dockerfile,镜像,容器,Docker">
+<meta name="keywords" content="Dockerfile,Docker,镜像,容器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker最简教程">
 <meta property="og:url" content="https://icoty.github.io/2019/04/22/docker/index.html">
@@ -109,7 +109,7 @@
 <meta property="og:image" content="https://icoty.github.io/2019/04/22/docker/load-save.png">
 <meta property="og:image" content="https://icoty.github.io/2019/04/22/docker/rmi-rm.png">
 <meta property="og:image" content="https://icoty.github.io/2019/04/22/docker/build.png">
-<meta property="og:updated_time" content="2019-06-09T06:56:06.000Z">
+<meta property="og:updated_time" content="2019-06-13T02:57:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker最简教程">
 <meta name="twitter:description" content="本文旨在让你用最短的时间弄懂Docker命令操作，什么虚拟化都太泛泛了，不讲大道理，实践出真知，让你从此的日常开发和工作中在面对Docker时不再茫然失措而是得心应手。本文也不谈安装，我实在认为作为程序员，要是我在这里教你如何安装Docker，既是在浪费你的时间也是在浪费我的时间，请参考Docker安装； Docker Hub是Docker官方维护的一个公共仓库，其中已经包括了数量超过15 000">
@@ -432,7 +432,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-09 06:56:06" itemprop="dateModified" datetime="2019-06-09T06:56:06+00:00">2019-06-09</time>
+                <time title="修改时间：2019-06-13 02:57:46" itemprop="dateModified" datetime="2019-06-13T02:57:46+00:00">2019-06-13</time>
               
             
           </span>
@@ -562,7 +562,7 @@
 <p><img src="/2019/04/22/docker/build.png" alt="cmd"></p>
 <h3 id="镜像与容器"><a href="#镜像与容器" class="headerlink" title="镜像与容器"></a>镜像与容器</h3><p>为了便于理解，你可以把镜像理解成一个初始模版A，通过这个模板A你可以复制出模板B、模板C等，模板B和模板C在这里就相当于容器，突然某一天你发现模板A现有的内容已经不能满足你的需求了（比如模板A没有安装Mysql，而你需要安装Mysql），这时你就只能自定义新的模板(相当于自定义新的符合你的要求的镜像)，而自定义方式则可以从模板B或模板C中安装Mysql，安装成功之后，通过docker commit命令将模板B或模板C提交成一个新的初始模板A1（也就是新的镜像），以后所有从模板A1运行的容器就都有Mysql了，然后你就有模板A和模板A1了（就是两个镜像）。</p>
 <h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><p>实际操作部分，对各个命令有疑问的，相信我，直接执行一遍才是解决你心中疑虑的不二之法，如果你的命令参数不正确，顶多就是报错和执行不成功，不会让你的主机崩溃，最坏也就不过重新执行一遍，IT这个职业，其本身就是一个不断试错、犯错和总结经验的过程，如果你学到了，请我喝奶茶吧，小生会一直奋斗在原创的路上。</p>
-<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p><a href="http://www.runoob.com/docker/docker-command-manual.html" rel="external nofollow noopener noreferrer" target="_blank">Docker命令</a><br><a href="http://www.docker.org.cn/index.html" rel="external nofollow noopener noreferrer" target="_blank">Docker中文社区</a></p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>[1] <a href="http://www.runoob.com/docker/docker-command-manual.html" rel="external nofollow noopener noreferrer" target="_blank">Docker命令大全</a><br>[2] <a href="http://www.docker.org.cn/index.html" rel="external nofollow noopener noreferrer" target="_blank">Docker中文社区</a></p>
 
       
     </div>
@@ -595,7 +595,7 @@
   <p><span>本文标题:</span><a href="/2019/04/22/docker/">Docker最简教程</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 杨宇 的个人博客">杨宇</a></p>
   <p><span>发布时间:</span>2019年04月22日 - 12:04</p>
-  <p><span>最后更新:</span>2019年06月09日 - 06:06</p>
+  <p><span>最后更新:</span>2019年06月13日 - 02:06</p>
   <p><span>原始链接:</span><a href="/2019/04/22/docker/" title="Docker最简教程">https://icoty.github.io/2019/04/22/docker/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://icoty.github.io/2019/04/22/docker/" aria-label="复制成功！"></i></span>
   </p>
@@ -667,11 +667,11 @@
           
             <a href="/tags/Dockerfile/" rel="tag"><i class="fa fa-tag"></i> Dockerfile</a>
           
+            <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
+          
             <a href="/tags/镜像/" rel="tag"><i class="fa fa-tag"></i> 镜像</a>
           
             <a href="/tags/容器/" rel="tag"><i class="fa fa-tag"></i> 容器</a>
-          
-            <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
           
         </div>
       
