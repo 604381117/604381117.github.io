@@ -185,10 +185,10 @@
         <category>操作系统</category>
       </categories>
       <tags>
-        <tag>Nachos-3.4</tag>
         <tag>时间片轮转调度策略</tag>
         <tag>FIFO线程调度策略</tag>
         <tag>基于优先级的可抢占式调度策略</tag>
+        <tag>Nachos-3.4</tag>
       </tags>
   </entry>
   <entry>
@@ -199,8 +199,8 @@
         <category>操作系统</category>
       </categories>
       <tags>
-        <tag>PCB</tag>
         <tag>Nachos-3.4</tag>
+        <tag>PCB</tag>
       </tags>
   </entry>
   <entry>
