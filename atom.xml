@@ -398,13 +398,13 @@
     
       <category term="信号量" scheme="https://icoty.github.io/tags/%E4%BF%A1%E5%8F%B7%E9%87%8F/"/>
     
+      <category term="Nachos-3.4" scheme="https://icoty.github.io/tags/Nachos-3-4/"/>
+    
       <category term="生产者消费者问题" scheme="https://icoty.github.io/tags/%E7%94%9F%E4%BA%A7%E8%80%85%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98/"/>
     
       <category term="读者写者问题" scheme="https://icoty.github.io/tags/%E8%AF%BB%E8%80%85%E5%86%99%E8%80%85%E9%97%AE%E9%A2%98/"/>
     
       <category term="Barrier" scheme="https://icoty.github.io/tags/Barrier/"/>
-    
-      <category term="Nachos-3.4" scheme="https://icoty.github.io/tags/Nachos-3-4/"/>
     
   </entry>
   
@@ -460,9 +460,9 @@
       <category term="操作系统" scheme="https://icoty.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
     
-      <category term="Nachos-3.4" scheme="https://icoty.github.io/tags/Nachos-3-4/"/>
-    
       <category term="PCB" scheme="https://icoty.github.io/tags/PCB/"/>
+    
+      <category term="Nachos-3.4" scheme="https://icoty.github.io/tags/Nachos-3-4/"/>
     
   </entry>
   
