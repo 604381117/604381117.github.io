@@ -183,10 +183,10 @@
         <tag>条件变量</tag>
         <tag>锁</tag>
         <tag>信号量</tag>
-        <tag>Nachos-3.4</tag>
         <tag>生产者消费者问题</tag>
         <tag>读者写者问题</tag>
         <tag>Barrier</tag>
+        <tag>Nachos-3.4</tag>
       </tags>
   </entry>
   <entry>
@@ -211,8 +211,8 @@
         <category>操作系统</category>
       </categories>
       <tags>
-        <tag>PCB</tag>
         <tag>Nachos-3.4</tag>
+        <tag>PCB</tag>
       </tags>
   </entry>
   <entry>
